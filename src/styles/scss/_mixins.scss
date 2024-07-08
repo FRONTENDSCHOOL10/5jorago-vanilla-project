@@ -12,17 +12,22 @@
 }
 
 @mixin display(
-  $display: flex,
   $direction,
   $wrap,
   $align-items,
-  $justify-content
+  $justify-content,
+  $display: flex
 ) {
-  display: $display; // 기본값 설정
   flex-direction: $direction;
   flex-wrap: $wrap;
   align-items: $align-items;
   justify-content: $justify-content;
+  display: $display; // 기본값 설정
+}
+
+@mixin margin-padding($margin, $padding) {
+  margin: $margin;
+  padding: $padding;
 }
 
 @mixin default-style($border-radius, $background, $z-index) {

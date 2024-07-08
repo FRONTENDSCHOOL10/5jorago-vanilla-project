@@ -104,3 +104,31 @@ $above-low: 0 -4px 24px 0 rgba(0 0 0 / 0.1);
 $below-high: 0 16px 48px 0 rgba(0 0 0 / 0.3);
 $below-medium: 0 8px 36px 0 rgba(0 0 0 / 0.2);
 $below-low: 0 4px 24px 0 rgba(0 0 0 / 0.1);
+
+
+// Profile Variables
+// -----------------------------------------------------------------------------
+$profile__width: 14.625rem;
+$profile__height: 18.4375rem;
+$profile__row-gap: 1rem;
+
+$profile__name--color: #a6a6a6;
+$profile__name--font-family: 'Pretendard';
+$profile__name--font-size: 1.78rem;
+$profile__name--font-weight: 400;
+$profile__name--line-height: 2.843rem;
+
+$profile__img--width: 14.625rem;
+$profile__img--height: 14.625rem;
+$profile__img--border-radius: 0.25rem;
+$profile__img--background: rgba(0, 0, 0, 0.5);
+
+$profile__icon--width: 3.75rem;
+$profile__icon--height: 3.75rem;
+$profile__lock--top: 42%;
+$profile__lock--left: 50%;
+$profile__lock--transform: translate(-50%, -50%);
+
+$profile__img--overlay-height: 14.625rem;
+$profile__img--overlay-bgc: rgba(0, 0, 0, 0.5);
+
