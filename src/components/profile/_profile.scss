@@ -1,0 +1,180 @@
+
+
+$profile__width: 14.625rem;
+$profile__height: 18.4375rem;
+$profile__row-gap: 1rem;
+
+$profile__name--color: #a6a6a6;
+$profile__name--font-family: 'Pretendard';
+$profile__name--font-size: 1.78rem;
+$profile__name--font-weight: 400;
+$profile__name--line-height: 2.843rem;
+
+$profile__img--width: 14.625rem;
+$profile__img--height: 14.625rem;
+$profile__img--border-radius: 0.25rem;
+$profile__img--background: rgba(0, 0, 0, 0.5);
+
+$profile__icon--width: 3.75rem;
+$profile__icon--height: 3.75rem;
+$profile__lock--top: 42%;
+$profile__lock--left: 50%;
+$profile__lock--transform: translate(-50%, -50%);
+
+$profile__img--overlay-height: 14.625rem;
+$profile__img--overlay-bgc: rgba(0, 0, 0, 0.5);
+
+
+// 분기점
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+
+// 믹스인
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin display($direction, $align-items, $display: flex) {
+  flex-direction: $direction;
+  align-items: $align-items;
+  display: $display; // 기본값 설정
+}
+
+@mixin default-style($border-radius, $background, $z-index) {
+  border-radius: $border-radius;
+  background: $background;
+  z-index: $z-index;
+}
+
+@mixin position($top, $left, $position: absolute){
+  top: $top;
+  left: $left;
+  position: $position;
+}
+
+@mixin font(
+  $font-size,
+  $font-weight,
+  $line-height,
+  $font-family: $profile__name--font-family
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  font-family: $font-family; // 기본값 설정
+}
+
+@mixin fontSize-lineHeight($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+
+// 테스트 용
+body {
+  margin: 100px;
+}
+
+.profile {
+  @include size($profile__width, $profile__height);
+
+  @include display(column, center, inline-flex);
+  justify-content: center;
+  row-gap: $profile__row-gap;
+
+  position: relative;
+}
+
+.profile__img {
+  @include size($profile__img--width, $profile__img--height);
+
+  @include default-style($profile__img--border-radius, $profile__img--background, 0);
+}
+
+// 프로필 위 까만 블러 효과
+.profile__img--overlay {
+  @include position(0, 0);
+  
+  @include size(100%, $profile__img--overlay-height);
+
+  @include default-style($profile__img--border-radius, $profile__img--overlay-bgc, 1);
+}
+
+// 자물쇠 아이콘(잠금 상태), 연필 아이콘(수정 상태)
+.profile__lock, .profile__edit {
+  @include size($profile__icon--width, $profile__icon--height);
+
+  @include position($profile__lock--top, $profile__lock--left);
+
+  transform: $profile__lock--transform;
+  z-index: 2;
+}
+
+.profile__name {
+  color: $profile__name--color;
+  text-align: center;
+
+  @include font($profile__name--font-size, $profile__name--font-weight, $profile__name--line-height);
+}
+
+
+// 태블릿 ver
+@media (max-width: $breakpoint-desktop) {
+  .profile {
+    @include size(8.25rem, 10.1875rem);
+    row-gap: 0.75rem;
+  }
+
+  .profile__img {
+    @include size(8.25rem, 8.25rem);
+  }
+
+  .profile__lock {
+    @include size(3.125rem, 3.125rem);
+  }
+
+  .profile__edit {
+    @include size(3.125rem, 3.125rem);
+  }
+
+  .profile__img--overlay {
+    height: 81.5%;
+  }
+
+  .profile__name {
+    @include fontSize-lineHeight(0.75019rem, 1.20031rem);
+  }
+}
+
+
+// 모바일 ver
+@media (max-width: $breakpoint-tablet) {
+  .profile {
+    @include size(7.125rem, 9.0625rem);
+    row-gap: 0.75rem;
+  }
+
+  .profile__img {
+    @include size(7.125rem, 7.125rem);
+  }
+
+  .profile__lock {
+    @include size(3.125rem, 3.125rem);
+  }
+
+  .profile__edit {
+    @include size(3.125rem, 3.125rem);
+  }
+
+  .profile__img--overlay {
+    height: 79%;
+  }
+
+  .profile__name {
+    @include fontSize-lineHeight(0.75019rem, 1.20031rem);
+  }
+}
+
