@@ -1,0 +1,151 @@
+$card--font-family: 'Pretendard';
+
+$quickVOD--title-color: #c4c4c4;
+$quickVOD--episode-number-color: #a6a6a6;
+$quickVOD__icon-title-color: #e1e1e1;
+
+// 반응형 분기점
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// 믹스인
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin display($display, $flex-direction) {
+  display: $display;
+  flex-direction: $flex-direction;
+}
+
+@mixin font(
+  $font-size,
+  $font-weight,
+  $line-height,
+  $font-style: normal,
+  $font-family: 'Pretendard'
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  font-style: $font-style; // 기본값 normal
+  font-family: $font-family; // 기본값 Pretendard
+}
+
+@mixin fontSize-lineHeight($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+// 테스트 용
+body {
+  margin: 10%;
+}
+
+.quickVOD__content {
+  @include size(21.5625rem, 16.5rem);
+  @include display(flex, column);
+}
+
+.quickVOD__content-img {
+  @include size(21.5625rem, 12.125rem);
+  border-radius: 0.25rem;
+}
+
+.quickVOD__title {
+  margin-top: 0.5rem;
+
+  color: $quickVOD--title-color;
+  @include font(1.333rem, 600, 1.9995rem);
+}
+
+.quickVOD__episode-number {
+  margin-top: 0.25rem;
+
+  color: $quickVOD--episode-number-color;
+  @include font(1rem, 400, 1.6rem);
+}
+
+// Quick VOD 아이콘
+.quickVOD__icon {
+  @include size(7rem, 3rem);
+
+  position: absolute;
+  z-index: 1;
+}
+
+.quickVOD__icon-title {
+  @include size(6rem, 1.875rem);
+  margin: 0.3rem 15.25rem 9.94rem 0.3rem;
+
+  color: $quickVOD__icon-title-color;
+  border-radius: 0.25rem;
+  background: #c73e4e;
+  @include font(1rem, 400, 1.6rem);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 반응형 ============================================
+// 태블릿 ver
+@media (max-width: $breakpoint-desktop) {
+  .quickVOD__content {
+    @include size(14rem, 10.9375rem);
+  }
+
+  .quickVOD__content-img {
+    @include size(14rem, 7.875rem);
+  }
+
+  .quickVOD__title {
+    @include fontSize-lineHeight(0.75019rem, 1.12531rem);
+  }
+
+  .quickVOD__episode-number {
+    @include fontSize-lineHeight(0.75019rem, 1.20031rem);
+  }
+
+  // Quick VOD 아이콘
+  .quickVOD__icon {
+    @include size(4rem, 2rem);
+  }
+
+  .quickVOD__icon-title {
+    @include size(2.75rem, 1rem);
+    padding: 0rem 0.38rem;
+
+    @include fontSize-lineHeight(0.5625rem, 0.9rem);
+  }
+}
+
+// 모바일 ver
+@media (max-width: $breakpoint-tablet) {
+  .quickVOD__content {
+    @include size(9.0625rem, 5.125rem);
+  }
+
+  .quickVOD__content-img {
+    @include size(9.11113rem, 5.125rem);
+  }
+
+  .quickVOD__title,
+  .quickVOD__episode-number {
+    margin: 0;
+  }
+
+  // Quick VOD 아이콘
+  .quickVOD__icon {
+    @include size(4rem, 2rem);
+  }
+
+  .quickVOD__icon-title {
+    @include size(2.75rem, 1rem);
+    padding: 0rem 0.38rem;
+
+    @include fontSize-lineHeight(0.5625rem, 0.9rem);
+  }
+}
