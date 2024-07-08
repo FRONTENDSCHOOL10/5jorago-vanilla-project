@@ -1,0 +1,102 @@
+@import '/styles/scss/_variables.scss';
+@import '/styles/scss/_mixins.scss';
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+
+body {
+  background-color: $black;
+}
+
+footer {
+  @include display(flex, column, flex-start, null);
+  align-self: stretch;
+  gap: 1.5rem;
+
+  color: $gray-500; // CSS 변수와 Sass 변수 함께 사용
+  font-family: Pretendard;
+  font-size: 1.333rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+
+  .footer--util {
+    display: flex;
+    gap: 2.25rem;
+
+    span {
+      color: $gray-200;
+      font-family: Pretendard;
+      font-size: 0.75019rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+    }
+  }
+
+  ul {
+    margin: 1.5rem 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+
+    li {
+      @include display(flex, row, center, center);
+      @include size(3.25rem, 3.25rem);
+      background-color: $gray-800;
+      border-radius: 1.875rem;
+    }
+
+    li img {
+      @include size(50%, 50%);
+    }
+  }
+
+  p {
+    @include display(flex, row, center, null);
+    position: relative;
+    font-size: 0.75019rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    gap: 0.5rem;
+    align-self: stretch;
+
+    span:not(:first-child)::before {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 11px;
+      background-color: $gray-800;
+      vertical-align: middle; /* 구분선 중앙 정렬 */
+      margin-right: 0.5rem;
+    }
+
+    .textunderline {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .footer--p {
+    display: none;
+  }
+  footer {
+    .footer--util {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+    }
+  }
+}
