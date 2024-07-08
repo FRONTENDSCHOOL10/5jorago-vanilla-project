@@ -4,9 +4,11 @@
 @use 'sass:color';
 @use './function' as func;
 
-@mixin size($width, $height: null) {
+@mixin size($width, $height: null, $max-width, $max-height) {
   width: $width;
   height: $height;
+  max-width: $max-width;
+  max-height: $max-height;
 }
 
 @mixin display($display: flex, $direction, $align-items, $justify-content) {
