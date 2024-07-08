@@ -1,113 +1,106 @@
-:root {
-  /* TYPE */
-  --heading-medium-family: "Pretendard";
-  --heading-medium-size: 16px;
-  --heading-medium-size-rem: 1rem;
-  --heading-medium-weight: 700;
-  --heading-medium-style: normal;
-  --heading-medium-line-height: 140%;
-  --heading-large-family: "Pretendard";
-  --heading-large-size: 21.33px;
-  --heading-large-size-rem: 1.333rem;
-  --heading-large-weight: 700;
-  --heading-large-style: normal;
-  --heading-large-line-height: 140%;
-  --heading-xl-family: "Pretendard";
-  --heading-xl-size: 28.43px;
-  --heading-xl-size-rem: 1.7769rem;
-  --heading-xl-weight: 700;
-  --heading-xl-style: normal;
-  --heading-xl-line-height: 140%;
-  --heading-xxl-family: "Pretendard";
-  --heading-xxl-size: 37.9px;
-  --heading-xxl-size-rem: 2.3686rem;
-  --heading-xxl-weight: 700;
-  --heading-xxl-style: normal;
-  --heading-xxl-line-height: 140%;
-  --heading-xxxl-family: "Pretendard";
-  --heading-xxxl-size: 50.52px;
-  --heading-xxxl-size-rem: 3.1573rem;
-  --heading-xxxl-weight: 700;
-  --heading-xxxl-style: normal;
-  --heading-xxxl-line-height: 140%;
-  --label-small-family: "Pretendard";
-  --label-small-size: 12px;
-  --label-small-size-rem: 0.7502rem;
-  --label-small-weight: 600;
-  --label-small-style: normal;
-  --label-small-line-height: 150%;
-  --label-medium-family: "Pretendard";
-  --label-medium-size: 16px;
-  --label-medium-size-rem: 1rem;
-  --label-medium-weight: 600;
-  --label-medium-style: normal;
-  --label-medium-line-height: 150%;
-  --label-large-family: "Pretendard";
-  --label-large-size: 21.33px;
-  --label-large-size-rem: 1.333rem;
-  --label-large-weight: 600;
-  --label-large-style: normal;
-  --label-large-line-height: 150%;
-  --label-xl-family: "Pretendard";
-  --label-xl-size: 28.43px;
-  --label-xl-size-rem: 1.7769rem;
-  --label-xl-weight: 600;
-  --label-xl-style: normal;
-  --label-xl-line-height: 150%;
-  --label-xxl-family: "Astloch";
-  --label-xxl-size: 37.9px;
-  --label-xxl-size-rem: 2.3686rem;
-  --label-xxl-weight: 600;
-  --label-xxl-style: normal;
-  --label-xxl-line-height: 150%;
-  --paragraph-small-family: "Pretendard";
-  --paragraph-small-size: 12px;
-  --paragraph-small-size-rem: 0.7502rem;
-  --paragraph-small-weight: 400;
-  --paragraph-small-style: normal;
-  --paragraph-small-line-height: 160%;
-  --paragraph-medium-family: "Pretendard";
-  --paragraph-medium-size: 16px;
-  --paragraph-medium-size-rem: 1rem;
-  --paragraph-medium-weight: 400;
-  --paragraph-medium-style: normal;
-  --paragraph-medium-line-height: 160%;
-  --paragraph-large-family: "Pretendard";
-  --paragraph-large-size: 21.33px;
-  --paragraph-large-size-rem: 1.333rem;
-  --paragraph-large-weight: 400;
-  --paragraph-large-style: normal;
-  --paragraph-large-line-height: 160%;
-  --paragraph-xl-family: "Pretendard";
-  --paragraph-xl-size: 28.43px;
-  --paragraph-xl-size-rem: 1.7769rem;
-  --paragraph-xl-weight: 400;
-  --paragraph-xl-style: normal;
-  --paragraph-xl-line-height: 160%;
+// Font Family
+$search--font-family: 'Pretendard';
 
-  /* COLORS */
-  --black: #000000;
-  --white: #ffffff;
-  --gray-100: #e1e1e1;
-  --gray-200: #c4c4c4;
-  --gray-300: #a6a6a6;
-  --gray-400: #898989;
-  --gray-500: #6b6b6b;
-  --gray-600: #565656;
-  --gray-700: #404040;
-  --gray-800: #2b2b2b;
-  --gray-900: #151515;
-  --brand-red-1: #ff153c;
-  --brand-red-2: #e93945;
-  --brand-dark-bg-1: #191919;
-  --brand-dark-bg-2: #212121;
+// Breakpoints
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
 
-  /* SHADOWS */
-  --text: inset 1px 1px 0 0 #000000;
-  --above-high: 0 -16px 48px 0 rgba(0 0 0 / 0.3);
-  --above-medium: 0 -8px 36px 0 rgba(0 0 0 / 0.2);
-  --above-low: 0 -4px 24px 0 rgba(0 0 0 / 0.1);
-  --below-high: 0 16px 48px 0 rgba(0 0 0 / 0.3);
-  --below-medium: 0 8px 36px 0 rgba(0 0 0 / 0.2);
-  --below-low: 0 4px 24px 0 rgba(0 0 0 / 0.1);
-}
+// Colors
+$black: #000000;
+$white: #ffffff;
+$gray-100: #e1e1e1;
+$gray-200: #c4c4c4;
+$gray-300: #a6a6a6;
+$gray-400: #898989;
+$gray-500: #6b6b6b;
+$gray-600: #565656;
+$gray-700: #404040;
+$gray-800: #2b2b2b;
+$gray-900: #151515;
+$brand-red-1: #ff153c;
+$brand-red-2: #e93945;
+$brand-dark-bg-1: #191919;
+$brand-dark-bg-2: #212121;
+
+// Typography
+// -----------------------------------------------------------------------------
+
+// Headings (Pretendard)
+$heading-family: 'Pretendard';
+$heading-style: normal;
+$heading-weight: 700;
+$heading-line-height: 140%;
+
+$heading-medium: 1rem; /* 16px */
+$heading-medium-size: 16px;
+$heading-large: 1.333rem; /* 21.33px */
+$heading-large-size: 21.33px;
+$heading-xl: 1.7769rem; /* 28.43px */
+$heading-xl-size: 28.43px;
+$heading-xxl: 2.3686rem; /* 37.9px */
+$heading-xxl-size: 37.9px;
+$heading-xxxl: 3.1573rem; /* 50.52px */
+$heading-xxxl-size: 50.52px;
+
+// Labels (Pretendard & Astloch)
+$label-family: 'Pretendard';
+$label-style: normal;
+$label-weight: 600;
+$label-line-height: 150%;
+
+$label-small: 0.7502rem;
+$label-medium: 1rem;
+$label-large: 1.333rem;
+$label-xl: 1.7769rem;
+
+$label-xxl-family: 'Astloch';
+$label-xxl: 2.3686rem;
+
+// Paragraphs (Pretendard)
+$paragraph-family: 'Pretendard';
+$paragraph-style: normal;
+$paragraph-weight: 400;
+$paragraph-line-height: 160%;
+
+$paragraph-small: 0.7502rem;
+$paragraph-medium: 1rem;
+$paragraph-large: 1.333rem;
+$paragraph-xl: 1.7769rem;
+
+// Search-Specific Variables
+// -----------------------------------------------------------------------------
+
+// Recent Searches
+$search__recent-searches--width: 680px;
+$search__recent-searches--height: 613px;
+$search__recent-searches--title-color: $gray-200;
+$search__recent-searches--bgc: $black;
+$search__recent-searches--no-result-title-color: $gray-200;
+$search__recent-searches--no-result-content-color: $gray-300;
+$search__recent-searches--list-title-color: $gray-300;
+$search__recent-searches--list-delete-color: $gray-300;
+$search__recent-searches--all-delete-color: $gray-600;
+$search__recent-searches--list-delete-width: 0.93738rem;
+$search__recent-searches--list-delete-height: 0.93688rem;
+$search__recent-searches--list-delete-svg-width: 0.9375rem;
+$search__recent-searches--list-delete-svg-height: 0.9375rem;
+
+// Popular Searches
+$search__popular-searches-width: 680px;
+$search__popular-searches-height: 613px;
+$search__popular-searches--title-color: $gray-200;
+$search__popular-searches--content-title-color: $gray-300;
+$search__popular-searches--rank-color: $brand-red-1;
+
+// Date
+$search__date-color: $gray-500;
+
+// Shadows
+$text: inset 1px 1px 0 0 #000000;
+$above-high: 0 -16px 48px 0 rgba(0 0 0 / 0.3);
+$above-medium: 0 -8px 36px 0 rgba(0 0 0 / 0.2);
+$above-low: 0 -4px 24px 0 rgba(0 0 0 / 0.1);
+$below-high: 0 16px 48px 0 rgba(0 0 0 / 0.3);
+$below-medium: 0 8px 36px 0 rgba(0 0 0 / 0.2);
+$below-low: 0 4px 24px 0 rgba(0 0 0 / 0.1);
