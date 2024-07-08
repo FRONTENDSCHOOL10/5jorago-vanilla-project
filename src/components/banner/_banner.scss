@@ -1,0 +1,84 @@
+@use '@/styles/scss/' as *;
+
+$breakpoint-mobile: 20rem;
+$breakpoint-tablet: 48rem;
+$breakpoint-desktop: 64rem;
+
+.banner__link--image-container {
+  @include display(flex, null, null, null, center);
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.banner__image-container--logo {
+  @include position(null, 25rem, null, 4.38rem, absolute);
+  @include size(100%, auto, 60rem, 100%);
+  z-index: 10;
+  justify-content: left;
+  transform: translateY(50%);
+}
+
+.banner__image-container--img {
+  width: 100%;
+  height: auto;
+}
+
+.banner__image-wrapper {
+  width: 100%;
+  overflow: hidden; /* 이미지가 잘리지 않도록 설정 */
+}
+
+.banner__image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: $breakpoint-desktop) {
+  .banner__image-container--img {
+    width: 100%;
+    height: auto;
+  }
+  .banner__image-container--logo {
+    @include size(100%, null, 22rem, null);
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .banner__image-container--img {
+    width: 100%;
+    height: auto;
+  }
+  .banner__image-container--logo {
+    @include size(100%, null, 15rem, null);
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .banner__image-container--logo {
+    @include size(100%, null, 3rem, null);
+  }
+  .banner__image-container--img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.banner__image-container--desc {
+  @include position(null, 17.375rem, null, 4.38rem, absolute);
+  @include display(flex, column, nowrap, null, null);
+  @include font(1.77688rem, 400, 160%, Pretendard, white);
+  font-style: normal;
+  transform: translateY(100%);
+  margin: 0;
+}
+
+.banner__image-container--desc1 {
+  margin: 0;
+}
+
+.banner__image-container--desc2 {
+  margin-top: 0;
+  margin: 0;
+}

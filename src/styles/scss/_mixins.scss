@@ -4,14 +4,23 @@
 @use 'sass:color';
 @use './function' as func;
 
-@mixin size($width, $height: null) {
+@mixin size($width, $height: null, $max-width, $max-height) {
   width: $width;
   height: $height;
+  max-width: $max-width;
+  max-height: $max-height;
 }
 
-@mixin display($display: flex, $direction, $align-items, $justify-content) {
+@mixin display(
+  $display: flex,
+  $direction,
+  $wrap,
+  $align-items,
+  $justify-content
+) {
   display: $display; // 기본값 설정
   flex-direction: $direction;
+  flex-wrap: $wrap;
   align-items: $align-items;
   justify-content: $justify-content;
 }
@@ -30,11 +39,12 @@
   position: $position;
 }
 
-@mixin font($font-size, $font-weight, $line-height, $font-family) {
+@mixin font($font-size, $font-weight, $line-height, $font-family, $color) {
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: $line-height;
   font-family: $font-family;
+  color: $color;
 }
 
 @mixin fontSize-line-height($font-size, $line-height) {
