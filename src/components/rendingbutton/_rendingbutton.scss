@@ -1,20 +1,22 @@
+@use '/styles/scss/_variables';
+@import '/styles/scss/_mixins.scss';
+
 button {
+  @include display(flex, row, center, null);
   position: relative;
-  background-color: #e93945;
-  display: flex;
+  background-color: var(--brand-red-2);
   width: 31.625rem;
   height: 5rem;
   padding: 0.5rem 4rem 0.5rem 0.5rem;
-  align-items: center;
   gap: 1.5rem;
   flex-shrink: 0;
   border-radius: 0.25rem;
-  border: #e93945;
+  border: var(--brand-red-2);
 
   span {
     padding-left: 6.25rem;
     position: absolute;
-    color: #fff;
+    color: var(--white);
     text-align: right;
     font-size: 1.77688rem;
     font-weight: 600;
@@ -40,7 +42,7 @@ button {
     span {
       padding-left: 4rem;
       position: absolute;
-      color: #fff;
+      color: var(--white);
       text-align: right;
       font-size: 1rem;
       font-weight: 600;
