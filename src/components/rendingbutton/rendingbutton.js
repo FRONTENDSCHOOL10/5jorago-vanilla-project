@@ -1,1 +1,1 @@
-import '/components/rendingbutton/rendingbutton.scss';
+import '/components/rendingbutton/_rendingbutton.scss';
