@@ -4,10 +4,14 @@ $search--font-family: 'Pretendard';
 // 최근 검색어
 $search__recent-searches--width: 680px;
 $search__recent-searches--height: 613px;
-$search__recent-searches--bgc: #000000;
 $search__recent-searches--title-color: #c4c4c4;
-$search__recent-searches--no-content-color: #a6a6a6;
+$search__recent-searches--bgc: #000000;
 
+// 최근 검색어 X (no-result)
+$search__recent-searches--no-result-title-color: #c4c4c4;
+$search__recent-searches--no-result-content-color: #a6a6a6;
+
+// 최근 검색어 O (has-result)
 $search__recent-searches--list-title-color: #a6a6a6;
 $search__recent-searches--list-delete-color: #a6a6a6;
 $search__recent-searches--all-delete-color: #565656;
@@ -16,14 +20,15 @@ $search__recent-searches--list-delete-height: 0.93688rem;
 $search__recent-searches--list-delete-svg-width: 0.9375rem;
 $search__recent-searches--list-delete-svg-height: 0.9375rem;
 
-$search__popular-searches--content-title-color: #a6a6a6;
-$search__date-color: #6b6b6b;
-
 // 인기 검색어
+$search__popular-searches--content-title-color: #a6a6a6;
 $search__popular-searches-width: 680px;
 $search__popular-searches-height: 613px;
 $search__popular-searches--title-color: #c4c4c4;
 $search__popular-searches--rank-color: #ff153c;
+
+// 실시간 시간
+$search__date-color: #6b6b6b;
 
 // 반응형 분기점
 $breakpoint-mobile: 320px;
@@ -93,21 +98,21 @@ body {
 
 // 최근 검색어 X
 // (최근 검색어가 없는 창의 CSS는 <최근 검색어 O>의 html과 CSS에 주석 처리하고 사용)------------------------------
-// .search__recent-searches--box {
+// .search__recent-searches--no-result {
 //   @include display(column, flex-start);
 
 //   gap: 1.25rem;
 // }
 
-// .search__recent-searches--title {
+// .search__recent-searches--no-result-title {
 //   margin: 0;
-//   color: $search__recent-searches--title-color;
+//   color: $search__recent-searches--no-result-title-color;
 
 //   @include font(1.77688rem, 600, 2.66531rem);
 // }
 
-// .search__recent-searches--no-content {
-//   color: $search__recent-searches--no-content-color;
+// .search__recent-searches--no-result-content {
+//   color: $search__recent-searches--no-result-content-color;
 
 //   @include font(1.333rem, 400, 2.13281rem);
 // }
@@ -115,14 +120,13 @@ body {
 
 // 최근 검색어 O (검색어 리스트)-----------------
 // (최근 검색어가 있는 창의 CSS는 <최근 검색어 X>의 html과 CSS에 주석 처리하고 사용)------------------------------
-.search__recent-searches--box {
+.search__recent-searches--has-results {
   @include display-direction(row);
 
   gap: 1.5rem;
-  
 }
 
-.search__recent-searches--title {
+.search__recent-searches--has-results-title {
   color: $search__recent-searches--title-color;
   @include font(1.77688rem, 600, 2.66531rem);
 
@@ -187,7 +191,7 @@ body {
   position: absolute;
   top: 20%;
 }
-//---------------------------------------
+// ---------------------------------------
 
 // 인기 검색어---------------------------------------
 .search__popular-searches {
@@ -264,22 +268,22 @@ body {
   //   gap: 0.75rem;
   // }
 
-  // .search__recent-searches--title {
+  // .search__recent-searches--no-result-title {
   //   @include fontSize-lineHeight(1rem, 1.5rem);
   // }
 
-  // .search__recent-searches--no-content {
+  // .search__recent-searches--no-result-content {
   //   @include fontSize-lineHeight(0.75019rem, 1.20031rem);
   // }
 
 
   // 최근 검색어 O (검색어 리스트)
   // (최근 검색어가 있을 때의 CSS, <최근 검색어 X>의 html과 CSS에 주석 처리하고 사용)------------------------------
-  .search__recent-searches--box {
+  .search__recent-searches--has-results {
     gap: 1.25rem;
   }
 
-  .search__recent-searches--title {
+  .search__recent-searches--has-results-title {
     @include fontSize-lineHeight(1rem, 1.5rem);
   }
 
@@ -362,7 +366,8 @@ body {
 
 // 모바일 ver
 @media (max-width: $breakpoint-tablet) {
-  // 최근 검색어는 모바일 XXX
+  // 최근 검색어는 모바일 X
+
   // 인기 검색어-------------------------------------
   .search__popular-searches {
     @include size(14.125rem, 21.25rem);
