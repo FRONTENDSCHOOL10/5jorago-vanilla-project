@@ -1,0 +1,412 @@
+
+
+$search--font-family: 'Pretendard';
+
+// 최근 검색어
+$search__recent-searches--width: 680px;
+$search__recent-searches--height: 613px;
+$search__recent-searches--title-color: #c4c4c4;
+$search__recent-searches--bgc: #000000;
+
+// 최근 검색어 X (no-result)
+$search__recent-searches--no-result-title-color: #c4c4c4;
+$search__recent-searches--no-result-content-color: #a6a6a6;
+
+// 최근 검색어 O (has-result)
+$search__recent-searches--list-title-color: #a6a6a6;
+$search__recent-searches--list-delete-color: #a6a6a6;
+$search__recent-searches--all-delete-color: #565656;
+$search__recent-searches--list-delete-width: 0.93738rem;
+$search__recent-searches--list-delete-height: 0.93688rem;
+$search__recent-searches--list-delete-svg-width: 0.9375rem;
+$search__recent-searches--list-delete-svg-height: 0.9375rem;
+
+// 인기 검색어
+$search__popular-searches--content-title-color: #a6a6a6;
+$search__popular-searches-width: 680px;
+$search__popular-searches-height: 613px;
+$search__popular-searches--title-color: #c4c4c4;
+$search__popular-searches--rank-color: #ff153c;
+
+// 실시간 시간
+$search__date-color: #6b6b6b;
+
+// 반응형 분기점
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// 믹스인
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin display($direction, $align-items, $display: flex) {
+  flex-direction: $direction;
+  align-items: $align-items;
+  display: $display; // 기본값 설정
+}
+
+@mixin display-direction($direction, $display: flex) {
+  flex-direction: $direction;
+  display: $display; // 기본값 설정
+}
+
+@mixin font(
+  $font-size,
+  $font-weight,
+  $line-height,
+  $font-family: $search--font-family
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  font-family: $font-family; // 기본값 설정
+}
+
+@mixin fontSize-lineHeight($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin margin-padding($margin, $padding) {
+  margin: $margin;
+  padding: $padding;
+}
+
+@mixin button-clear($background-color, $border) {
+  background-color: $background-color;
+  border: $border;
+}
+
+
+// 테스트 하려고 넣음
+body {
+  margin: 10%;
+}
+
+.search__recent-searches {
+  @include size(
+    $search__recent-searches--width,
+    $search__recent-searches--height
+  );
+
+  background-color: $search__recent-searches--bgc;
+
+  @include display(column, flex-start);
+}
+
+// 최근 검색어 X
+// (최근 검색어가 없는 창의 CSS는 <최근 검색어 O>의 html과 CSS에 주석 처리하고 사용)------------------------------
+// .search__recent-searches--no-result {
+//   @include display(column, flex-start);
+
+//   gap: 1.25rem;
+// }
+
+// .search__recent-searches--no-result-title {
+//   margin: 0;
+//   color: $search__recent-searches--no-result-title-color;
+
+//   @include font(1.77688rem, 600, 2.66531rem);
+// }
+
+// .search__recent-searches--no-result-content {
+//   color: $search__recent-searches--no-result-content-color;
+
+//   @include font(1.333rem, 400, 2.13281rem);
+// }
+
+
+// 최근 검색어 O (검색어 리스트)-----------------
+// (최근 검색어가 있는 창의 CSS는 <최근 검색어 X>의 html과 CSS에 주석 처리하고 사용)------------------------------
+.search__recent-searches--has-results {
+  @include display-direction(row);
+
+  gap: 1.5rem;
+}
+
+.search__recent-searches--has-results-title {
+  color: $search__recent-searches--title-color;
+  @include font(1.77688rem, 600, 2.66531rem);
+
+  margin: 0;
+}
+
+.search__recent-searches--list {
+  @include display-direction(column);
+  list-style: none;
+
+  margin-top: 1.25rem;
+  padding: 0;
+  gap: 1rem;
+}
+
+.search__recent-searches--list-title {
+  color: $search__recent-searches--list-title-color;
+  @include button-clear(transparent, none);
+
+  font-style: normal;
+  @include font(1.333rem, 600, 1.9995rem);
+
+  padding: 0;
+}
+
+.search__recent-searches--list-delete {
+  color: $search__recent-searches--list-delete-color;
+  @include button-clear(transparent, none);
+
+  @include size(
+    $search__recent-searches--list-delete-width,
+    $search__recent-searches--list-delete-height
+  );
+  opacity: 0.5;
+
+  svg {
+    @include size(
+      $search__recent-searches--list-delete-svg-width,
+      $search__recent-searches--list-delete-svg-height
+    );
+  }
+}
+
+// 모두 지우기 버튼
+.search__recent-searches--all-delete {
+  color: $search__recent-searches--all-delete-color;
+  @include button-clear(transparent, none);
+
+  font-style: normal;
+  @include font(1.333rem, 600, 1.9995rem);
+
+  display: flex;
+  position: absolute;
+
+  @include margin-padding(0, 0);
+  margin-top: 0.3125rem;
+}
+
+.search__recent-searches--all-delete-icon {
+  margin-left: 6.75rem;
+
+  position: absolute;
+  top: 20%;
+}
+// ---------------------------------------
+
+// 인기 검색어---------------------------------------
+.search__popular-searches {
+  @include size(
+    $search__popular-searches-width,
+    $search__popular-searches-height
+  );
+
+  @include display(column, flex-start);
+  background-color: #000000;
+}
+
+.search__popular-searches--title {
+  color: $search__popular-searches--title-color;
+
+  @include font(1.77688rem, 600, 2.66531rem);
+  font-style: normal;
+}
+
+.search__popular-searches--list {
+  list-style: none;
+  gap: 1rem; // 랭킹과 랭킹 사이 갭
+
+  @include display-direction(column);
+  @include margin-padding(0, 0);
+}
+
+// 인기 검색어 랭킹
+.search__popular-searches--content {
+  @include display-direction(row);
+
+  gap: 2.75rem; // 랭킹과 타이틀 사이 갭
+}
+
+.search__popular-searches--rank {
+  color: $search__popular-searches--rank-color;
+
+  @include font(1.333rem, 700, 2.13281rem, -family);
+  font-style: normal;
+}
+
+.search__popular-searches--content-title {
+  width: 42.5rem;
+  text-decoration: none;
+
+  display: flex;
+  padding-right: 20.25rem;
+
+  h3 {
+    margin: 0;
+    color: $search__popular-searches--content-title-color;
+    @include font(1.333rem, 600, 1.9995rem);
+    font-style: normal;
+  }
+}
+
+.search__date {
+  color: $search__date-color;
+
+  @include font(1.333rem, 400, 2.13281rem);
+  font-style: normal;
+}
+
+// 반응형 ============================================
+// 태블릿 ver
+@media (max-width: $breakpoint-desktop) {
+  .search__recent-searches {
+    @include size(32.625rem, 21.9375rem);
+  }
+
+  // 최근 검색어 X
+  // (최근 검색어가 없을 때의 CSS, <최근 검색어 O>의 html과 CSS에 주석 처리하고 사용)------------------------------
+  // .search__recent-searches--box {
+  //   gap: 0.75rem;
+  // }
+
+  // .search__recent-searches--no-result-title {
+  //   @include fontSize-lineHeight(1rem, 1.5rem);
+  // }
+
+  // .search__recent-searches--no-result-content {
+  //   @include fontSize-lineHeight(0.75019rem, 1.20031rem);
+  // }
+
+
+  // 최근 검색어 O (검색어 리스트)
+  // (최근 검색어가 있을 때의 CSS, <최근 검색어 X>의 html과 CSS에 주석 처리하고 사용)------------------------------
+  .search__recent-searches--has-results {
+    gap: 1.25rem;
+  }
+
+  .search__recent-searches--has-results-title {
+    @include fontSize-lineHeight(1rem, 1.5rem);
+  }
+
+  .search__recent-searches--list {
+    gap: 0.5rem;
+  }
+
+  .search__recent-searches--list-title {
+    @include fontSize-lineHeight(0.75019rem, 1.12531rem);
+  }
+
+  .search__recent-searches--list-delete {
+    @include button-clear(transparent, none);
+
+    color: $search__recent-searches--list-delete-color;
+
+    @include size(0.93738rem, 0.93688rem);
+    opacity: 0.5;
+
+    svg {
+      @include size(0.75rem, 0.75rem);
+    }
+  }
+
+  // 모두 지우기 버튼
+  .search__recent-searches--all-delete {
+    @include fontSize-lineHeight(0.75019rem, 1.12531rem);
+
+    @include margin-padding(0, 0);
+    margin-top: 5px;
+  }
+
+  .search__recent-searches--all-delete-icon {
+    @include size(0.75rem, 0.75rem);
+    margin-left: 3.6875rem;
+  }
+
+
+  // 인기 검색어-------------------------------------
+  .search__popular-searches {
+    @include size(14.125rem, 21.25rem);
+  }
+
+  .search__popular-searches--title {
+    @include fontSize-lineHeight(1rem, 1.5rem);
+  }
+
+  .search__popular-searches--list {
+    gap: 0.56rem; // 랭킹과 랭킹 사이 갭
+  }
+
+  // 인기 검색어 랭킹
+  .search__popular-searches--content {
+    gap: 1.13rem;
+  }
+
+  .search__popular-searches--rank {
+    @include font(0.75019rem, 600, 1.12531rem);
+  }
+
+  .search__popular-searches--content-title {
+    text-decoration: none;
+
+    display: flex;
+    width: 42.5rem;
+    padding-right: 20.25rem;
+
+    h3 {
+      @include fontSize-lineHeight(0.75019rem, 1.12531rem);
+    }
+  }
+
+  .search__date {
+    @include fontSize-lineHeight(0.75019rem, 1.20031rem);
+
+    margin-top: 0.44rem;
+  }
+}
+
+
+// 모바일 ver
+@media (max-width: $breakpoint-tablet) {
+  // 최근 검색어는 모바일 X
+
+  // 인기 검색어-------------------------------------
+  .search__popular-searches {
+    @include size(14.125rem, 21.25rem);
+  }
+
+  .search__popular-searches--title {
+    @include fontSize-lineHeight(1rem, 1.5rem);
+  }
+
+  .search__popular-searches--list {
+    gap: 0.56rem; // 랭킹과 랭킹 사이 갭
+  }
+
+  // 인기 검색어 랭킹
+  .search__popular-searches--content {
+    gap: 1.13rem;
+  }
+
+  .search__popular-searches--rank {
+    @include font(0.75019rem, 600, 1.12531rem);
+  }
+
+  .search__popular-searches--content-title {
+    text-decoration: none;
+
+    display: flex;
+    width: 42.5rem;
+    padding-right: 20.25rem;
+
+    h3 {
+      @include fontSize-lineHeight(0.75019rem, 1.12531rem);
+    }
+  }
+
+  .search__date {
+    @include fontSize-lineHeight(0.75019rem, 1.20031rem);
+
+    margin-top: 0.44rem;
+  }
+}
+

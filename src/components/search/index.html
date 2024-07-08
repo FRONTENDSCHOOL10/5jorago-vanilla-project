@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>search 컴포넌트</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+    <script type="module" src="../search/search.js"></script>
+  </head>
+  <body>
+    <div class="search">
+
+      <!-- 최근 검색어 -->
+      <div class="search__recent-searches">
+        
+        <!-- 최근 검색어 X (no-result) -->
+        <!-- <div class="search__recent-searches--no-result">
+          <h2 class="search__recent-searches--no-result-title">
+            최근 검색어</h2>
+          
+          <span class="search__recent-searches--no-result-content">
+            검색 내역이 없습니다.</span>
+        </div>  -->
+       
+
+        <!-- 최근 검색어 O (has-result) -->
+        <div class="search__recent-searches--has-results">
+          <h2 class="search__recent-searches--has-results-title">
+            최근 검색어</h2>
+
+          <!-- 모두 지우기 버튼 -->
+          <div>
+            <button type="button" class="search__recent-searches--all-delete">
+              모두 지우기
+              <svg
+                class="search__recent-searches--all-delete-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+              >
+                <g opacity="0.301">
+                  <path
+                    d="M10 20.5C15.5228 20.5 20 16.0228 20 10.5C20 4.97715 15.5228 0.5 10 0.5C4.47715 0.5 0 4.97715 0 10.5C0 16.0228 4.47715 20.5 10 20.5Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M13.6475 14.7861C13.5636 14.7862 13.4805 14.7697 13.4031 14.7376C13.3256 14.7055 13.2552 14.6583 13.1961 14.5989L5.90177 7.30462C5.78208 7.18488 5.71484 7.0225 5.71484 6.8532C5.71484 6.68389 5.78208 6.52151 5.90177 6.40177C6.02151 6.28208 6.18389 6.21484 6.3532 6.21484C6.5225 6.21484 6.68488 6.28208 6.80462 6.40177L14.0989 13.6961C14.1882 13.7854 14.249 13.8991 14.2736 14.023C14.2982 14.1468 14.2856 14.2752 14.2372 14.3918C14.1889 14.5085 14.1071 14.6082 14.0021 14.6784C13.8972 14.7485 13.7737 14.786 13.6475 14.7861V14.7861Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M6.3532 14.7861C6.26933 14.7862 6.18626 14.7697 6.10878 14.7376C6.0313 14.7055 5.96095 14.6583 5.90177 14.5989C5.78208 14.4792 5.71484 14.3168 5.71484 14.1475C5.71484 13.9782 5.78208 13.8158 5.90177 13.6961L13.1961 6.40177C13.3158 6.28208 13.4782 6.21484 13.6475 6.21484C13.8168 6.21484 13.9792 6.28208 14.0989 6.40177C14.2186 6.52151 14.2858 6.68389 14.2858 6.8532C14.2858 7.0225 14.2186 7.18488 14.0989 7.30462L6.80462 14.5989C6.74544 14.6583 6.67509 14.7055 6.59761 14.7376C6.52013 14.7697 6.43707 14.7862 6.3532 14.7861V14.7861Z"
+                    fill="black"
+                  />
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 최근 검색한 검색어 리스트 -->
+        <ul class="search__recent-searches--list">
+          <li>
+            <button type="button" class="search__recent-searches--list-title">재벌집</button>
+            <button type="button" 
+            aria-label="삭제" class="search__recent-searches--list-delete">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                <g opacity="0.5">
+                  <path d="M14.3172 15.4971C14.2276 15.4972 14.1388 15.4796 14.056 15.4453C13.9732 15.4109 13.898 15.3606 13.8348 15.2971L0.199537 1.66313C0.083091 1.53315 0.0208634 1.36351 0.0256474 1.18907C0.0304313 1.01463 0.101863 0.848651 0.225257 0.725257C0.348651 0.601863 0.51463 0.530431 0.68907 0.525647C0.86351 0.520863 1.03315 0.583091 1.16313 0.699537L14.7996 14.336C14.8946 14.4315 14.9592 14.553 14.9852 14.6851C15.0113 14.8172 14.9977 14.9541 14.9461 15.0785C14.8945 15.2029 14.8073 15.3093 14.6954 15.3842C14.5834 15.4592 14.4519 15.4993 14.3172 15.4996V15.4971Z" fill="white"/>
+                  <path d="M0.682186 15.4974C0.592563 15.4975 0.503803 15.4799 0.421011 15.4456C0.338219 15.4113 0.263029 15.3609 0.199766 15.2975C0.0718551 15.1695 0 14.996 0 14.815C0 14.6341 0.0718551 14.4606 0.199766 14.3326L13.8362 0.699891C13.9651 0.576225 14.1372 0.50798 14.3158 0.509801C14.4943 0.511622 14.6651 0.583364 14.7913 0.709632C14.9176 0.8359 14.9894 1.00663 14.9912 1.18519C14.993 1.36375 14.9248 1.53591 14.8011 1.66473L1.16336 15.3C1.03548 15.427 0.862408 15.498 0.682186 15.4974V15.4974Z" fill="white"/>
+                </g>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="search__recent-searches--list-title">재벌집</button>
+            <button type="button" 
+            aria-label="삭제" class="search__recent-searches--list-delete">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                <g opacity="0.5">
+                  <path d="M14.3172 15.4971C14.2276 15.4972 14.1388 15.4796 14.056 15.4453C13.9732 15.4109 13.898 15.3606 13.8348 15.2971L0.199537 1.66313C0.083091 1.53315 0.0208634 1.36351 0.0256474 1.18907C0.0304313 1.01463 0.101863 0.848651 0.225257 0.725257C0.348651 0.601863 0.51463 0.530431 0.68907 0.525647C0.86351 0.520863 1.03315 0.583091 1.16313 0.699537L14.7996 14.336C14.8946 14.4315 14.9592 14.553 14.9852 14.6851C15.0113 14.8172 14.9977 14.9541 14.9461 15.0785C14.8945 15.2029 14.8073 15.3093 14.6954 15.3842C14.5834 15.4592 14.4519 15.4993 14.3172 15.4996V15.4971Z" fill="white"/>
+                  <path d="M0.682186 15.4974C0.592563 15.4975 0.503803 15.4799 0.421011 15.4456C0.338219 15.4113 0.263029 15.3609 0.199766 15.2975C0.0718551 15.1695 0 14.996 0 14.815C0 14.6341 0.0718551 14.4606 0.199766 14.3326L13.8362 0.699891C13.9651 0.576225 14.1372 0.50798 14.3158 0.509801C14.4943 0.511622 14.6651 0.583364 14.7913 0.709632C14.9176 0.8359 14.9894 1.00663 14.9912 1.18519C14.993 1.36375 14.9248 1.53591 14.8011 1.66473L1.16336 15.3C1.03548 15.427 0.862408 15.498 0.682186 15.4974V15.4974Z" fill="white"/>
+                </g>
+              </svg>
+            </button>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+      <!--인기 검색어------------------------ -->
+      <div class="search__popular-searches">
+        <h2 class="search__popular-searches--title">
+          실시간 인기 검색어</h2>
+
+        <ul class="search__popular-searches--list">
+          <li class="search__popular-searches--content">
+            <span class="search__popular-searches--rank">1</span>
+            <a href="/" class="search__popular-searches--content-title">
+              <h3 class="">재벌집 막내 아들</h3>
+            </a>
+          </li>
+
+          <li class="search__popular-searches--content">
+            <span class="search__popular-searches--rank">2</span>
+            <a href="/" class="search__popular-searches--content-title">
+              <h3 class="">미스터트롯2: 새로운 전설의 시작</h3>
+            </a>
+          </li>
+
+          <span class="search__date">실시간 날짜</span>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
