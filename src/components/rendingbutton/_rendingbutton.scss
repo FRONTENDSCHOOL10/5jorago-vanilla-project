@@ -1,32 +1,10 @@
-@mixin button__style($width, $height, $padding, $flex-direction) {
-  flex-direction: $flex-direction;
-  width: $width;
-  height: $height;
-  padding: $padding;
-}
-
-@mixin button__text__style($padding-left, $font-size) {
-  padding-left: $padding-left;
-  font-size: $font-size;
-  position: absolute; // span 요소의 position을 absolute로 고정
-  color: #fff;
-  text-align: right;
-  font-weight: 600;
-  line-height: 150%;
-}
-
-@mixin button__logo__style($width, $height, $padding) {
-  width: $width;
-  height: $height;
-  padding: $padding;
-  flex-shrink: 0; // 이미지 크기 유지
-}
-
-.rending__button {
-  position: relative; // span과 img 요소의 position absolute 기준 설정
+button {
+  position: relative;
   background-color: #e93945;
   display: flex;
-  @include button__style(31.625rem, 5rem, 0.5rem 4rem 0.5rem 0.5rem, row);
+  width: 31.625rem;
+  height: 5rem;
+  padding: 0.5rem 4rem 0.5rem 0.5rem;
   align-items: center;
   gap: 1.5rem;
   flex-shrink: 0;
@@ -34,46 +12,72 @@
   border: #e93945;
 
   span {
-    @include button__text__style(6.25rem, 1.77688rem);
+    padding-left: 6.25rem;
+    position: absolute;
+    color: #fff;
+    text-align: right;
+    font-size: 1.77688rem;
+    font-weight: 600;
+    line-height: 150%;
   }
 
   img {
     position: absolute;
     top: 0;
-    @include button__logo__style(
-      auto,
-      auto,
-      0
-    ); // 초기 이미지 스타일 설정 (크기, 패딩은 0)
   }
+}
 
-  @media (max-width: 768px) {
-    @include button__style(17.6875rem, 3rem, 0rem 2.75rem 0rem 0.5rem, column);
-    align-items: flex-start;
+@media (max-width: 768px) {
+  button {
     justify-content: center;
-    span {
-      @include button__text__style(4rem, 1rem);
-    }
-
-    img {
-      @include button__logo__style(
-        1.94844rem,
-        2.25rem,
-        0rem 0.17656rem 0rem 0.125rem
-      );
-    }
-  }
-
-  @media (max-width: 320px) {
-    @include button__style(11.75rem, 2.125rem, 0rem 1rem 0rem 0.5rem, column);
+    display: flex;
+    width: 17.6875rem;
+    height: 3rem;
+    padding: 0rem 2.75rem 0rem 0.5rem;
+    flex-direction: column;
     align-items: flex-start;
 
     span {
-      @include button__text__style(1.5rem, 0.75019rem);
+      padding-left: 4rem;
+      position: absolute;
+      color: #fff;
+      text-align: right;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 150%;
     }
 
     img {
-      @include button__logo__style(1.40725rem, 1.625rem, 0);
+      width: 1.94844rem;
+      height: 2.25rem;
+      flex-shrink: 0;
+      padding: 0rem 0.17656rem 0rem 0.125rem;
+    }
+  }
+}
+@media (max-width: 320px) {
+  button {
+    display: flex;
+    width: 11.75rem;
+    height: 2.125rem;
+    padding: 0rem 1rem 0rem 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+
+    span {
+      padding-left: 1.5rem;
+      text-align: right;
+      font-family: Pretendard;
+      font-size: 0.75019rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%; /* 1.12531rem */
+    }
+
+    img {
+      width: 1.40725rem;
+      height: 1.625rem;
+      flex-shrink: 0;
     }
   }
 }
