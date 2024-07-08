@@ -1,0 +1,150 @@
+$card--font-family: 'Pretendard';
+
+// 반응형 분기점
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+body {
+  margin: 10%;
+}
+
+.quickVOD__content {
+  width: 345px;
+  height: 264px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.quickVOD__content-img {
+  width: 21.5625rem;
+  height: 12.125rem;
+
+  border-radius: 0.25rem;
+}
+
+.quickVOD__title {
+  margin-top: 0.5rem;
+
+  color: var(--gray-200, #c4c4c4);
+
+  font-family: Pretendard;
+  font-size: 1.333rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.9995rem;
+}
+
+.quickVOD__episode-number {
+  margin-top: 0.25rem;
+  color: var(--gray-300, #a6a6a6);
+
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6rem;
+}
+
+// Quick VOD 아이콘
+.quickVOD__icon {
+  width: 7rem;
+  height: 3rem;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.quickVOD__icon-title {
+  width: 6rem;
+  height: 1.875rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0.25rem;
+  background: #c73e4e;
+
+  color: var(--gray-100, #e1e1e1);
+  font-family: $card--font-family;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6rem;
+
+  margin: 0.3rem 15.25rem 9.94rem 0.3rem;
+}
+
+// 반응형 ============================================
+// 태블릿 ver
+@media (max-width: $breakpoint-desktop) {
+  .quickVOD__content {
+    width: 14rem;
+    height: 10.9375rem;
+  }
+
+  .quickVOD__content-img {
+    width: 14rem;
+    height: 7.875rem;
+  }
+
+  .quickVOD__title {
+    font-size: 0.75019rem;
+    line-height: 1.12531rem;
+  }
+
+  .quickVOD__episode-number {
+    font-size: 0.75019rem;
+    line-height: 1.20031rem;
+  }
+
+  // Quick VOD 아이콘
+  .quickVOD__icon {
+    width: 4rem;
+    height: 2rem;
+  }
+
+  .quickVOD__icon-title {
+    width: 2.75rem;
+    height: 1rem;
+    padding: 0rem 0.38rem;
+
+    font-size: 0.5625rem;
+    line-height: 0.9rem;
+  }
+}
+
+// 모바일 ver
+@media (max-width: $breakpoint-tablet) {
+  .quickVOD__content {
+    width: 9.0625rem;
+    height: 5.125rem;
+  }
+
+  .quickVOD__content-img {
+    width: 9.11113rem;
+    height: 5.125rem;
+  }
+
+  .quickVOD__title,
+  .quickVOD__episode-number {
+    margin: 0;
+  }
+
+  // Quick VOD 아이콘
+  .quickVOD__icon {
+    width: 4rem;
+    height: 2rem;
+  }
+
+  .quickVOD__icon-title {
+    width: 2.75rem;
+    height: 1rem;
+    padding: 0rem 0.38rem;
+
+    font-size: 0.5625rem;
+    line-height: 0.9rem;
+  }
+}
