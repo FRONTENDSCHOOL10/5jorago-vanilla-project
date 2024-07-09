@@ -1,10 +1,9 @@
-@import '/styles/scss/_variables.scss';
-@import '/styles/scss/_mixins.scss';
-@import '/styles/scss/_reset.scss';
+@use '@/styles/scss/' as *;
 
 body {
   background-color: $black;
 }
+
 .footer--contents {
   width: 100%;
   margin: 0, 4.25rem;
