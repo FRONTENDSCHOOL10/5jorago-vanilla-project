@@ -1,4 +1,7 @@
 @use '@/styles/scss/' as *;
+$desktop-card-width: 15rem;
+$tablet-card-width: 8.125rem;
+$mobile-card-width: 5.80588rem;
 
 body {
   display: flex;
@@ -8,16 +11,56 @@ body {
 
 .mainFirstCard {
   position: relative;
-  @include display(row, wrap, flex-start, center);
+  @include display(row, wrap, flex-start, flex-end);
   gap: 0.5rem;
-  @include size(15rem, 21.5625rem, 15rem, 21.5625rem);
+  @include size(
+    $desktop-card-width,
+    21.5625rem,
+    $desktop-card-width,
+    21.5625rem
+  );
+}
+
+.mainFirstCard--card {
+  position: relative;
 }
 .mainFirstCard__videoTitle {
-  color: var(--gray-200, #c4c4c4);
+  color: var(--gray-200,);
 
   font-family: Pretendard;
   font-size: 1.333rem;
   font-style: normal;
   font-weight: 600;
   line-height: 150%; /* 1.9995rem */
+}
+.mainFirstCard--card__brandname {
+  position: absolute;
+  bottom: 1rem;
+  left: $desktop-card-width * 0.25;
+  width: 50%;
+}
+
+//desktop
+@media (max-width: $breakpoint-tablet) {
+  .mainFirstCard {
+    @include size(
+      $tablet-card-width,
+      11.8125rem,
+      $tablet-card-width,
+      11.8125rem
+    );
+
+    .mainFirstCard--card__brandname {
+      left: $tablet-card-width * 0.25;
+    }
+  }
+}
+//tablet
+@media (max-width: $breakpoint-mobile) {
+  .mainFirstCard {
+    @include size($mobile-card-width, 8.375rem, $mobile-card-width, 8.375rem);
+  }
+  .mainFirstCard--card__brandname {
+    left: $mobile-card-width * 0.25;
+  }
 }
