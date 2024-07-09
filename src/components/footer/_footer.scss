@@ -1,6 +1,4 @@
-@import '/styles/scss/_variables.scss';
-@import '/styles/scss/_mixins.scss';
-@import '/styles/scss/_reset.scss';
+@use '@/styles/scss/' as *;
 
 body {
   background-color: $black;
