@@ -1,0 +1,58 @@
+@import '/styles/scss/_variables.scss';
+@import '/styles/scss/_reset.scss';
+@import '/styles/scss/_mixins.scss';
+
+body {
+  background-color: black;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+  padding-top: 4.375rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-component {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+input {
+  padding-left: 1.5rem;
+  width: 100%;
+  height: 6rem;
+  gap: 21.1875rem;
+  background: $brand-dark-bg-2;
+  border: 0px;
+  border-radius: 0.25rem;
+  @include font(1.77688rem, 400, 160%, Pretendard, $gray-500);
+}
+p {
+  @include font(1.333rem, 400, 160%, Pretendard, $gray-500);
+}
+@media (max-width: $breakpoint-tablet) {
+  input {
+    @include size(100%, 3.375rem, 100%, 3.375rem);
+    padding-left: 1.25rem;
+    gap: 21.1875rem;
+    background: $brand-dark-bg-2;
+    border: 0px;
+    border-radius: 0.25rem;
+    @include font(1rem, 400, 160%, Pretendard, $gray-500);
+  }
+  p {
+    @include font(0.75019rem, 400, 160%, Pretendard, $gray-500);
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  input {
+    @include size(100%, 2.875rem, 100%, 2.875rem);
+  }
+}

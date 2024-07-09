@@ -1,35 +1,32 @@
 @import '/styles/scss/_variables.scss';
 @import '/styles/scss/_mixins.scss';
-
-p {
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-li {
-  list-style-type: none;
-}
+@import '/styles/scss/_reset.scss';
 
 body {
   background-color: $black;
 }
+.footer--contents {
+  width: 100%;
+  margin: 0, 4.25rem;
+  border: 0.0625rem solid $gray-800;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+}
 
 footer {
-  @include display(flex, column, flex-start, null);
+  margin-top: 8.75rem;
+  margin-bottom: 10.52rem;
+  margin-left: 4.25rem;
+  margin-right: 4.25rem;
+  @include display(column, null, flex-start, null);
   align-self: stretch;
   gap: 1.5rem;
 
-  color: $gray-500; // CSS 변수와 Sass 변수 함께 사용
-  font-family: Pretendard;
-  font-size: 1.333rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%;
+  @include font(1.333rem, 400, 160%, Pretendard, $gray-500);
 
   .footer--util {
+    margin-top: 1.69rem;
     display: flex;
     gap: 2.25rem;
 
@@ -51,19 +48,19 @@ footer {
     gap: 1.25rem;
 
     li {
-      @include display(flex, row, center, center);
-      @include size(3.25rem, 3.25rem);
+      @include display(row, null, center, center);
+      @include size(3.25rem, 3.25rem, 3.25rem, 3.25rem);
       background-color: $gray-800;
       border-radius: 1.875rem;
     }
 
     li img {
-      @include size(50%, 50%);
+      @include size(50%, 50%, 50%, 50%);
     }
   }
 
   p {
-    @include display(flex, row, center, null);
+    @include display(row, null, center, null);
     position: relative;
     font-size: 0.75019rem;
     font-style: normal;
