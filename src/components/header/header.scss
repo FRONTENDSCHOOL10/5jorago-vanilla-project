@@ -294,7 +294,34 @@ a {
         gap: 1rem;
       }
 
-      .header__icon-search,
+      .header__icon-search {
+        @include respond-to(desktop) {
+          display: flex;
+          width: 2.5rem;
+          height: 2.5rem;
+          justify-content: center;
+          align-items: center;
+        }
+        @include respond-to(tablet) {
+          display: flex;
+          width: 1.5rem;
+          height: 1.5rem;
+          justify-content: center;
+          align-items: center;
+        }
+        @include respond-to(mobile) {
+          display: flex;
+          width: 1.125rem;
+          height: 1.125rem;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &:hover {
+          content: url('/assets/cancel_1_hover.png');
+        }
+      }
+
       .header__icon-profile {
         @include respond-to(desktop) {
           display: flex;
