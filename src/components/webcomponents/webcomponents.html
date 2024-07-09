@@ -9,7 +9,7 @@
   <body style="background-color: black">
     <!-- 푸터 -->
     <template id="footer-template">
-      <link rel="stylesheet" href="../footer/_footer.scss" />
+      <link rel="stylesheet" href="/components/footer/_footer.scss" />
       <footer>
         <div class="footer--contents">
           <div class="footer--util">
@@ -80,10 +80,9 @@
     </template>
     <c-footer></c-footer>
 
-    
     <!-- 메인 헤더 -->
     <!-- 원본 html 및 css 수정 필요*** -->
-    <template id="main-header-template">
+    <!-- <template id="main-header-template">
       <link rel="stylesheet" href="../header/_header.scss" />
       <header class="header">
         <nav class="nav">
@@ -150,16 +149,26 @@
         </nav>
       </header>
     </template>
-    <c-main-header></c-main-header>
+    <c-main-header></c-main-header> -->
 
 
     <!-- 랜딩 헤더 -->
     <!-- 메인 헤더에서 티빙 로고 빼고 지우고 사용 -->
     <!-- <template id="landing-header-template">
       <link rel="stylesheet" href="../header/_header.scss" />
-      <header>
+      <header class="header">
+        <nav class="nav">
+          <div class="header__nav__logo-menu">
+            <a href="#" class="header__logo">
+              <img src="/assets/logo_1.png" alt="Logo" class="header__logo" />
+            </a>
+            </div>
+          </div>
+        </nav>
       </header>
     </template>
     <c-landing-header></c-landing-header> -->
+
+    <my-footer></my-footer>
   </body>
 </html>
