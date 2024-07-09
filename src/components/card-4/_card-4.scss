@@ -1,0 +1,23 @@
+@use '@/styles/scss/' as *;
+
+body {
+  display: flex;
+  gap: 1.25rem;
+  background-color: black;
+}
+
+.mainFirstCard {
+  position: relative;
+  @include display(row, wrap, flex-start, center);
+  gap: 0.5rem;
+  @include size(15rem, 21.5625rem, 15rem, 21.5625rem);
+}
+.mainFirstCard__videoTitle {
+  color: var(--gray-200, #c4c4c4);
+
+  font-family: Pretendard;
+  font-size: 1.333rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 1.9995rem */
+}
