@@ -1,66 +1,63 @@
 @use '@/styles/scss/' as *;
-$desktop-card-width: 15rem;
-$tablet-card-width: 8.125rem;
-$mobile-card-width: 5.80588rem;
 
 body {
-  display: flex;
-  gap: 1.25rem;
   background-color: black;
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
 }
 
 .mainFirstCard {
+  @include display(column, nowrap, null, null, flex);
   position: relative;
-  @include display(row, wrap, flex-start, flex-end);
-  gap: 0.5rem;
-  @include size(
-    $desktop-card-width,
-    21.5625rem,
-    $desktop-card-width,
-    21.5625rem
-  );
+  width: 15rem;
+  height: 21.5625rem;
+
+  .logo {
+    left: 15rem * 0.25;
+    width: 50%;
+    position: absolute;
+    bottom: 1rem;
+  }
+
+  .mainFirstCard--card {
+    position: relative;
+  }
+
+  .mainFirstCard__videoTitle {
+    display: block;
+    /* Label/Large */
+    @include font(1.333rem, 600, 150%, Pretendard, $gray-200);
+  }
 }
 
-.mainFirstCard--card {
-  position: relative;
-}
-.mainFirstCard__videoTitle {
-  color: var(--gray-200,);
+// 반응형 테블릿
 
-  font-family: Pretendard;
-  font-size: 1.333rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 150%; /* 1.9995rem */
-}
-.mainFirstCard--card__brandname {
-  position: absolute;
-  bottom: 1rem;
-  left: $desktop-card-width * 0.25;
-  width: 50%;
-}
-
-//desktop
 @media (max-width: $breakpoint-tablet) {
   .mainFirstCard {
-    @include size(
-      $tablet-card-width,
-      11.8125rem,
-      $tablet-card-width,
-      11.8125rem
-    );
+    @include size(8.125rem, 11.8125rem, 8.125rem, 11.8125rem);
 
-    .mainFirstCard--card__brandname {
-      left: $tablet-card-width * 0.25;
+    .logo {
+      left: 8.125rem * 0.25;
+      width: 50%;
+      bottom: 1rem;
+    }
+    .mainFirstCard__videoTitle {
+      font-size: 0.75019rem;
     }
   }
 }
-//tablet
+//모바일
 @media (max-width: $breakpoint-mobile) {
   .mainFirstCard {
-    @include size($mobile-card-width, 8.375rem, $mobile-card-width, 8.375rem);
-  }
-  .mainFirstCard--card__brandname {
-    left: $mobile-card-width * 0.25;
+    @include size(5.80588rem, 8.375rem, 5.80588rem, 8.375rem);
+    .logo {
+      left: 5.80588rem * 0.25;
+      width: 50%;
+      bottom: 1rem;
+    }
+    .mainFirstCard__videoTitle {
+      display: none;
+    }
   }
 }
