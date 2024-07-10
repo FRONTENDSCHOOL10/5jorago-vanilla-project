@@ -40,9 +40,9 @@ $breakpoint-desktop: 1024px;
 }
 
 // 테스트 용
-body {
-  margin: 10%;
-}
+// body {
+//   margin: 10%;
+// }
 
 .quickVOD__content {
   @include size(21.5625rem, 16.5rem);
