@@ -1,7 +1,7 @@
-@use '/src/styles/scss/variables' as *;
+@use "/src/styles/scss/" as *;
 
 .banner__link--container {
-  @include display(flex, null, null, null, center);
+  @include display(null, null, null, center, flex);
   position: relative;
   width: 100%;
   height: auto;

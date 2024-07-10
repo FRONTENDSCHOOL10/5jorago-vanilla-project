@@ -1,4 +1,4 @@
-import '/src/components/banner/banner';
+import '/src/components/banner/_banner.scss';
 import { insertLast } from 'kind-tiger';
 
 const template = `
