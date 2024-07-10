@@ -1,10 +1,11 @@
-import '/src/components/card-2/card-2';
+import '/src/components/card-2/_card-2.scss';
 import { insertLast } from 'kind-tiger';
+import poster from '/src/assets/poster-1.png';
 
 const template = `
 <div class="card-section">
       <div class="card">
-        <img class="card--img" src="/src/assets/poster-1.png" alt="이미지" />
+        <img class="card--img" src="${poster}" alt="이미지" />
         <div class="card--wrapper">
           <span class="card__wrapper--rank">1</span>
           <div class="scrap">
