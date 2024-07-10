@@ -11,6 +11,11 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="/main.js"></script>
   </head>
   <body>
@@ -52,10 +57,22 @@
       </div>
 
       <div class="section-02__swiper-box">
-        <img
-          src="/styles/landing_lovecatcher.png"
-          alt="타잉에만 있는 첫 번째 콘텐츠 - 러브캐처 인 발리"
-        />
+        <div class="swiper" dir="ltr">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="/styles/landing_lovecatcher.png"
+                alt="타잉에만 있는 첫 번째 콘텐츠 - 러브캐처 인 발리"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/styles/treasureHunt.png"
+                alt="타잉에만 있는 두 번째 콘텐츠 - 보물찾기"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -72,17 +89,40 @@
       </div>
 
       <div class="section-03__swiper-box">
-        <div class="">
-          <img
-            src="/styles/landing_lovecatcher.png"
-            alt="타잉에만 있는 첫 번째 콘텐츠 - 러브캐처 인 발리"
-          />
-        </div>
-        <div class="">
-          <img
-            src="/styles/landing_lovecatcher.png"
-            alt="타잉에만 있는 첫 번째 콘텐츠 - 러브캐처 인 발리"
-          />
+        <!-- 위 슬라이드 -->
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="/styles/landing_lovecatcher.png"
+                alt="타잉에만 있는 첫 번째 콘텐츠 - 러브캐처 인 발리"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/styles/treasureHunt.png"
+                alt="타잉에만 있는 두 번째 콘텐츠 - 보물찾기"
+              />
+            </div>
+          </div>
+
+          <!-- 아래 슬라이드 -->
+          <div class="swiper" dir="rtl">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="/styles/landing_lovecatcher.png"
+                  alt="타잉에만 있는 첫 번째 콘텐츠 - 러브캐처 인 발리"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/styles/treasureHunt.png"
+                  alt="타잉에만 있는 두 번째 콘텐츠 - 보물찾기"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

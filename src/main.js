@@ -30,3 +30,26 @@ async function loadTemplate() { // loadTemplate()을 비동기로 정의
 
 // 문서가 완전히 로드되고 DOM 트리가 완성되면(= DOMContentLoaded: 문서가 완전히 로드되고 파싱된 후에 발생) loadTemplate()를 실행함
 document.addEventListener('DOMContentLoaded', loadTemplate);
+
+
+
+// 스와이퍼
+document.addEventListener('DOMContentLoaded', function () {
+  const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+    // reverseDirection: true,
+
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+
+    },
+
+    speed: 6000, // 슬라이드 전환 속도
+    slidesPerView: 1, // 화면에 표시할 슬라이드 수
+    spaceBetween: -485, // 이미지 간격
+    centeredSlides: true, // 슬라이드를 가운데 정렬
+  });
+});
+
