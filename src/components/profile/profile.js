@@ -1,3 +1,1 @@
-
-
-import '/src/components/profile/profile.scss';
+import '/src/components/profile/profile';

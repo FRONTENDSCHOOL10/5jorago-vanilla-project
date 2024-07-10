@@ -1,4 +1,4 @@
-import './_banner.scss';
+import '/src/components/banner/banner';
 import { insertLast } from 'kind-tiger';
 
 const template = `
@@ -26,6 +26,6 @@ const template = `
           </div>
         </div>
       </a>
-    </section>`
+    </section>`;
 
 insertLast('.banner-container', template);
