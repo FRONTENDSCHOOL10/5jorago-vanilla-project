@@ -1,12 +1,9 @@
-
-
-
 import css from '/src/components/footer/_footer.scss?inline';
 
 export class Footer extends HTMLElement {
-  constructor(){
+  constructor() {
     super();
-    this.attachShadow({mode:'open'});
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
       <style>${css}</style>
       <footer>
@@ -80,8 +77,4 @@ export class Footer extends HTMLElement {
   }
 }
 
-
-customElements.define('c-footer',Footer);
-
-
-
+customElements.define('c-footer', Footer);

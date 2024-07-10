@@ -1,6 +1,7 @@
 import css from '/src/components/header/_header.scss?inline';
 import logo from '/src/assets/logo_1.png';
 
+// 메인 페이지 컴포넌트
 export class Header extends HTMLElement {
   constructor() {
     super();

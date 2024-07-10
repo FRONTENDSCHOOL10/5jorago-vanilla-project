@@ -1,4 +1,4 @@
-@use '@/styles/scss/' as *;
+@use '/src/styles/style.scss' as *;
 
 // 색상 변수
 $gray-800: #2b2b2b;
@@ -55,7 +55,6 @@ body {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 1rem;
   box-sizing: border-box;
   height: 6.25rem;
 
@@ -64,6 +63,8 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
+    padding-top: 1.8rem;
 
     .header__nav__logo-menu {
       display: flex;
@@ -115,10 +116,6 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 1.75rem;
-
-    li {
-      list-style: none;
-    }
   }
 
   .header__menu-item {

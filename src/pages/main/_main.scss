@@ -1,4 +1,4 @@
-@use '@/components/header/header';
+@use "/src/components/header/_header.scss";
 @use '/src/styles/scss/' as *;
 
 .body {
@@ -30,7 +30,7 @@
 }
 
 h3 {
-  // height: 4.38rem;
+  // height: 40.6rem;
   color: white;
   align-items: center;
   /* Heading/XL */
@@ -109,6 +109,23 @@ h3 {
 
 /* swiper 설정 */
 
+.swiper {
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition-timing-function: linear !important;
+
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .swiper-container {
   overflow-x: hidden;
 }
@@ -132,4 +149,14 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+// .swiper,
+// .swiper-wrapper,
+// .swiper-slide {
+//   all: unset;
+// }
+
+.swiper-sec-10{
+  
 }
