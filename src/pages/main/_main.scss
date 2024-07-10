@@ -1,0 +1,135 @@
+// @use '@/components/header/_header.scss';
+@use '@/styles/scss/' as *;
+
+.body {
+  // overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.header {
+  width: 100%;
+  height: 6.25rem;
+  background-color: green;
+  position: absolute;
+  z-index: 3;
+  opacity: 30%;
+}
+
+.banner-group {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.section-group {
+  margin-left: 4.38rem;
+  width: 100%;
+  padding-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+h3 {
+  // height: 4.38rem;
+  color: white;
+  align-items: center;
+  /* Heading/XL */
+  font-family: Pretendard;
+  font-size: 1.77688rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 2.48763rem */
+  margin: 0.75rem 0;
+}
+
+.sec-1 {
+  background: red;
+  height: 24rem;
+}
+
+.sec-2 {
+  height: 16.5rem;
+}
+
+.sec-3 {
+  height: 24.25rem;
+}
+
+.sec-4 {
+  height: 18.3rem;
+  background-color: orange;
+}
+
+.sec-5 {
+  background-color: tomato;
+  height: 35.625rem;
+}
+
+.promo-banner {
+  height: 11.0625rem;
+  // max-width: 132.75rem;
+  width: 100%;
+  background-color: dodgerblue;
+  margin: 2.25rem 0;
+}
+
+// .event-prom{
+//   margin-left: 4.38rem;
+//   margin-top: 2.25rem;
+// }
+
+.event-group {
+  padding: 0rem 0rem 2.25rem 4.375rem;
+  display: block;
+  background-color: yellow;
+  height: 7.5rem;
+  // margin: 0rem 0rem 2.25rem 4.375rem;
+}
+
+.footer-container {
+  margin: 8.75rem 4.25rem;
+  span {
+    color: white;
+  }
+}
+
+.more-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notice-group {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.dash {
+  margin: 0 1.88rem;
+}
+
+/* swiper 설정 */
+
+.swiper-container {
+  overflow-x: hidden;
+}
+
+.swiper-sec-2 {
+  width: 100%;
+  height: 100%;
+  left: 40%;
+  overflow-x: hidden;
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
