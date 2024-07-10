@@ -1,11 +1,5 @@
-@use '/src/styles/style' as *;
+@use "/src/styles/scss/" as *;
 
-body {
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  gap: 1.25rem;
-}
 
 .mainFirstCard {
   @include display(column, nowrap, null, null, flex);
