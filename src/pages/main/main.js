@@ -9,7 +9,8 @@ import '/src/components/card-4/card-4.js';
 
 import '/src/pages/main/_main.scss';
 
-const swiper = new Swiper('.swiper-sec-1', {
+/* 배너 스와이퍼 */
+const swiper = new Swiper('.swiper-sec-banner', {
   direction: 'horizontal',
   hashNavigation: true,
   navigation: {
@@ -18,7 +19,7 @@ const swiper = new Swiper('.swiper-sec-1', {
   },
   loop: true,
   autoplay: {
-    delay: 500,
+    delay: 5000,
   },
 
   pagination: {
@@ -27,49 +28,38 @@ const swiper = new Swiper('.swiper-sec-1', {
   cssMode: true
 });
 
+/* 실시간 인기 프로그램 스와이퍼 */
+const swiper1 = new Swiper('.swiper-sec-1', {
+  slidesPerView: 7,
+  spaceBetween: 10,
+  autoplay: {
+    delay: 5000,
+  },
+  cssMode: true
+});
+
+
+/* Quick VOD 스와이퍼 */
 const swiper2 = new Swiper('.swiper-sec-2', {
   slidesPerView: 4,
-  spaceBetween: 16,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+  spaceBetween: -160,
   autoplay: {
-    delay: 500,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
+    delay: 5000,
   },
   cssMode: true
 });
 
-
+/* 실시간 인기 프로그램 스와이퍼 */
 const swiper3 = new Swiper('.swiper-sec-3', {
   slidesPerView: 7,
-  spaceBetween: 30,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+  spaceBetween: 10,
   autoplay: {
-    delay: 500,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
+    delay: 5000,
   },
   cssMode: true
 });
 
 
-const swiper4 = new Swiper('.swiper-sec-10', {
-  slidesPerView: 4,
-  spaceBetween: 16,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  autoplay: {
-    delay: 500,
-  },
-  cssMode: true
-});
+
+
+

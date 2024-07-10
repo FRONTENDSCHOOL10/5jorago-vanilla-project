@@ -15,11 +15,11 @@ const template = `
       <span class="mainFirstCard__videoTitle">보물찾기</span>
     </div>`;
 
-insertLast('.sec-10', template);
-insertLast('.sec-10-1', template);
-insertLast('.sec-10-2', template);
-insertLast('.sec-10-3', template);
-insertLast('.sec-10-4', template);
-insertLast('.sec-10-5', template);
-insertLast('.sec-10-6', template);
-insertLast('.sec-10-7', template);
+insertLast('.sec-1', template);
+insertLast('.sec-1-1', template);
+insertLast('.sec-1-2', template);
+insertLast('.sec-1-3', template);
+insertLast('.sec-1-4', template);
+insertLast('.sec-1-5', template);
+insertLast('.sec-1-6', template);
+insertLast('.sec-1-7', template);

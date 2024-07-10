@@ -25,6 +25,7 @@
 .section-group {
   margin-left: 4.38rem;
   width: 100%;
+  max-width: 116rem;
   padding-bottom: 2.5rem;
   overflow: hidden;
 }
@@ -108,11 +109,26 @@ h3 {
 }
 
 /* swiper 설정 */
+html,
+body {
+      position: relative;
+      height: 100%;
+    }
 
-.swiper {
-  overflow: hidden;
-  position: relative;
-}
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+// .swiper {
+//   overflow: hidden;
+//   position: relative;
+// }
 
 .swiper-wrapper {
   display: flex;
@@ -159,4 +175,18 @@ h3 {
 
 .swiper-sec-10{
   
+}
+
+
+.swiper-sec-banner {
+  position: relative; /* 부모 요소를 relative로 설정 */
+}
+
+.swiper-button-next {
+  position: absolute;
+  right: 10px; /* 원하는 위치 조정 */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: white; /* 버튼 색상 */
 }

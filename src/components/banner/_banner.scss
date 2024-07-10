@@ -1,5 +1,7 @@
 @use "/src/styles/scss/" as *;
 
+
+
 .banner__link--container {
   @include display(null, null, null, center, flex);
   position: relative;
