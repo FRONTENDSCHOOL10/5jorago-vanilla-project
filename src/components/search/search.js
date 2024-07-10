@@ -1,4 +1,4 @@
 
 
-import "/components/search/_search.scss";
+import '/src/components/search/_search.scss';
 

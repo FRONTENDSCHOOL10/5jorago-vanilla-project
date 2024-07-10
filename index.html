@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <title>Vite Scss</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="/main.js"></script>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header>웹 컴포넌트로 넣기</header>
+
+    <!-- 섹션 1 -->
+    <section class="section-01">
+      <div class="img-box">
+        <img class="bg" src="/src/assets/backgroundimg_1.png" alt="" />
+        <img class="g" src="/src/styles/gradation-img.png" alt="" />
+      </div>
+
+      <div class="text111">
+        <span class="title">
+          <h2>타잉 오리지널 콘텐츠,</h2>
+          <h2>방송, 영화, 해외시리즈까지!</h2>
+          <h2>재미를 플레이해보세요.</h2>
+        </span>
+        <span class="explain">
+          간편하게 가입하고, 원하실 때 해지할 수 있어요.
+        </span>
+      </div>
+
+      <!-- 버튼 -->
+      <div class="button">
+        <button>웹 컴포넌트로 넣기(되면)</button>
+      </div>
+    </section>
+
+    <!-- 섹션 2 -->
+    <section class="section-02">
+      <div class="text">
+        <span class="title">
+          <h2>타잉에만 있는 재미</h2>
+        </span>
+        <span class="explain"> 오리지널 콘텐츠를 만나보세요! </span>
+        <span class="explain2"> 차별화된 웰메이드 오리지널 콘텐츠 </span>
+      </div>
+
+      <div class="section-02__swiper-box">
+        <div class="swiper" dir="ltr">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="/src/styles/landing_lovecatcher.png"
+                alt="타잉에만 있는 첫 번째 콘텐츠 - 러브캐처 인 발리"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/src/styles/treasureHunt.png"
+                alt="타잉에만 있는 두 번째 콘텐츠 - 보물찾기"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 3 -->
+    <section class="section-03">
+      <div class="text">
+        <span class="title">
+          <h2>내가 찾던 재미</h2>
+        </span>
+        <span class="explain"> 보고 싶은 콘텐츠를 발견하세요! </span>
+        <span class="explain2">
+          최신, 인기 TV프로그램, 영화, 해외시리즈, 파라마운트+ 오리지널 및 독점
+        </span>
+      </div>
+
+      <div class="section-03__swiper-box">
+        <!-- 위 슬라이드 -->
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="/src/styles/landing_lovecatcher.png"
+                alt="타잉에만 있는 첫 번째 콘텐츠 - 러브캐처 인 발리"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/src/styles/treasureHunt.png"
+                alt="타잉에만 있는 두 번째 콘텐츠 - 보물찾기"
+              />
+            </div>
+          </div>
+
+          <!-- 아래 슬라이드 -->
+          <div class="swiper" dir="rtl">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="/src/styles/landing_lovecatcher.png"
+                  alt="타잉에만 있는 첫 번째 콘텐츠 - 러브캐처 인 발리"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/src/styles/treasureHunt.png"
+                  alt="타잉에만 있는 두 번째 콘텐츠 - 보물찾기"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 4 -->
+    <section class="section-04">
+      <div class="main">
+        <div class="taing-logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="280"
+            height="71"
+            viewBox="0 0 280 71"
+            fill="none"
+          >
+            <path
+              d="M127.798 2.51618H151.069V67.4608H127.798V2.51618ZM0.5 21.8986H17.2308V67.4636H39.7396V21.8986H56.4689V2.51618H0.5V21.8986ZM196.945 2.51901V29.6542C196.946 29.9212 196.856 30.1807 196.689 30.3901C196.523 30.5996 196.29 30.7468 196.029 30.8077C195.767 30.8686 195.493 30.8396 195.25 30.7255C195.008 30.6114 194.811 30.4189 194.693 30.1793L180.933 2.51901H158.943V67.465H180.327V40.4785C180.327 40.2119 180.417 39.9532 180.584 39.7443C180.75 39.5355 180.982 39.3887 181.243 39.3279C181.504 39.2671 181.778 39.2957 182.02 39.4093C182.262 39.5228 182.459 39.7146 182.578 39.9533L196.274 67.4622H218.267V2.51618L196.945 2.51901ZM245.492 41.5401V27.3526C245.492 23.7628 246.927 21.1243 250.387 20.2198C254.096 19.2573 257.519 21.6056 258.682 25.4473L279.149 14.5394C271.083 -0.098259 255.993 0.101333 249.953 0.6279C243.298 1.03242 236.947 3.54739 231.832 7.80449C226.239 12.5662 223.592 20.3345 223.592 28.5288V41.3193C223.592 53.5096 228.427 61.6402 236.766 66.3935C251.152 74.5864 271.34 68.9994 279.504 62.8151V31.643H258.372V51.1004C255.376 52.2583 245.498 53.586 245.498 41.5373"
+              fill="white"
+            />
+          </svg>
+        </div>
+        <p>지금 시작해보세요</p>
+        <button>웹 컴포넌트로 넣기(되면)</button>
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <c-footer></c-footer>
+  </body>
+</html>

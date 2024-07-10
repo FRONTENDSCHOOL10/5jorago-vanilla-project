@@ -1,7 +1,7 @@
-import '/pages/main/_main.scss';
-import '/components/banner/_banner.scss';
-import '/components/footer/_footer.scss';
-import '/components/card-1/_card-1.scss';
+import '/src/pages/main/_main.scss';
+import '/src/components/banner/_banner.scss';
+import '/src/components/footer/_footer.scss';
+import '/src/components/card-1/_card-1.scss';
 
 const swiper = new Swiper('.swiper-sec-1', {
   direction: 'horizontal',

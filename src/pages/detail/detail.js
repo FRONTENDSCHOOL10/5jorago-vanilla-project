@@ -1,1 +1,1 @@
-import './_detail.scss';
+// import '/src/pages/detail/detail.scss';

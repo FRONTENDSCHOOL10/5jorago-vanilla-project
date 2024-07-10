@@ -1,4 +1,4 @@
-import '/components/card-1/_card-1.scss';
+import '/src/components/card-1/_card-1.scss';
 import { insertLast } from 'kind-tiger';
 
 const template = `

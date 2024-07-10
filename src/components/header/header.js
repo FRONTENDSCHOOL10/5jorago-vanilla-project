@@ -1,1 +1,1 @@
-import '/components/header/_header.scss';
+import '/src/components/header/_header.scss';

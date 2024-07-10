@@ -1,1 +1,1 @@
-import './_input.scss';
+import './input.scss';
