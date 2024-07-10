@@ -8,8 +8,11 @@ import { Footer } from '/src/components/footer/footer.js'
 
 
 // 스와이퍼
-import Swiper from 'swiper';
-import 'swiper/css';
+// import Swiper from 'swiper';
+// import 'swiper/css';
+
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
 // 스와이퍼
 document.addEventListener('DOMContentLoaded', function () {
