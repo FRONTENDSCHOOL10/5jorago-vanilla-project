@@ -70,9 +70,9 @@ header {
 }
 
 // 모든 스와이퍼에 공통적으로 들어감
-.swiper-wrapper {
-  transition-timing-function: linear;
-}
+// .swiper-wrapper {
+//   transition-timing-function: linear;
+// }
 
 // 섹션 3----------------------------------
 .section-03 {
@@ -83,8 +83,6 @@ header {
 
     padding-top: 4.37rem;
     padding-bottom: 4.37rem;
-
-    background-color: pink; // 테스트용
 
     div {
       margin-bottom: 0.25rem;
