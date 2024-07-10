@@ -1,9 +1,8 @@
-@use '/src/styles/style.scss' as *;
+@use '/src/styles/scss' as *;
 
 $breakpoint-mobile: 320px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
-
 
 .card-section {
   position: relative;

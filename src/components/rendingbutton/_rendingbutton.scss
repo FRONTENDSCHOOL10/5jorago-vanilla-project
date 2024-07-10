@@ -1,5 +1,5 @@
-@use '/src/styles/scss/_variables.scss';
-@import '/src/styles/scss/_mixins.scss';
+@use '/src/styles/scss/variables';
+@import '/src/styles/scss/mixins';
 
 button {
   @include display(flex, row, center, null);
