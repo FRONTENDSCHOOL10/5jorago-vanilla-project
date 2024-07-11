@@ -5,7 +5,7 @@ import poster from '/src/assets/poster-1.png';
 const template = `
 <div class="card-section">
       <div class="card">
-        <a href="/"><img class="card--img" src="/src/assets/poster-1.png" alt="이미지" /></a>
+        <a href="/"><img class="card--img" src="${poster}" alt="이미지" /></a>
         <div class="card--wrapper">
           <span class="card__wrapper--rank">1</span>
           <div class="scrap">
