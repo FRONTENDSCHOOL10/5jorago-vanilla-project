@@ -1,0 +1,26 @@
+@use 'src/styles/scss/' as *;
+
+.container {
+  width: 100%;
+  background-color: yellow;
+}
+
+.search-wraper {
+  padding: 3.25rem 13.75rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.search {
+  margin-top: 6.12rem;
+  display: flex;
+  flex-direction: row;
+  gap: 7.5rem;
+}
+.search-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem 0rem;
+  border-bottom: 3px solid $white;
+  background-color: $gray-700;
+}
