@@ -1,0 +1,131 @@
+@use 'src/styles/scss/' as *;
+
+section {
+  height: 1200px;
+  display: flex;
+  padding-top: 4.375rem;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch;
+  .content--head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 1.75rem;
+    h2 {
+      @include font(2.36856rem, 700, 140%, Pretendard, $white);
+    }
+
+    p {
+      @include font(1.77688rem, 600, 159%, Pretendard, $gray-400);
+    }
+  }
+
+  .contentwraper--content {
+    padding: 0rem, 37.13rem;
+  }
+  .container {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.12rem;
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .display-none {
+    display: none;
+  }
+}
+.checkboxwraper {
+  color: white;
+}
+
+.checkobx-image {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.checkbox {
+  margin: 1.75rem 0;
+  position: relative;
+
+  input {
+    position: absolute;
+    right: 6.6rem;
+    top: 0.2rem;
+    appearance: none;
+    padding: 0.125rem;
+  }
+  label {
+    background: url('/src/assets/defaultCircle_1.png') no-repeat 0 0 / contain;
+    padding-left: 1.5rem;
+    padding-bottom: 0.0625rem;
+  }
+  input:checked + label {
+    background-image: url('/src/assets/activeCircle_1.png');
+  }
+}
+.mustChecked {
+  .checkbox2 {
+    margin: 0.75rem 0rem;
+    position: relative;
+
+    input {
+      position: absolute;
+      right: 6.6rem;
+      top: 0.2rem;
+      appearance: none;
+      padding: 0.125rem;
+    }
+    label {
+      background: url('/src/assets/defaultCheck_1.png') no-repeat 0 0 / contain;
+      padding-left: 1.5rem;
+      padding-bottom: 0.0625rem;
+    }
+    input:checked + label {
+      background-image: url('/src/assets/activeCheck_1.png');
+    }
+  }
+}
+.marcketingChecked {
+  .checkbox2 {
+    margin: 0.75rem 2rem;
+    position: relative;
+
+    input {
+      position: absolute;
+      right: 6.6rem;
+      top: 0.2rem;
+      appearance: none;
+      padding: 0.125rem;
+    }
+    label {
+      background: url('/src/assets/defaultCheck_1.png') no-repeat 0 0 / contain;
+      padding-left: 1.5rem;
+      padding-bottom: 0.0625rem;
+    }
+    input:checked + label {
+      background-image: url('/src/assets/activeCheck_1.png');
+    }
+  }
+}
+button {
+  margin-top: 2.25rem;
+  width: 100%;
+  height: 5.375rem;
+  justify-content: center;
+  align-items: center;
+  background-color: $gray-700;
+  font-family: Pretendard;
+  font-size: 1.77688rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  color: $gray-400;
+}
