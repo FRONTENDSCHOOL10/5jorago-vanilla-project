@@ -1,7 +1,7 @@
 import '/src/components/banner/_banner.scss';
 import { insertLast } from 'kind-tiger';
-import logo from '/src/assets/baekpacker_logo.webp';
-import img from '/src/assets/baekpacker_img.webp';
+import logo from '/public/assets/baekpacker_logo.webp';
+import img from '/public/assets/baekpacker_img.webp';
 
 const template = `
 <section class="banner">

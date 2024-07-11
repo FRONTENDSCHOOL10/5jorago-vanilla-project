@@ -1,5 +1,5 @@
 import '/src/components/rendingbutton/_rendingbutton.scss';
-import logo from '/src/assets/icon.png';
+import logo from '/public/assets/icon.png';
 
 const template = `
 <div class="rending">

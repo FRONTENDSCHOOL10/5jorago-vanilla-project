@@ -1,6 +1,6 @@
 import '/src/components/card-2/_card-2.scss';
 import { insertLast } from 'kind-tiger';
-import poster from '/src/assets/poster-1.png';
+import poster from '/public/assets/poster-1.png';
 
 const template = `
 <div class="card-section">

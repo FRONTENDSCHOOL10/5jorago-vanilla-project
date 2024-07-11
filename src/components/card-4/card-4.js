@@ -1,9 +1,9 @@
 import '/src/components/card-4/_card-4.scss';
 import { insertLast } from 'kind-tiger';
-import vertical1 from "/src/assets/Vertical_1.png";
-import vertical2 from "/src/assets/Vertical_2.png";
-import vertical3 from "/src/assets/Vertical_3.png";
-import logo from "/src/assets/tvingoriginal_1.png";
+import vertical1 from "/public/assets/Vertical_1.png";
+import vertical2 from "/public/assets/Vertical_2.png";
+import vertical3 from "/public/assets/Vertical_3.png";
+import logo from "/public/assets/tvingoriginal_1.png";
 
 const template = `
     <div class="mainFirstCard">
