@@ -10,6 +10,5 @@ const template = `
 </div>
 `;
 
-
 document.querySelector('.button1 .rendingbutton').innerHTML = template;
 document.querySelector('.button2 .rendingbutton').innerHTML = template;
