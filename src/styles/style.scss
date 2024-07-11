@@ -297,5 +297,112 @@ body {
 // 모바일 ver
 @media (max-width: $breakpoint-tablet) { 
 
+  .section-1 {
+    height: 23.74894rem;
 
+    .text-box__title {
+      @include font(1rem, 700, 
+      1.4rem, null, $text-box__title--color);
+    }
+
+    .text-box__explain {
+      font-size: 0.75019rem;
+      font-weight: 400;
+      line-height: 1.20031rem;
+    }
+
+    .section-1__img-box--backgroundImg {
+      height: 24rem;
+    }
+
+    .section-1__img-box--gradationImg {
+      height: 25rem;
+    }
+  
+    .button {
+      top: 52%;
+    }
+  }
+
+  // 섹션 2----------------------------------
+  .section-2 {
+    height: 30rem;
+    margin-top: -12rem;
+
+    .text-box__title {
+      display: block;
+    }
+ 
+    .section-2__swiper-box {
+      width: 18.8rem;
+      height: 25rem;
+      margin-top: 1.62rem;
+
+      img {
+        width: 17.316rem;
+        height: 25rem;
+      }
+    }
+  }
+  
+  // 섹션 3----------------------------------
+  .section-3 {
+    height: 20rem;
+    margin-top: 5rem;
+
+    .section-3__swiper-box {
+      width: 20rem;
+      height: 18.1rem;
+      padding: 2rem 0;
+
+      img {
+        width: 11.33331rem;
+        height: 6.375rem;
+      }
+    }
+  }
+  
+  // 섹션 4----------------------------------
+  .section-4 {
+    height: 20rem;
+    margin-top: 160px;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.4rem;
+      margin: 1.125rem 0;
+    }
+
+    img {
+      width: 5.1875rem;
+      height: 2rem;
+    }
+  
+    .button {
+      top: 70%;
+    }
+
+    .rending__button {
+      img{
+        width: 1.625rem;
+        height: 1.625rem;
+      }
+    }
+  }
+  // ---------------------------------------
+  
+  .text-box {
+    padding-top: 10rem;
+  }
+  
+  .text-box__title {
+    @include font(1.333rem, 700, 
+    1.86619rem, null, $text-box__title--color);
+  }
+  
+  .text-box__explain, .text-box__explain2 {
+    @include font(0.75019rem, 400, 
+    1.20031rem, null, $text-box__explain--color);
+    margin: 0;
+  }
 }

@@ -10,11 +10,6 @@ $font-size-large: 1.333rem;
 $font-weight-normal: 400;
 $line-height-large: 160%; // 2.13281rem
 
-// 반응형 분기점
-$breakpoint-mobile: 320px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1200px;
-
 //폰트 믹스인
 @mixin font(
   $font-size,
@@ -89,7 +84,7 @@ body {
   .header__icon-search,
   .header__icon-profile {
     width: 2.5rem;
-      height: 2.5rem;
+    height: 2.5rem;
     display: block;
   }
 
@@ -107,10 +102,15 @@ body {
   display: none;
 }
 
-// 태블릿 반응형 구현
-@media (min-width: $breakpoint-tablet) {
+// 태블릿 ver
+@media (max-width: $breakpoint-desktop) { 
   .header__menu-wrapper {
     display: block;
+  }
+
+  .header__logo {
+    width: 4.8125rem;
+    height: 1.5rem;
   }
 
   .header__menu {
@@ -144,8 +144,14 @@ body {
   }
 }
 
-// desktop 반응형 구현
-@media (min-width: $breakpoint-desktop) {
+// 모바일 ver
+@media (max-width: $breakpoint-tablet) { 
+
+  .header__logo {
+    width: 2.875rem;
+    height: 0.9375rem;
+  }
+
   .header__menu {
     gap: 3.25rem;
   }

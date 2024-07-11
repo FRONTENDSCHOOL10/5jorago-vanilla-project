@@ -33,8 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
     spaceBetween: -485, // 이미지 간격
 
     breakpoints: {
+
+      320: {
+        spaceBetween: -5, // 이미지 간격
+      },
+
       768: {
-        speed: 4000,
+        speed: 8000,
         spaceBetween: -470, // 이미지 간격
       }
     }
@@ -60,15 +65,16 @@ document.addEventListener('DOMContentLoaded', function () {
     breakpoints: {
 
       320: {
-        spaceBetween: 150, // 이미지 간격
+        spaceBetween: -130, // 이미지 간격
       },
 
       768: {
         speed: 4000,
-        spaceBetween: -580, // 이미지 간격
+        spaceBetween: -580,
       },
 
       1024: {
+        speed: 7000,
         spaceBetween: -280, // 이미지 간격
       }
     }
