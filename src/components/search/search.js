@@ -36,6 +36,3 @@ const popularSearch = /*html*/ `
 </ul>
 </div>
 `;
-
-insertLast('.search', recentSearch);
-insertLast('.search', popularSearch);
