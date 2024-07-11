@@ -1,4 +1,8 @@
 import css from '/src/components/footer/_footer.scss?inline';
+import youtube from '/src/assets/youtube-1.png';
+import instagram from '/src/assets/instagram-1.png';
+import twitter from '/src/assets/twitter-1.png';
+import facebook from '/src/assets/facebook-1.png';
 
 export class Footer extends HTMLElement {
   constructor() {
@@ -51,22 +55,22 @@ export class Footer extends HTMLElement {
           <ul>
             <a href="">
               <li class="assets--youtube">
-                <img src="/src/assets/youtube-1.png" alt="" />
+                <img src="${youtube}" alt="" />
               </li>
             </a>
             <a href="">
               <li class="assets--instargram">
-                <img src="/src/assets/instagram-1.png" alt="" />
+                <img src="${instagram}" alt="" />
               </li>
             </a>
             <a href="">
               <li class="assets--twitter">
-                <img src="/src/assets/twitter-1.png" alt="" />
+                <img src="${twitter}" alt="" />
               </li>
             </a>
             <a href="">
               <li class="asset--facebook">
-                <img src="/src/assets/facebook-1.png" alt="facebook icon" />
+                <img src="${facebook}" alt="facebook icon" />
               </li>
             </a>
           </ul>
@@ -78,3 +82,4 @@ export class Footer extends HTMLElement {
 }
 
 customElements.define('c-footer', Footer);
+
