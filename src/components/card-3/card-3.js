@@ -1,6 +1,6 @@
 import '/src/components/card-3/_card-3.scss';
 import { insertLast } from 'kind-tiger';
-import poster from '/src/assets/jtbcLIVE-1.png';
+import poster from '/public/assets/jtbcLIVE-1.png';
 
 const template = `
 <div class="liveChannel">
