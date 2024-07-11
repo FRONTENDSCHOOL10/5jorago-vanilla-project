@@ -1,6 +1,6 @@
 import '/src/components/card-1/_card-1.scss';
 import { insertLast } from 'kind-tiger';
-import card from '/src/assets/quickVOD-card-1.png';
+import card from '/public/assets/quickVOD-card-1.png';
 
 const template = `
 <div class="quickVOD">

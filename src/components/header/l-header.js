@@ -1,5 +1,5 @@
 import css from '/src/components/header/_header.scss?inline';
-import logo from '/src/assets/logo_1.png';
+import logo from '/public/assets/logo_1.png';
 
 // 랜딩 페이지 컴포넌트
 export class Header extends HTMLElement {

@@ -1,8 +1,8 @@
 import css from '/src/components/footer/_footer.scss?inline';
-import youtube from '/src/assets/youtube-1.png';
-import instagram from '/src/assets/instagram-1.png';
-import twitter from '/src/assets/twitter-1.png';
-import facebook from '/src/assets/facebook-1.png';
+import youtube from '/public/assets/youtube-1.png';
+import instagram from '/public/assets/instagram-1.png';
+import twitter from '/public/assets/twitter-1.png';
+import facebook from '/public/assets/facebook-1.png';
 
 export class Footer extends HTMLElement {
   constructor() {

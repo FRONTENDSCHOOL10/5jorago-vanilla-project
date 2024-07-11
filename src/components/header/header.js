@@ -1,9 +1,9 @@
 import css from '/src/components/header/_header.scss?inline';
-import logo from '/src/assets/logo_1.png';
-import live from '/src/assets/live_1_default.png';
-import serch_default from '/src/assets/search_1_default.png';
-import paramount from '/src/assets/paramount_1_default.png';
-import usericon from '/src/assets/usericon_1.png';
+import logo from '/public/assets/logo_1.png';
+import live from '/public/assets/live_1_default.png';
+import serch_default from '/public/assets/search_1_default.png';
+import paramount from '/public/assets/paramount_1_default.png';
+import usericon from '/public/assets/usericon_1.png';
 
 // 메인 페이지 컴포넌트
 export class Header extends HTMLElement {
