@@ -1,15 +1,12 @@
-@use '/src/styles/scss/variables' as *;
-@use '/src/styles/scss/mixins' as *;
-
+@use 'src/styles/scss/' as *;
 // 테스트 하려고 넣음
-body {
-  margin: 10%;
-}
 
 .search__recent-searches {
   @include size(
     $search__recent-searches--width,
-    $search__recent-searches--height, null, null
+    $search__recent-searches--height,
+    null,
+    null
   );
 
   background-color: $search__recent-searches--bgc;
@@ -116,13 +113,10 @@ body {
 
 // 인기 검색어---------------------------------------
 .search__popular-searches {
-  @include size(
-    $search__popular-searches-width,
-    $search__popular-searches-height, null, null
-  );
+  @include size(100%, 100%, null, null);
 
   @include display(column, null, flex-start, null);
-  background-color: #000000;
+  background-color: $brand-dark-bg-1;
 }
 
 .search__popular-searches--title {
@@ -159,7 +153,6 @@ body {
   text-decoration: none;
 
   display: flex;
-  padding-right: 20.25rem;
 
   h3 {
     margin: 0;
@@ -269,7 +262,6 @@ body {
 
     display: flex;
     width: 42.5rem;
-    padding-right: 20.25rem;
 
     h3 {
       @include fontSize-line-height(0.75019rem, 1.12531rem);
@@ -314,7 +306,6 @@ body {
 
     display: flex;
     width: 42.5rem;
-    padding-right: 20.25rem;
 
     h3 {
       @include fontSize-line-height(0.75019rem, 1.12531rem);
