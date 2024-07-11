@@ -1,5 +1,7 @@
 import '/src/components/banner/_banner.scss';
 import { insertLast } from 'kind-tiger';
+import logo from '/src/assets/baekpacker_logo.webp';
+import img from '/src/assets/baekpacker_img.webp';
 
 const template = `
 <section class="banner">
@@ -7,13 +9,13 @@ const template = `
         <div class="banner__link--container">
           <img
             class="banner__link__container--img"
-            src="../../assets/baekpacker_img.webp"
+            src="${img}"
             alt="백패커 이미지"
           />
           <div class="banner__link__container--group">
             <img
               class="banner__link__container__group--logo"
-              src="../../assets/baekpacker_logo.webp"
+              src="${logo}"
               alt="백패커 로고"
             />
 
@@ -28,4 +30,5 @@ const template = `
       </a>
     </section>`;
 
-insertLast('.banner-container', template);
+insertLast('.top-banner__swiper--slide1', template);
+insertLast('.top-banner__swiper--slide2', template);

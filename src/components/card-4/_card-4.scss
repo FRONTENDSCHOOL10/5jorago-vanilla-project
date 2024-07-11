@@ -5,13 +5,13 @@
   @include display(column, nowrap, null, null, flex);
   position: relative;
   width: 15rem;
-  height: 21.5625rem;
+  height: 24.2rem;
 
   .logo {
     left: 15rem * 0.25;
     width: 50%;
     position: absolute;
-    bottom: 1rem;
+    bottom: 4rem;
   }
 
   .mainFirstCard--card {

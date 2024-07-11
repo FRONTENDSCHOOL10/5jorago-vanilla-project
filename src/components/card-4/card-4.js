@@ -7,19 +7,21 @@ import logo from "/src/assets/tvingoriginal_1.png";
 
 const template = `
     <div class="mainFirstCard">
-      <source media="(min-width: 768px)" srcset="${vertical2}" />
-      <source media="(min-width: 320px)" srcset="${vertical3}" />
-      <img src="${vertical1}" alt="" />
-      <div class="mainFirstCard--card"></div>
-      <img class="logo" src="${logo}" alt="" />
-      <span class="mainFirstCard__videoTitle">보물찾기</span>
+      <a href="/">
+        <source media="(min-width: 768px)" srcset="/src/assets/Vertical_2.png" />
+        <source media="(min-width: 320px)" srcset="/src/assets/Vertical_3.png" />
+        <img src="/src/assets/Vertical_1.png" alt="" />
+        <div class="mainFirstCard--card"></div>
+        <img class="logo" src="/src/assets/tvingoriginal_1.png" alt="" />
+        <span class="mainFirstCard__videoTitle">보물찾기</span>
+      </a>
     </div>`;
 
-insertLast('.sec-10', template);
-insertLast('.sec-10-1', template);
-insertLast('.sec-10-2', template);
-insertLast('.sec-10-3', template);
-insertLast('.sec-10-4', template);
-insertLast('.sec-10-5', template);
-insertLast('.sec-10-6', template);
-insertLast('.sec-10-7', template);
+insertLast('.article__swiper1--slide1', template);
+insertLast('.article__swiper1--slide2', template);
+insertLast('.article__swiper1--slide3', template);
+insertLast('.article__swiper1--slide4', template);
+insertLast('.article__swiper1--slide5', template);
+insertLast('.article__swiper1--slide6', template);
+insertLast('.article__swiper1--slide7', template);
+insertLast('.article__swiper1--slide8', template);

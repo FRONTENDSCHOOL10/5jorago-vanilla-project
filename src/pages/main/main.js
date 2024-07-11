@@ -9,7 +9,8 @@ import '/src/components/card-4/card-4.js';
 
 import '/src/pages/main/_main.scss';
 
-const swiper = new Swiper('.swiper-sec-1', {
+/* 배너 스와이퍼 */
+const swiper = new Swiper('.top-banner--swiper', {
   direction: 'horizontal',
   hashNavigation: true,
   navigation: {
@@ -18,7 +19,7 @@ const swiper = new Swiper('.swiper-sec-1', {
   },
   loop: true,
   autoplay: {
-    delay: 500,
+    delay: 2000,
   },
 
   pagination: {
@@ -27,49 +28,78 @@ const swiper = new Swiper('.swiper-sec-1', {
   cssMode: true
 });
 
-const swiper2 = new Swiper('.swiper-sec-2', {
-  slidesPerView: 4,
-  spaceBetween: 16,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  autoplay: {
-    delay: 500,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-  },
-  cssMode: true
-});
-
-
-const swiper3 = new Swiper('.swiper-sec-3', {
+/* 티빙에서 꼭봐야하는 컨텐츠 스와이퍼 */
+const swiper1 = new Swiper('.article--swiper1', {
   slidesPerView: 7,
-  spaceBetween: 30,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+  spaceBetween: 240,
   autoplay: {
     delay: 500,
   },
-  navigation: {
-    nextEl: '.swiper-button-next',
-  },
-  cssMode: true
+  loop: true,
+  // cssMode: true
 });
 
 
-const swiper4 = new Swiper('.swiper-sec-10', {
+/* Quick VOD 스와이퍼 */
+const swiper2 = new Swiper('.article--swiper2', {
   slidesPerView: 4,
   spaceBetween: 16,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
   autoplay: {
     delay: 500,
   },
+  loop: true,
   cssMode: true
 });
+
+/* 실시간 인기 프로그램 스와이퍼 */
+const swiper3 = new Swiper('.article--swiper3', {
+  slidesPerView: 7,
+  spaceBetween: 200,
+  autoplay: {
+    delay: 500,
+  },
+  loop: true,
+  cssMode: true
+});
+
+
+/* 오직 티빙에만 있어요 스와이퍼 */
+const swiper5 = new Swiper('.article--swiper5', {
+  slidesPerView: 7,
+  spaceBetween: 200,
+  autoplay: {
+    delay: 500,
+  },
+  loop: true,
+  cssMode: true
+});
+
+
+
+
+/* 이벤트 스와이퍼 */
+
+const swiperEvent = new Swiper('.swiper-event', {
+  slidesPerView: 2,
+  spaceBetween: 200,
+  autoplay: {
+    delay: 5000,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    },
+    768: {
+      slidesPerView: 2  ,
+      spaceBetween: 20
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: -100
+        }
+  // cssMode: true
+}
+});
+
+
