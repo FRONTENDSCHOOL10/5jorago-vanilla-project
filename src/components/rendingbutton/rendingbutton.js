@@ -11,5 +11,5 @@ const template = `
 `;
 
 
-document.querySelector('.b1 .rendingbutton').innerHTML = template;
-document.querySelector('.b4 .rendingbutton').innerHTML = template;
+document.querySelector('.button1 .rendingbutton').innerHTML = template;
+document.querySelector('.button2 .rendingbutton').innerHTML = template;

@@ -2,7 +2,11 @@
 
 // 변수
 
+
+
 // 믹스인
+
+
 
 body {
   font-family: $search--font-family;
@@ -14,22 +18,17 @@ body {
   }
 }
 
-// 헤더
-header {
-  width: auto;
-  height: 6.25rem;
-}
 
 // 섹션 1----------------------------------
-.section-01 {
+.section-1 {
   height: 50rem; // 임의로 정함
   position: relative;
 
-  .img-box {
+  .section-1__img-box {
     position: relative;
   }
 
-  .bg, .g {
+  .section-1__img-box--backgroundImg, .section-1__img-box--gradationImg {
     width: 100%;
     height: 51rem;
   
@@ -38,12 +37,12 @@ header {
     object-fit: cover;
   }
 
-  .bg {
+  .section-1__img-box--backgroundImg {
     height: 58rem;
     z-index: 1;
   }
 
-  .g {
+  .section-1__img-box--gradationImg {
     height: 59rem;
     z-index: 2;
   }
@@ -58,14 +57,14 @@ header {
 }
 
 // 섹션 2----------------------------------
-.section-02 {
+.section-2 {
   height: 53rem; // 임의로 정함
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .section-02__swiper-box {
+  .section-2__swiper-box {
     width: 88.3rem;
     height: 31.9rem;
     margin-top: 3.19rem;
@@ -73,7 +72,7 @@ header {
     img {
       width: 56.7rem;
       height: 31.88rem;
-      border-radius: var(--base, 0.25rem);
+      border-radius:  0.25rem ;
     }
   }
 }
@@ -133,7 +132,7 @@ header {
 }
 // ---------------------------------------
 
-.text111 {
+.section-1__text-box {
   user-select: none;
   width: 100%;
 

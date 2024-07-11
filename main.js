@@ -38,17 +38,34 @@ document.addEventListener('DOMContentLoaded', function () {
   const swiper2 = new Swiper('.swiper2', {
     direction: 'horizontal',
     loop: true,
+    speed: 6000, // 슬라이드 전환 속도
+    slidesPerView: 1, // 화면에 표시할 슬라이드 수
+    centeredSlides: true, // 슬라이드를 가운데 정렬
 
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
     },
+    
+    // spaceBetween: -1650, // 이미지 간격
+    
+    breakpoints: {
 
-    speed: 4000, // 슬라이드 전환 속도
-    slidesPerView: 1, // 화면에 표시할 슬라이드 수
-    spaceBetween: -1650, // 이미지 간격
-    // spaceBetween: -1115, // 이미지 간격
-    centeredSlides: true, // 슬라이드를 가운데 정렬
+      320: {
+        spaceBetween: 150, // 이미지 간격
+      },
+
+      768: {
+        spaceBetween: -280, // 이미지 간격
+      },
+
+      1024: {
+        speed: 4000,
+        spaceBetween: -1110, // 이미지 간격
+      }
+    }
+
+
   });
 });
 

@@ -16,16 +16,16 @@ export class Header extends HTMLElement {
       <nav class="nav">
         <div class="header__nav__logo-menu">
           <a href="#" class="header__logo">
-            <img src="${logo}" alt="Logo" class="header__logo" />
+            <img src="${logo}" alt="타잉 로고" class="header__logo" />
           </a>
 
-          <div class="header__menu-wrapper">
+          <div class="header__menu-wrapper" aria-orientation="horizontal" >
             <ul class="header__menu">
               <li style="list-style: none">
                 <a href="#" class="header__menu-item" aria-label="Live">
                   <img
                     src="${live}"
-                    alt="Live Icon"
+                    alt="실시간 라이브 컨텐츠"
                     class="header__icon-live"
                   />
                   <span class="text">실시간</span>
@@ -45,7 +45,7 @@ export class Header extends HTMLElement {
                 <a href="#" class="header__menu-item" aria-label="Paramount">
                   <img
                     src="${paramount}"
-                    alt="Paramount Icon"
+                    alt="파라마운트 플러스 컨텐츠"
                     class="header__paramount"
                   />
                 </a>
