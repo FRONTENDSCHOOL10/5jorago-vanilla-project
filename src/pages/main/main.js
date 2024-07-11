@@ -10,7 +10,7 @@ import '/src/components/card-4/card-4.js';
 import '/src/pages/main/_main.scss';
 
 /* 배너 스와이퍼 */
-const swiper = new Swiper('.swiper-sec-banner', {
+const swiper = new Swiper('.top-banner--swiper', {
   direction: 'horizontal',
   hashNavigation: true,
   navigation: {
@@ -19,7 +19,7 @@ const swiper = new Swiper('.swiper-sec-banner', {
   },
   loop: true,
   autoplay: {
-    delay: 5000,
+    delay: 2000,
   },
 
   pagination: {
@@ -29,7 +29,7 @@ const swiper = new Swiper('.swiper-sec-banner', {
 });
 
 /* 티빙에서 꼭봐야하는 컨텐츠 스와이퍼 */
-const swiper1 = new Swiper('.swiper-sec-1', {
+const swiper1 = new Swiper('.article--swiper1', {
   slidesPerView: 7,
   spaceBetween: 240,
   autoplay: {
@@ -41,7 +41,7 @@ const swiper1 = new Swiper('.swiper-sec-1', {
 
 
 /* Quick VOD 스와이퍼 */
-const swiper2 = new Swiper('.swiper-sec-2', {
+const swiper2 = new Swiper('.article--swiper2', {
   slidesPerView: 4,
   spaceBetween: 16,
   autoplay: {
@@ -52,7 +52,7 @@ const swiper2 = new Swiper('.swiper-sec-2', {
 });
 
 /* 실시간 인기 프로그램 스와이퍼 */
-const swiper3 = new Swiper('.swiper-sec-3', {
+const swiper3 = new Swiper('.article--swiper3', {
   slidesPerView: 7,
   spaceBetween: 200,
   autoplay: {
@@ -61,6 +61,19 @@ const swiper3 = new Swiper('.swiper-sec-3', {
   loop: true,
   cssMode: true
 });
+
+
+/* 오직 티빙에만 있어요 스와이퍼 */
+const swiper5 = new Swiper('.article--swiper5', {
+  slidesPerView: 7,
+  spaceBetween: 200,
+  autoplay: {
+    delay: 500,
+  },
+  loop: true,
+  cssMode: true
+});
+
 
 
 

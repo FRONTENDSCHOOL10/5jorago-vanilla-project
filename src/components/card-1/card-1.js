@@ -23,11 +23,11 @@ const template = `
   </div>
 </div>`;
 
-insertLast('.sec-2', template);
-insertLast('.sec-2-1', template);
-insertLast('.sec-2-2', template);
-insertLast('.sec-2-3', template);
-insertLast('.sec-2-4', template);
-insertLast('.sec-2-5', template);
-insertLast('.sec-2-6', template);
-insertLast('.sec-2-7', template);
+insertLast('.article__swiper2--slide1', template);
+insertLast('.article__swiper2--slide2', template);
+insertLast('.article__swiper2--slide3', template);
+insertLast('.article__swiper2--slide4', template);
+insertLast('.article__swiper2--slide5', template);
+insertLast('.article__swiper2--slide6', template);
+insertLast('.article__swiper2--slide7', template);
+insertLast('.article__swiper2--slide8', template);

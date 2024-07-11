@@ -17,11 +17,11 @@ const template = `
       </a>
     </div>`;
 
-insertLast('.sec-1', template);
-insertLast('.sec-1-1', template);
-insertLast('.sec-1-2', template);
-insertLast('.sec-1-3', template);
-insertLast('.sec-1-4', template);
-insertLast('.sec-1-5', template);
-insertLast('.sec-1-6', template);
-insertLast('.sec-1-7', template);
+insertLast('.article__swiper1--slide1', template);
+insertLast('.article__swiper1--slide2', template);
+insertLast('.article__swiper1--slide3', template);
+insertLast('.article__swiper1--slide4', template);
+insertLast('.article__swiper1--slide5', template);
+insertLast('.article__swiper1--slide6', template);
+insertLast('.article__swiper1--slide7', template);
+insertLast('.article__swiper1--slide8', template);

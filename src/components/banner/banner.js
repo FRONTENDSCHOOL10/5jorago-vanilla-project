@@ -30,4 +30,5 @@ const template = `
       </a>
     </section>`;
 
-insertLast('.banner-container', template);
+insertLast('.top-banner__swiper--slide1', template);
+insertLast('.top-banner__swiper--slide2', template);
