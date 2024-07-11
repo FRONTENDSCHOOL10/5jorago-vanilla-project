@@ -6,7 +6,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;900&display=swap"
       rel="stylesheet"
     />
     <script type="module" src="/src/pages/main/main.js"></script>
@@ -24,13 +24,11 @@
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
-
       </div>
     </div>
 
     <!-- 스와이퍼 -->
     <div class="section-group">
-
       <!-- 티빙에서 꼭 봐야하는 콘텐츠 -->
       <h3>티빙에서 꼭 봐야하는 콘텐츠</h3>
       <div class="swiper-sec-1">
@@ -58,9 +56,9 @@
           <div class="swiper-slide sec-2-5"></div>
           <div class="swiper-slide sec-2-6"></div>
           <div class="swiper-slide sec-2-7"></div>
+        </div>
       </div>
       
-
       <h3>실시간 인기 프로그램</h3>
       <!-- Slides -->
       <div class="swiper-sec-3">
@@ -73,23 +71,23 @@
           <div class="swiper-slide sec-3-5"></div>
           <div class="swiper-slide sec-3-6"></div>
           <div class="swiper-slide sec-3-7"></div>
-          
         </div>
       </div>
+      
       <h3>인기 LIVE 채널</h3>
       <section class="sec-4">인기 LIVE 채널 섹션</section>
       <h3>오직 티빙에만 있어요</h3>
       <section class="sec-5">오직 티빙에만 있어요</section>
     </div>
+
     <section class="promo-banner">
-      <img src="/" alt="프로모션" />
+      <a href="/"><img class="promotion-img" src="/src/assets/banner.png" alt="프로모션" /></a>
     </section>
 
     <!-- 이벤트 -->
     <h3 class="event-prom">이벤트</h3>
-    <div class="event-group">
-      <img class="event-img" src="/" alt="" />
-    </div>
+    <section class="event-group">이벤트 섹션</section>
+    
     <!-- 푸터 -->
     <div class="footer-container">
       <div class="more-info">
@@ -107,7 +105,9 @@
           <a href=""><span>+</span></a>
         </div>
       </div>
+      <div class="footer-con">
+        <c-footer></c-footer>
+      </div>
     </div>
-    <c-footer></c-footer>
   </body>
 </html>

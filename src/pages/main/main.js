@@ -28,38 +28,65 @@ const swiper = new Swiper('.swiper-sec-banner', {
   cssMode: true
 });
 
-/* 실시간 인기 프로그램 스와이퍼 */
+/* 티빙에서 꼭봐야하는 컨텐츠 스와이퍼 */
 const swiper1 = new Swiper('.swiper-sec-1', {
   slidesPerView: 7,
-  spaceBetween: 10,
+  spaceBetween: 240,
   autoplay: {
-    delay: 5000,
+    delay: 500,
   },
-  cssMode: true
+  loop: true,
+  // cssMode: true
 });
 
 
 /* Quick VOD 스와이퍼 */
 const swiper2 = new Swiper('.swiper-sec-2', {
   slidesPerView: 4,
-  spaceBetween: -160,
+  spaceBetween: 16,
   autoplay: {
-    delay: 5000,
+    delay: 500,
   },
+  loop: true,
   cssMode: true
 });
 
 /* 실시간 인기 프로그램 스와이퍼 */
 const swiper3 = new Swiper('.swiper-sec-3', {
   slidesPerView: 7,
-  spaceBetween: 10,
+  spaceBetween: 200,
   autoplay: {
-    delay: 5000,
+    delay: 500,
   },
+  loop: true,
   cssMode: true
 });
 
 
 
+/* 이벤트 스와이퍼 */
+
+const swiperEvent = new Swiper('.swiper-event', {
+  slidesPerView: 2,
+  spaceBetween: 200,
+  autoplay: {
+    delay: 5000,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    },
+    768: {
+      slidesPerView: 2  ,
+      spaceBetween: 20
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: -100
+        }
+  // cssMode: true
+}
+});
 
 

@@ -1,5 +1,9 @@
 import css from '/src/components/header/_header.scss?inline';
 import logo from '/src/assets/logo_1.png';
+import live from '/src/assets/live_1_default.png';
+import serch_default from '/src/assets/search_1_default.png';
+import paramount from '/src/assets/paramount_1_default.png';
+import usericon from '/src/assets/usericon_1.png';
 
 // 메인 페이지 컴포넌트
 export class Header extends HTMLElement {
@@ -20,7 +24,7 @@ export class Header extends HTMLElement {
               <li style="list-style: none">
                 <a href="#" class="header__menu-item" aria-label="Live">
                   <img
-                    src="/src/assets/live_1_default.png"
+                    src="${live}"
                     alt="Live Icon"
                     class="header__icon-live"
                   />
@@ -40,7 +44,7 @@ export class Header extends HTMLElement {
               <li style="list-style: none">
                 <a href="#" class="header__menu-item" aria-label="Paramount">
                   <img
-                    src="/src/assets/paramount_1_default.png"
+                    src="${paramount}"
                     alt="Paramount Icon"
                     class="header__paramount"
                   />
@@ -53,14 +57,14 @@ export class Header extends HTMLElement {
         <div class="aside">
           <a href="#" aria-label="Search">
             <img
-              src="/src/assets/search_1_default.png"
+              src="${serch_default}"
               alt="Search Icon"
               class="header__icon-search"
             />
           </a>
           <a href="#" aria-label="Profile">
             <img
-              src="/src/assets/usericon_1.png"
+              src="${usericon}"
               alt="Profile Icon"
               class="header__icon-profile"
             />
