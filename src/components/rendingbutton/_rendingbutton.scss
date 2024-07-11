@@ -29,6 +29,9 @@ button {
   img {
     position: absolute;
     top: 0;
+    
+    width: 3.40981rem;
+    height: 3.9375rem;
   }
 }
 
@@ -43,7 +46,7 @@ button {
     align-items: flex-start;
 
     span {
-      padding-left: 4rem;
+      padding-left: 3rem;
       position: absolute;
       color: $white;
       text-align: right;
@@ -60,6 +63,7 @@ button {
     }
   }
 }
+
 @media (max-width: 320px) {
   button {
     display: flex;

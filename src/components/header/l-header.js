@@ -8,7 +8,7 @@ export class Header extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
       <style>${css}</style>
-      <header class="header">
+      <header class="header" style="background-color: transparent;">
       <nav class="nav">
         <div class="header__nav__logo-menu">
           <a href="#" class="header__logo">
