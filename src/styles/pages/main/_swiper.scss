@@ -1,0 +1,82 @@
+@use '/src/styles/scss' as *;
+/* 스와이퍼 페이지 버튼 */
+.swiper-button-next, .swiper-button-prev {
+  color: #898989;
+}
+
+.article--swiper2{
+  width: 100%;
+  height: 100%;
+}
+
+.article--swiper5 {
+  width: 100%;
+  height: 100%;
+
+
+.swiper-slide {
+  display: flex;
+  img {
+    object-fit: cover;
+    display: block;
+    max-width: 17.8125rem;
+    max-height: 35.625rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.25rem;
+  }
+  }
+}
+
+
+@media (max-width: $breakpoint-desktop){
+  .article--swiper5{
+    .swiper-slide{
+      img{
+        max-width: 10.5rem;
+        max-height: 21rem;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  }
+}
+
+
+
+@media (max-width: $breakpoint-tablet){
+  .article--swiper5{
+    .swiper-slide{
+      img{
+        max-width: 8.6875rem;
+        max-height: 17.375rem;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  }
+}
+
+
+.top-banner--swiper{
+  width: 100%;
+}
+.article--swiper1{
+  width: 100%;
+}
+
+.article--swiper2{
+  width: 100%;
+}
+
+.article{
+
+  .swiper-button-next{
+    margin-right: -100px;
+    color: white;
+  }
+}
+
+

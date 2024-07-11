@@ -54,10 +54,21 @@
 // 모바일
 @media (max-width: $breakpoint-tablet) {
   .banner__link__container--group {
-    width: 12rem;
+    width: 16rem;
+    bottom: 1.6rem;
   }
 
   .banner__link__container__group--desc {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .banner__link__container--group {
+    width: 7rem;
+  }
+
+  .banner__link__container__group--desc {
+    font-size: 0.5rem;
   }
 }

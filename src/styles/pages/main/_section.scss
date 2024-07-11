@@ -1,0 +1,63 @@
+@use '/src/styles/scss' as *;
+.article {
+  margin-left: 4.38rem;
+  width: 100%;
+  max-width: 116rem;
+  overflow: hidden;
+}
+
+h3 {
+  // height: 40.6rem;
+  color: white;
+  align-items: center;
+  font-family: Pretendard;
+  font-size: 1.77688rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 2.48763rem */
+  margin: 0.75rem 0;
+}
+
+.sec-1 {
+  height: 24rem;
+}
+
+.sec-2 {
+  height: 16.5rem;
+}
+
+.sec-3 {
+  height: 24.25rem;
+}
+
+.sec-4 {
+  height: 18.3rem;
+  background-color: orange;
+}
+
+.sec-5 {
+  background-color: tomato;
+  height: 35.625rem;
+}
+
+// tablet
+@media (max-width: $breakpoint-desktop){
+  h3{
+    font-size: 1rem;
+  }
+
+  .sec-2{
+
+    height: 10.9rem;
+  }
+
+  .sec-3{
+  }
+}
+
+// mobile
+@media (max-width: $breakpoint-tablet){
+  h3{
+    font-size: 0.75019rem;
+  }
+}
