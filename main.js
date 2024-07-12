@@ -9,15 +9,54 @@ import { Footer } from '/src/components/footer/footer.js'
 // 랜딩 버튼 컴포넌트
 import '/src/components/rendingbutton/rendingbutton.js'
 
-
 // 스와이퍼
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
-// 스와이퍼
-document.addEventListener('DOMContentLoaded', function () {
 
-  // 섹션2 슬라이드
+// getPbImageURL 파일 만들어야됨
+// import getPbImageURL from '../../../api/getPbImageURL';
+// const data = await pb.collection('render_contents').getOne('i0vjd5h4d763hk2');
+// console.log(getPbImageURL(data,'img'))
+
+
+// const data = await pb.collection('render_contents').getOne('spn9eneezrzuue8');
+// // console.log(`${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${data.img[0]}`);
+
+// for (let i = 0; i < data.img.length; i++) {
+//   console.log(`${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${data.img[i]}`);
+// }
+
+
+//?????????????????
+// const record = await pb.collection('render_contents').getOne('i0vjd5h4d763hk2');
+
+// console.log(getPblimageURL(data, 'title'));
+
+
+// const record = await pb.collection('render_contents').getFullList();
+
+// console.log(record);
+// console.log(record[0].img);
+
+
+// 상단 스와이퍼
+async function image() {
+
+  const data = await pb.collection('render_contents').getOne('i0vjd5h4d763hk2');
+
+  for (let i = 0; i < data.img.length; i++) {
+
+    const template = `
+    <div class="swiper-slide">
+      <img src="${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${data.img[i]}" alt="">
+    </div>
+    `
+    document.querySelector('.swiper-wrapper').insertAdjacentHTML('beforeend', template);
+    // insertLast('.swiper-wrapper', template);
+  }
+
+  
   const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
@@ -44,9 +83,30 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+}
+
+image();
 
 
-  // 섹션3 슬라이드
+// 하단 스와이퍼 
+// 클래스명, 함수명 수정하기**********
+async function image2() {
+
+  const data = await pb.collection('render_contents').getOne('spn9eneezrzuue8');
+
+  for (let i = 0; i < data.img.length; i++) {
+
+    const template = `
+    <div class="swiper-slide">
+      <img src="${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${data.img[i]}" alt="">
+    </div>
+    `
+    document.querySelector('.swiper-wrapper2').insertAdjacentHTML('beforeend', template);
+    document.querySelector('.swiper-wrapper3').insertAdjacentHTML('beforeend', template);
+    // insertLast('.swiper-wrapper', template);
+  }
+
+
   const swiper2 = new Swiper('.swiper2', {
     direction: 'horizontal',
     loop: true,
@@ -56,9 +116,9 @@ document.addEventListener('DOMContentLoaded', function () {
       disableOnInteraction: false,
     },
 
-    speed: 6000, 
-    slidesPerView: 1, 
-    centeredSlides: true, 
+    speed: 6000,
+    slidesPerView: 1,
+    centeredSlides: true,
     spaceBetween: -1110,
 
     // 반응형 
@@ -79,16 +139,19 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
-});
+}
+
+image2();
 
 
 
-// const button = document.getElementById('myButton');
+// 페이지 이동 함수-------------------------------
+const button = document.getElementById('button');
 
-// function moveToPage() {
-//   location.href = "https://www.naver.com";
-// }
+function moveToPage() {
+  window.location.href = "main/index.html";
+}
 
 
-// btn.addEventListener('click', moveToPage)
+button.addEventListener('click', moveToPage)
 
