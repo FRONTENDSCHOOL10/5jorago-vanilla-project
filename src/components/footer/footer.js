@@ -53,24 +53,24 @@ export class Footer extends HTMLElement {
             </p>
           </div>
           <ul>
-            <a href="">
+            <a href="https://github.com/YSP97">
               <li class="assets--youtube">
-                <img src="${youtube}" alt="" />
+                <img src="${youtube}" alt="개발자 박윤선 깃허브로 이동" />
               </li>
             </a>
-            <a href="">
+            <a href="https://github.com/kwonboryong">
               <li class="assets--instargram">
-                <img src="${instagram}" alt="" />
+                <img src="${instagram}" alt="개발자 권보령 깃허브로 이동" />
               </li>
             </a>
-            <a href="">
+            <a href="https://github.com/Gomyeunghan">
               <li class="assets--twitter">
-                <img src="${twitter}" alt="" />
+                <img src="${twitter}" alt="개발자 고명한 깃허브로 이동" />
               </li>
             </a>
-            <a href="">
+            <a href="https://github.com/hyoungsiyoung">
               <li class="asset--facebook">
-                <img src="${facebook}" alt="facebook icon" />
+                <img src="${facebook}" alt="개발자 형시영 깃허브로 이동" />
               </li>
             </a>
           </ul>

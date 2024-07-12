@@ -2,12 +2,12 @@ import '/src/components/rendingbutton/_rendingbutton.scss';
 import logo from '/public/assets/icon.png';
 
 const template = `
-<div class="rending">
-<button class="rending__button">
-  <img src="${logo}" alt="" srcset="" />
-  <span>새로워진 티빙을 만나보세요!</span>
-</button>
-</div>
+    <div class="rending">
+    <button class="rending__button">
+      <img src="${logo}" alt="로그인 페이지로 이동하는 버튼" />
+      <span>새로워진 티빙을 만나보세요!</span>
+    </button>
+    </div>
 `;
 
 document.querySelector('.button1 .rendingbutton').innerHTML = template;
