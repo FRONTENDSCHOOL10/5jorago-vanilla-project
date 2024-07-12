@@ -1,5 +1,5 @@
 import '/src/components/input/_input.scss';
-import { insertLast } from 'kind-tiger';
+import { insertFirst } from 'kind-tiger';
 
 const idtemplate = /*html */ `
 
@@ -68,7 +68,7 @@ const checkTheEmail = /*html */ `
 </div>
 `;
 
-insertLast('.container', idtemplate);
-insertLast('.container', pwtemplate);
-insertLast('.container', checkThePassword);
-insertLast('.container', checkTheEmail);
+insertFirst('.container', idtemplate);
+insertFirst('.container', pwtemplate);
+insertFirst('.container', checkThePassword);
+insertFirst('.container', checkTheEmail);

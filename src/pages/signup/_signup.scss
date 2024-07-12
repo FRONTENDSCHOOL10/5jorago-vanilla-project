@@ -1,12 +1,12 @@
 @use 'src/styles/scss/' as *;
 
 section {
-  height: 1200px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 4.375rem;
-  justify-content: center;
-  align-items: flex-start;
-  align-self: stretch;
+  margin: 0 37.12rem;
+
   .content--head {
     display: flex;
     flex-direction: column;
@@ -28,7 +28,6 @@ section {
   }
   .container {
     width: 100%;
-    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,14 +40,8 @@ section {
     display: none;
   }
 }
-.checkboxwraper {
+.checkbox {
   color: white;
-}
-
-.checkobx-image {
-  width: 30px;
-  height: 30px;
-  display: block;
 }
 
 .checkbox {
@@ -63,58 +56,60 @@ section {
     padding: 0.125rem;
   }
   label {
-    background: url('/src/assets/defaultCircle_1.png') no-repeat 0 0 / contain;
+    background: url('/public/assets/defaultCircle_1.png') no-repeat 0 0 /
+      contain;
     padding-left: 1.5rem;
     padding-bottom: 0.0625rem;
   }
   input:checked + label {
-    background-image: url('/src/assets/activeCircle_1.png');
+    background-image: url('/public/assets/activeCircle_1.png');
   }
 }
-.mustChecked {
-  .checkbox2 {
-    margin: 0.75rem 0rem;
-    position: relative;
 
-    input {
-      position: absolute;
-      right: 6.6rem;
-      top: 0.2rem;
-      appearance: none;
-      padding: 0.125rem;
-    }
-    label {
-      background: url('/src/assets/defaultCheck_1.png') no-repeat 0 0 / contain;
-      padding-left: 1.5rem;
-      padding-bottom: 0.0625rem;
-    }
-    input:checked + label {
-      background-image: url('/src/assets/activeCheck_1.png');
-    }
-  }
-}
-.marcketingChecked {
-  .checkbox2 {
-    margin: 0.75rem 2rem;
-    position: relative;
+.checkbox2 {
+  color: #ffff;
+  margin: 0.75rem 0rem;
+  position: relative;
 
-    input {
-      position: absolute;
-      right: 6.6rem;
-      top: 0.2rem;
-      appearance: none;
-      padding: 0.125rem;
-    }
-    label {
-      background: url('/src/assets/defaultCheck_1.png') no-repeat 0 0 / contain;
-      padding-left: 1.5rem;
-      padding-bottom: 0.0625rem;
-    }
-    input:checked + label {
-      background-image: url('/src/assets/activeCheck_1.png');
-    }
+  input {
+    position: absolute;
+    right: 6.6rem;
+    top: 0.2rem;
+    appearance: none;
+    padding: 0.125rem;
+  }
+  label {
+    background: url('/public/assets/defaultCheck_1.png') no-repeat 0 0 / contain;
+    padding-left: 1.5rem;
+    padding-bottom: 0.0625rem;
+  }
+  input:checked + label {
+    background-image: url('/public/assets/activeCheck_1.png');
   }
 }
+
+.checkbox3 {
+  color: #ffff;
+  margin: 0.75rem 2rem;
+  position: relative;
+
+  input {
+    position: absolute;
+    right: 6.6rem;
+    top: 0.2rem;
+    appearance: none;
+    padding: 0.125rem;
+  }
+  label {
+    background: url('/public/assets/defaultCheck_1.png') no-repeat 0 0 / contain;
+    padding-left: 1.5rem;
+    padding-bottom: 0.0625rem;
+  }
+  input:checked + label {
+    background-image: url('/public/assets/activeCheck_1.png');
+  }
+}
+
 button {
   margin-top: 2.25rem;
   width: 100%;
@@ -128,4 +123,10 @@ button {
   font-weight: 600;
   line-height: 150%;
   color: $gray-400;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .contentwraper--content {
+    margin: 0rem, 11rem;
+  }
 }
