@@ -29,6 +29,15 @@
 }
 
 
+.swiper-pagination-bullet {
+  // position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  left: 10%;
+}
+
+
 @media (max-width: $breakpoint-desktop){
   .article--swiper5{
     .swiper-slide{

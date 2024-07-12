@@ -5,20 +5,24 @@
   @include display(column, nowrap, null, null, flex);
   position: relative;
   width: 15rem;
-  height: 24.2rem;
+  height: 24.1rem;
 
   a{
-    width: 100%;
-    height: 100%;
+    display: block;
+    max-width: 15rem;
+    max-height: 21.6rem;
   }
 
   img{
     border-radius: 0.25rem;
+    width: 100%;
+    height: 100%;
   }
 
   .logo {
-    left: 15rem * 0.25;
-    width: 50%;
+    left: 29%;
+    width: 6rem;
+    height: 1.2rem;
     position: absolute;
     bottom: 4rem;
     
@@ -50,6 +54,13 @@
     .mainFirstCard__videoTitle {
       font-size: 0.75019rem;
     }
+
+    a{
+    display: block;
+    width: 10rem;
+    height: 15rem;
+  }
+
   }
 }
 //모바일
