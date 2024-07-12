@@ -7,15 +7,26 @@
   width: 15rem;
   height: 24.2rem;
 
+  a{
+    width: 100%;
+    height: 100%;
+  }
+
+  img{
+    border-radius: 0.25rem;
+  }
+
   .logo {
     left: 15rem * 0.25;
     width: 50%;
     position: absolute;
     bottom: 4rem;
+    
   }
 
   .mainFirstCard--card {
     position: relative;
+    
   }
 
   .mainFirstCard__videoTitle {

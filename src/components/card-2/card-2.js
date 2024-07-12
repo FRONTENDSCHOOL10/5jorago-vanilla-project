@@ -9,7 +9,7 @@ const template = `
         <div class="card--wrapper">
           <span class="card__wrapper--rank">1</span>
           <div class="scrap">
-            <a href="/"><span class="card__wrapper--title">재벌집 막내아들</span></a>
+            <a class="scrap" href="/"><span class="card__wrapper--title">제목을 입력하세요 어쩌구 저쩌구</span></a>
             <div class="dot"><span class="card__wrapper--dot is-active"></span></div>
           </div>
         </div>
