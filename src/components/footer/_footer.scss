@@ -80,7 +80,7 @@ footer {
   }
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media (max-width: $breakpoint-desktop) {
   .footer--contents {
     min-width: $breakpoint-tablet;
   }
@@ -115,7 +115,7 @@ footer {
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media (max-width: $breakpoint-tablet) {
   footer {
     p {
       @include font(0.75019rem, 400, 160%, Pretendard, $gray-500);

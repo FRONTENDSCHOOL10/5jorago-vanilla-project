@@ -18,41 +18,51 @@
     <c-header style="position: relative; z-index: 100;"></c-header>
 
     <!-- 섹션 1 -->
-    <section class="section-01">
-      <div class="img-box">
-        <img class="bg" src="/src/assets/backgroundimg_1.png" alt="" />
-        <img class="g" src="/src/styles/gradation-img.png" alt="" />
+    <section class="section-1">
+      <div class="section-1__img-box">
+        <img 
+          class="section-1__img-box--backgroundImg" 
+          src="/public/assets/backgroundimg_1.png" 
+          alt="타잉 랜딩 페이지의 배경 이미지: 인기 TV 프로그램과 영화의 콜라주" />
+        <img 
+          class="section-1__img-box--gradationImg" 
+          src="/public/assets/gradation-img.png" 
+          alt="배경 이미지 위에 겹쳐지는 투명한 검은색 그라데이션 효과" />
       </div>
 
-      <div class="text111">
-        <span class="title">
+      <div class="section-1__text-box">
+        <span class="text-box__title">
           <h2>타잉 오리지널 콘텐츠,</h2>
           <h2>방송, 영화, 해외시리즈까지!</h2>
           <h2>재미를 플레이해보세요.</h2>
         </span>
-        <span class="explain">
+        <span class="text-box__explain">
           간편하게 가입하고, 원하실 때 해지할 수 있어요.
         </span>
       </div>
 
-      <div class="button b1">
-        <button class="rendingbutton"></button>
+      <div class="button1 button">
+        <button class="rendingbutton" aria-describedby="buttonDescription"></button>
       </div>
     </section>
 
+    
     <!-- 섹션 2 -->
-    <section class="section-02">
-      <div class="text">
-        <span class="title">
+    <section class="section-2">
+      <div class="text-box">
+        <span class="text-box__title">
           <h2>타잉에만 있는 재미</h2>
         </span>
-        <span class="explain"> 오리지널 콘텐츠를 만나보세요! </span>
-        <span class="explain2"> 차별화된 웰메이드 오리지널 콘텐츠 </span>
+        <span class="text-box__explain"> 오리지널 콘텐츠를 만나보세요! </span>
+        <span class="text-box__explain2"> 차별화된 웰메이드 오리지널 콘텐츠 </span>
       </div>
 
-      <div class="section-02__swiper-box">
+      <div class="section-2__swiper-box"
+           role="region" 
+           aria-label="타잉에만 있는 재미 - 티빙 작품 슬라이드" >
         <div class="swiper" dir="ltr">
-          <div class="swiper-wrapper" style="transition-timing-function: linear;">
+          <div class="swiper-wrapper" 
+               style="transition-timing-function: linear;">
             <div class="swiper-slide">
               <img
                 src="/src/styles/landing_lovecatcher.png"
@@ -71,21 +81,46 @@
     </section>
 
     <!-- 섹션 3 -->
-    <section class="section-03">
-      <div class="text">
-        <span class="title">
+    <section class="section-3">
+      <div class="text-box">
+        <span class="text-box__title">
           <h2>내가 찾던 재미</h2>
         </span>
-        <span class="explain"> 보고 싶은 콘텐츠를 발견하세요! </span>
-        <span class="explain2">
+        <span class="text-box__explain"> 
+          보고 싶은 콘텐츠를 발견하세요! 
+        </span>
+        <span class="text-box__explain2">
           최신, 인기 TV프로그램, 영화, 해외시리즈, 파라마운트+ 오리지널 및 독점
         </span>
       </div>
 
-      <div class="section-03__swiper-box">
+      <div class="section-3__swiper-box" 
+           role="region" 
+           aria-label="내가 찾던 재미 - 티빙 작품 슬라이드">
         <!-- 위 슬라이드 -->
         <div class="swiper2">
-          <div class="swiper-wrapper" style="transition-timing-function: linear;">
+          <div class="swiper-wrapper" 
+               style="transition-timing-function: linear;">
+            <div class="swiper-slide">
+              <img 
+                src="/src/styles/landing_lovecatcher.png"
+                alt="타잉에만 있는 첫 번째 콘텐츠 - 러브캐처 인 발리"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/src/styles/treasureHunt.png"
+                alt="타잉에만 있는 두 번째 콘텐츠 - 보물찾기"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- 아래 슬라이드 -->
+        <div class="swiper2" dir="rtl" 
+             role="region" 
+             aria-label="내가 찾던 재미 - 티빙 작품 슬라이드">
+          <div class="swiper-wrapper" 
+                style="transition-timing-function: linear;">
             <div class="swiper-slide">
               <img
                 src="/src/styles/landing_lovecatcher.png"
@@ -99,39 +134,21 @@
               />
             </div>
           </div>
-
-          <!-- 아래 슬라이드 -->
-          <div class="swiper2" dir="rtl">
-            <div class="swiper-wrapper" style="transition-timing-function: linear;">
-              <div class="swiper-slide">
-                <img
-                  src="/src/styles/landing_lovecatcher.png"
-                  alt="타잉에만 있는 첫 번째 콘텐츠 - 러브캐처 인 발리"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="/src/styles/treasureHunt.png"
-                  alt="타잉에만 있는 두 번째 콘텐츠 - 보물찾기"
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- 섹션 4 -->
-    <section class="section-04">
-      <div class="main">
-        <div class="taing-logo">
-          <img src="/src/assets/landing-logo.png" alt="티빙 로고" />
+    <section class="section-4">
+      <div class="section-4__box">
+        <div class="section-4__box--taing-logo">
+          <img src="/public/assets/landing-logo.png" alt="타잉 로고" />
         </div>
-        <p>지금 시작해보세요</p>
+        <p id="buttonDescription">지금 시작해보세요</p>
       </div>
 
-      <div class="button b4">
-        <button class="rendingbutton"></button>
+      <div class="button2 button">
+        <button class="rendingbutton" aria-describedby="buttonDescription"></button>
       </div>
     </section>
 

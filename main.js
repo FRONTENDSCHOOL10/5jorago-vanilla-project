@@ -29,8 +29,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     speed: 6000, // 슬라이드 전환 속도
     slidesPerView: 1, // 화면에 표시할 슬라이드 수
-    spaceBetween: -485, // 이미지 간격
     centeredSlides: true, // 슬라이드를 가운데 정렬
+    spaceBetween: -485, // 이미지 간격
+
+    breakpoints: {
+
+      320: {
+        spaceBetween: -5, // 이미지 간격
+      },
+
+      768: {
+        speed: 8000,
+        spaceBetween: -470, // 이미지 간격
+      }
+    }
   });
 
 
@@ -44,11 +56,29 @@ document.addEventListener('DOMContentLoaded', function () {
       disableOnInteraction: false,
     },
 
-    speed: 4000, // 슬라이드 전환 속도
-    slidesPerView: 1, // 화면에 표시할 슬라이드 수
-    spaceBetween: -1650, // 이미지 간격
-    // spaceBetween: -1115, // 이미지 간격
-    centeredSlides: true, // 슬라이드를 가운데 정렬
+    speed: 6000, 
+    slidesPerView: 1, 
+    centeredSlides: true, 
+    spaceBetween: -1110,
+
+    // 반응형 
+    breakpoints: {
+
+      320: {
+        spaceBetween: -130, // 이미지 간격
+      },
+
+      768: {
+        speed: 4000,
+        spaceBetween: -580,
+      },
+
+      1024: {
+        speed: 7000,
+        spaceBetween: -280, // 이미지 간격
+      }
+    }
   });
 });
+
 
