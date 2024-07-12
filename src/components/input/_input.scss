@@ -1,11 +1,12 @@
 @use '/src/styles/scss/' as *;
 body {
+  width: 100%;
   background-color: black;
 }
 
 .container {
+  min-width: $breakpoint-desktop;
   margin: 0 auto;
-  width: 1200px;
   display: flex;
   flex-direction: column;
   padding-top: 4.375rem;
@@ -14,7 +15,7 @@ body {
 }
 
 .input-component {
-  width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -38,7 +39,7 @@ p {
   @include font(1.333rem, 400, 160%, Pretendard, $gray-500);
 }
 @media (max-width: $breakpoint-tablet) {
-  input {
+  .input-component--input {
     @include size(100%, 3.375rem, 100%, 3.375rem);
     padding-left: 1.25rem;
     gap: 21.1875rem;
