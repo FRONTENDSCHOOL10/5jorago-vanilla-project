@@ -82,3 +82,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
+// const button = document.getElementById('myButton');
+
+// function moveToPage() {
+//   location.href = "https://www.naver.com";
+// }
+
+
+// btn.addEventListener('click', moveToPage)
+

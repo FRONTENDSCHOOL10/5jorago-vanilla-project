@@ -77,6 +77,11 @@ body {
   }
 }
 
+.header__logo {
+  width: 2.875rem;
+  height: 0.9375rem;
+}
+
 .aside {
   display: flex;
   align-items: center;
@@ -92,7 +97,7 @@ body {
   .header__icon-search {
     margin-right: 2rem;
     &:hover {
-      content: url('/src/assets/cancel_1_hover.png');
+      content: url('/public/assets/cancel_1_hover.png');
       width: 2.5rem;
       height: 2.5rem;
     }
@@ -104,7 +109,7 @@ body {
 }
 
 // 태블릿 ver
-@media (max-width: $breakpoint-desktop) { 
+@media (min-width: $breakpoint-desktop) { 
   .header__menu-wrapper {
     display: block;
   }
@@ -145,12 +150,12 @@ body {
   }
 }
 
-// 모바일 ver
-@media (max-width: $breakpoint-tablet) { 
+// 데스크탑 ver
+@media (min-width: $breakpoint-tablet) { 
 
   .header__logo {
-    width: 2.875rem;
-    height: 0.9375rem;
+    width: 8.25rem;
+    height: 2.625rem;
   }
 
   .header__menu {
