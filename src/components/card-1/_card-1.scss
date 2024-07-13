@@ -105,6 +105,7 @@ $breakpoint-desktop: 1024px;
 
   .quickVOD__title {
     @include fontSize-lineHeight(0.75019rem, 1.12531rem);
+
   }
 
   .quickVOD__episode-number {
@@ -120,14 +121,14 @@ $breakpoint-desktop: 1024px;
     @include size(2.75rem, 1rem);
     padding: 0rem 0.38rem;
 
-    @include fontSize-lineHeight(0.5625rem, 0.9rem);
+    @include fontSize-lineHeight(0.5rem, 0.9rem);
   }
 }
 
 // 모바일 ver
 @media (max-width: $breakpoint-tablet) {
   .quickVOD__content {
-    @include size(9.0625rem, 5.125rem);
+    @include size(9.0625rem, 8rem);
   }
 
   .quickVOD__content-img {
@@ -137,6 +138,7 @@ $breakpoint-desktop: 1024px;
   .quickVOD__title,
   .quickVOD__episode-number {
     margin: 0;
+    font-size: 0.7rem;
   }
 
   // Quick VOD 아이콘
@@ -148,6 +150,6 @@ $breakpoint-desktop: 1024px;
     @include size(2.75rem, 1rem);
     padding: 0rem 0.38rem;
 
-    @include fontSize-lineHeight(0.5625rem, 0.9rem);
+    @include fontSize-lineHeight(0.5rem, 0.9rem);
   }
 }

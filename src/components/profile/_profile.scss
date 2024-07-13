@@ -23,7 +23,7 @@ body {
 
 // 프로필 위 까만 블러 효과
 .profile__img--overlay {
-  @include position(0, null, null, 0);
+  @include position(-1px, null, null, 0);
 
   @include size(100%, $profile__img--overlay-height, null, null);
 
@@ -95,7 +95,8 @@ body {
   }
 
   .profile__img--overlay {
-    height: 79%;
+    // height: ;
+    height: 80%;
   }
 
   .profile__name {

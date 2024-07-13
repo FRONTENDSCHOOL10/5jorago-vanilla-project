@@ -9,63 +9,134 @@ import { Footer } from '/src/components/footer/footer.js'
 // 랜딩 버튼 컴포넌트
 import '/src/components/rendingbutton/rendingbutton.js'
 
-
 // 스와이퍼
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
-// 스와이퍼
-document.addEventListener('DOMContentLoaded', function () {
 
-  // 섹션2 슬라이드
-  const swiper = new Swiper('.swiper', {
+// 랜딩 버튼 페이지 이동 함수 -------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  const button = document.querySelectorAll('.button');
+
+  function moveToPage() {
+    window.location.href = '/src/pages/login/index.html';
+  }
+
+  button.forEach(button => {
+    button.addEventListener('click', moveToPage);
+  });
+});
+
+
+// 상단 스와이퍼 -------------------------------
+async function topSwiper() {
+  // 두 개의 이미지 데이터를 비동기적으로 가져옴
+  const data = await pb.collection('render_contents').getOne('i0vjd5h4d763hk2');
+  const data2 = await pb.collection('render_contents').getOne('rki6i5rdc9u7mnr');
+  const swiperWrapper = document.querySelector('.swiper-wrapper');
+
+  // 이미지 데이터를 기반으로 슬라이드를 로드하는 함수
+  function loadImages(imageData) {
+    swiperWrapper.innerHTML = ''; // 기존 이미지 초기화
+
+    for (let i = 0; i < imageData.img.length; i++) {
+      const template = `
+        <div class="swiper-slide" 
+             style="transition-timing-function: linear;">
+          <img src="${import.meta.env.VITE_PB_API}/files/${imageData.collectionId}/${imageData.id}/${imageData.img[i]}" alt="">
+        </div>
+      `;
+      swiperWrapper.insertAdjacentHTML('beforeend', template);
+    }
+  }
+
+  const SWIPER_OPTIONS = {
     direction: 'horizontal',
     loop: true,
-
+    speed: 6000,
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: -485,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
     },
-
-    speed: 6000, // 슬라이드 전환 속도
-    slidesPerView: 1, // 화면에 표시할 슬라이드 수
-    centeredSlides: true, // 슬라이드를 가운데 정렬
-    spaceBetween: -485, // 이미지 간격
-
     breakpoints: {
-
       320: {
-        spaceBetween: -5, // 이미지 간격
+        spaceBetween: -5,
       },
-
       768: {
         speed: 8000,
-        spaceBetween: -470, // 이미지 간격
+        spaceBetween: -470,
       }
+    },
+    transition: {
+      duration: 0,
+      timingFunction: 'linear',
     }
+  };
+
+  // Swiper를 초기화하는 함수
+  function initializeSwiper() {
+    return new Swiper('.swiper', SWIPER_OPTIONS);
+  }
+
+  // 이미지 경로를 업데이트하는 함수
+  function updateImagePaths(imageData) {
+    const images = swiperWrapper.querySelectorAll('.swiper-slide img');
+
+    images.forEach((img, i) => {
+      img.src = `${import.meta.env.VITE_PB_API}/files/${imageData.collectionId}/${imageData.id}/${imageData.img[i]}`;
+    });
+  }
+
+  // 처음 로드 시 적절한 이미지를 로드하고 Swiper를 초기화
+  loadImages(data); // 초기에는 큰 화면의 이미지를 로드
+  let swiper = initializeSwiper();
+
+  // 창 크기 변경 시 이미지 경로만 업데이트
+  window.addEventListener('resize', () => {
+    const imageData = window.innerWidth >= 1024 ? data : data2;
+    updateImagePaths(imageData);
+    swiper.update(); // Swiper 업데이트
   });
+}
+
+topSwiper();
 
 
-  // 섹션3 슬라이드
-  const swiper2 = new Swiper('.swiper2', {
+// 하단 스와이퍼 -------------------------------
+async function bottomSwiper() {
+  const data = await pb.collection('render_contents').getOne('spn9eneezrzuue8');
+  const swiperWrapper2 = document.querySelector('.swiper-wrapper2');
+  const swiperWrapper3 = document.querySelector('.swiper-wrapper3');
+
+  for (let i = 0; i < data.img.length; i++) {
+    const template = `
+    <div class="swiper-slide" >
+      <img src="${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${data.img[i]}" alt="">
+    </div>
+    `
+    swiperWrapper2.insertAdjacentHTML('beforeend', template);
+    swiperWrapper3.insertAdjacentHTML('beforeend', template);
+  }
+
+  const SWIPER_OPTIONS = {
     direction: 'horizontal',
     loop: true,
-
+    speed: 6000,
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: -1110,
+    allowTouchMove: false,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
     },
 
-    speed: 6000, 
-    slidesPerView: 1, 
-    centeredSlides: true, 
-    spaceBetween: -1110,
-
-    // 반응형 
     breakpoints: {
-
       320: {
-        spaceBetween: -130, // 이미지 간격
+        spaceBetween: -130,
       },
 
       768: {
@@ -75,20 +146,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
       1024: {
         speed: 7000,
-        spaceBetween: -280, // 이미지 간격
+        spaceBetween: -280, 
       }
     }
-  });
-});
+  }
+
+  new Swiper('.swiper2', SWIPER_OPTIONS);
+}
+
+bottomSwiper();
 
 
 
-// const button = document.getElementById('myButton');
+// getPbImageURL 파일 만들어야됨
+// import getPbImageURL from '../../../api/getPbImageURL';
+// const data = await pb.collection('render_contents').getOne('i0vjd5h4d763hk2');
+// console.log(getPbImageURL(data,'img'))
 
-// function moveToPage() {
-//   location.href = "https://www.naver.com";
+
+// const data = await pb.collection('render_contents').getOne('spn9eneezrzuue8');
+// // console.log(`${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${data.img[0]}`);
+
+// for (let i = 0; i < data.img.length; i++) {
+//   console.log(`${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${data.img[i]}`);
 // }
 
 
-// btn.addEventListener('click', moveToPage)
+//?????????????????
+// const record = await pb.collection('render_contents').getOne('i0vjd5h4d763hk2');
 
+// console.log(getPblimageURL(data, 'title'));
+
+
+// const record = await pb.collection('render_contents').getFullList();
+
+// console.log(record);
+// console.log(record[0].img);

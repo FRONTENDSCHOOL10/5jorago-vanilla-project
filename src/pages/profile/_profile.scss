@@ -1,0 +1,129 @@
+@use '/src/styles/scss/' as *;
+
+body {
+  font-family: $search--font-family;
+  background: $black;
+  margin: 0;
+  user-select: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+main {
+  height: 53rem;
+  padding: 8rem 0 0;
+  @include display(column, null, center, null);
+
+  h2 {
+    @include font(3.15731rem, 700, 4.42025rem, null, $main__h2--color);
+    text-align: center;
+    margin-bottom: 1.25rem;
+  }
+
+  p {
+    @include font(1.77688rem, 600, 2.66531rem, null, $main__p--color);
+  }
+
+  // 프로필 컴포넌트를 넣어야 함
+  .profile-box {
+    @include display(row, null, null, center);
+    height: 23rem;
+    padding-top: 2.75rem;
+    gap: 3.25rem;
+  }
+
+  button {
+    @include size(17rem, 5.38rem, null, null);
+    border: $main__button--border;
+    border-radius: 0.25rem;
+
+    p {
+      @include font(1.77688rem, 600, 2.66531rem, null, $main__button-p--color);
+      text-align: center;
+    }
+
+    &:hover {
+      background-color: #ffffffd0;
+
+      p {
+        color: $black;
+      }
+    }
+  }
+}
+
+// 반응형 -----------------------------------------------------
+
+// 태블릿 ver
+@media (max-width: $breakpoint-desktop) { 
+
+  main {
+    height: 22.3rem;
+    padding-top: 4.625rem;
+
+    h2 {
+      @include font(1.77688rem, 700, 2.48763rem, null, $main__h2--color);
+      margin: 0 0 0.5rem;
+    }
+
+    p {
+      @include font(1rem, 700, 1.5rem, null, $main__p--color);
+    }
+
+    .profile-box {
+      height: 10.2rem;
+      padding-top: 1.75rem;
+      gap: 2rem;
+    }
+
+      button {
+        @include size(9.75rem, 3.125rem, null, null);
+        margin-top: 2.75rem;
+  
+      p {
+        @include font(0.75019rem, 600, 1.12531rem, null, $main__button-p--color);
+      }
+    }
+  }
+}
+
+
+// 모바일 ver
+@media (max-width: $breakpoint-tablet) { 
+
+  main {
+    padding: 0;
+
+    h2 {
+      @include font(1rem, 700, 1.4rem, null, $main__h2--color);
+    }
+
+    p {
+      @include font(0.75019rem, 700, 1.12531rem, null, $main__p--color);
+    }
+
+    .profile-box {
+      height: auto;
+      padding-top: 1rem;
+  
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+      button {
+        @include size(8.4375rem, 2.625rem, null, null);
+        padding: 0.75rem 0rem;
+        margin-top: 2rem;
+  
+      p {
+        font-size: 0.75019rem;
+        line-height: 1.12531rem;
+      }
+    }
+  }
+}
+
