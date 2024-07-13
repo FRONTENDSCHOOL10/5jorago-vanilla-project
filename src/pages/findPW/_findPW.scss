@@ -1,0 +1,189 @@
+@use 'src/styles/scss/' as *;
+
+// 색상 변수
+$gray-800: #2b2b2b;
+$gray-200: #c4c4c4;
+
+// 반응형 분기점
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// 폰트 변수
+$font-family: 'Pretendard', sans-serif;
+$font-size-large: 1.333rem;
+$font-weight-normal: 400;
+$line-height-large: 160%; // 2.13281rem
+
+// 폰트 믹스인
+@mixin font($font-size,
+    $font-weight,
+    $line-height,
+    $font-style: normal,
+    $font-family: 'Pretendard'
+
+) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    font-style: $font-style;
+    font-family: $font-family;
+}
+
+@mixin fontSize-lineHeight($font-size, $line-height) {
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+.contentwraper {
+    width: 45.75rem;
+}
+
+.content--head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.head--title {
+    color: var(--white, #FFF);
+    @include font(2.36856rem, 700, 140%);
+}
+
+.input-form {
+    margin-top: 3.75rem;
+}
+
+.input-description {
+    color: var(--gray-400, #898989);
+    @include font(1.77688rem, 600, 150%);
+}
+
+.input-component {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.25rem;
+}
+
+.input-component--input {
+    box-sizing: border-box;
+    padding-left: 1.5rem;
+    width: 45.75rem;
+    height: 6rem;
+    background: $brand-dark-bg-2;
+    border: 0px;
+    border-radius: 0.25rem;
+    color: var(--gray-600, #565656);
+    @include font(1.77688rem, 400, 160%);
+}
+
+.confirm-btn {
+    width: 45.75rem;
+    height: 5.375rem;
+    border-radius: 0.25rem;
+    margin-top: 2.25rem;
+    background: var(--gray-700, #404040);
+}
+
+.confirm-btn>label {
+    color: var(--gray-400, #898989);
+    @include font(1.77688rem, 600, 2.66531rem);
+}
+
+
+
+// 태블릿 반응형 구현
+@media (max-width: $breakpoint-desktop) {
+    .contentwraper {
+        width: 26rem;
+    }
+
+    .head--title {
+        color: var(--white, #FFF);
+        @include font(1.77688rem, 700, 2.48763rem);
+    }
+
+    .input-description {
+        @include font(1rem, 600, 1.5rem);
+    }
+
+    .input-form {
+        margin-top: 1.5rem;
+    }
+
+    .input-component {
+        gap: 1rem;
+    }
+
+    .input-component--input {
+        width: 26rem;
+        height: 3.375rem;
+        padding: 0rem 1.25rem 0rem 1rem;
+        @include font(1rem, 400, 160%);
+    }
+
+    .confirm-btn {
+        width: 26rem;
+        height: 3.125rem;
+        margin-top: 1.5rem;
+    }
+
+    .confirm-btn>label {
+        @include font(1rem, 600, 1.5rem);
+    }
+
+}
+
+// 모바일 반응형 구현
+@media (max-width: $breakpoint-tablet) {
+    .contentwraper {
+        width: 18rem;
+    }
+
+    .head--title {
+        @include font(1rem, 700, 1.4rem);
+    }
+
+    .input-form {
+        margin-top: 1.75rem;
+    }
+
+    .input-description {
+        @include font(0.75019rem, 600, 1.12531rem);
+    }
+
+    .input-component {
+        gap: 1rem;
+    }
+
+    .input-component--input {
+        width: 18rem;
+        height: 2.875rem;
+        @include font(0.75019rem, 400, 1.20031rem);
+    }
+
+    .confirm-btn {
+        width: 18rem;
+        height: 2.625rem;
+        margin-top: 1.25rem;
+    }
+
+    .confirm-btn>label {
+        @include font(0.75019rem, 600, 1.12531rem);
+    }
+
+}
