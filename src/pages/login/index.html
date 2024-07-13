@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <title>Login Page</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/src/pages/login/login.js"></script>
+</head>
+
+<body>
+    <c-header style="align-self: stretch;"></c-header>
+
+
+    <section>
+
+        <div class="contentwraper">
+
+            <div class="contentwraper--content">
+                <div class="content--head">
+                    <h2 class="head--title">TVING ID 로그인</h2>
+                </div>
+                <div class="input-form">
+                    <div class="input-component">
+                        <label for="user-id"></label>
+                        <input placeholder="아이디" class="input-component--input" type="text" id="user-id" name="user-id"
+                            pattern="[a-zA-Z0-9]{6,12}" required="">
+
+                    </div>
+                    <div class="input-component">
+                        <label for="user-id"></label>
+                        <input placeholder="비밀번호" class="input-component--input" type="text" id="user-id" name="user-id"
+                            pattern="[a-zA-Z0-9]{6,12}" required="">
+
+                    </div>
+                </div>
+            </div>
+            <div class="checkboxwraper">
+                <div class="tooltip-group" role="group" aria-label="tooltip-group">
+                    <div class="btn-check">
+                        <input type="checkbox" class="checkbox" name="agree" id="agree" />
+                        <label for="agree">자동로그인</label>
+                    </div>
+                </div>
+            </div>
+            <button class="login-btn">
+                <label>로그인하기</label>
+            </button>
+
+            <div class="btnwrapper">
+                <div class="btn-noborder">
+                    <label class="btn-noborder-text">아이디찾기</label>
+                </div>
+                <span class="line"></span>
+                <div class="btn-noborder">
+                    <label class="btn-noborder-text">비밀번호찾기</label>
+                </div>
+            </div>
+
+            <div class="infojoinwrapper">
+                <span>아직 계정이 없으신가요?</span>
+                <div class="btn-noborder">
+                    <label class="btn-noborder-text">회원가입하기</label>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<c-footer style="
+align-self: stretch;
+"></c-footer>
+
+</html>
