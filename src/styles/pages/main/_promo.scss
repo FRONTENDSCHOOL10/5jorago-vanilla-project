@@ -1,3 +1,4 @@
+@use '/src/styles/scss' as *;
 .promo-banner {
   // max-width: 132.75rem;
   width: 100%;
@@ -49,6 +50,16 @@
 .event-group{
   margin-left: 4.375rem;;
   margin-bottom: 8.75rem;
+  img{
+    width: 21.625rem;
+    height: auto;
+  }
+
+}
+
+.event{
+  display: block;
+  // height: 22rem;
 }
 
 .footer-container{
@@ -56,4 +67,24 @@
   // display: flex;
   // justify-content: space-between;
   margin-left: 4.375rem;
+}
+
+
+@media (max-width: $breakpoint-desktop){
+  .event-group{
+    img{
+      width: 13.375rem;
+
+    }
+
+  }
+}
+@media (max-width: $breakpoint-tablet){
+  .event-group{
+    img{
+      width: 9.0625rem;
+
+    }
+
+  }
 }

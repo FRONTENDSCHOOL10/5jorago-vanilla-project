@@ -1,37 +1,50 @@
 import '/src/components/card-3/_card-3.scss';
-import { insertLast } from 'kind-tiger';
-import poster from '/public/assets/jtbcLIVE-1.png';
+import { insertLast, getNode } from 'kind-tiger';
+import pb from '/src/api/pocketbase.js';
+import getPbImageURL from '/api/getPbImageURL';
 
-const template = `
-<div class="liveChannel">
-    <div class="liveChannel__content">
-        <img
-            class="liveChannel__content-img"
-            src="${poster}"
-            alt="JTBC 뉴스룸"
-        />
-        <div class="liveChannel__wrap">
-            <div class="liveChannel__icon">    
-                <p class="liveChannel__icon-title">1</p>
-            </div>
-            <div class="liveChannel__info">
-                <div class="liveChannel__title">JTBC</div>
-                <div class="liveChannel__description">JTBC 뉴스룸</div>
-                <div class="liveChannel__viewer">27.9%</div>
+async function renderCard3(){
+    const article3Wrapper = getNode('.article--swiper4 .swiper-wrapper');
+
+
+const data = await pb.collection('main_live').getFullList({
+    sort: 'rank'
+});
+
+for (let i=0; i< data.length ; i ++){
+    const dataObj = data[i];
+    const imageURL = await getPbImageURL(dataObj);
+    const template = `
+    <div class="liveChannel">
+        <div class="liveChannel__content">
+            <img
+                class="liveChannel__content-img"
+                src="${imageURL}"
+                alt="${dataObj.title}"
+            />
+            <div class="liveChannel__wrap">
+                <div class="liveChannel__icon">    
+                    <p class="liveChannel__icon-title">${dataObj.rank}</p>
+                </div>
+                <div class="liveChannel__info">
+                    <div class="liveChannel__title">${dataObj.broadcast}</div>
+                    <div class="liveChannel__description">${dataObj.title}</div>
+                    <div class="liveChannel__viewer">27.9%</div>
+                </div>
             </div>
         </div>
-       
     </div>
-</div>
-    `;
+        `;
 
-insertLast('.sec-5', template);
-insertLast('.sec-5-1', template);
-insertLast('.sec-5-2', template);
-insertLast('.sec-5-3', template);
-insertLast('.sec-5-4', template);
-insertLast('.sec-5-5', template);
-insertLast('.sec-5-6', template);
-insertLast('.sec-5-7', template);
+    const slide = document.createElement('div');
+    slide.className = `swiper-slide article__swiper4--slide${i}`;
+    article3Wrapper.appendChild(slide);
+    insertLast(`.article__swiper4--slide${i}`, template);
+}
+
+}
+
+renderCard3();
+
 
 

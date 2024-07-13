@@ -1,33 +1,42 @@
 import '/src/components/card-1/_card-1.scss';
-import { insertLast } from 'kind-tiger';
-import card from '/public/assets/quickVOD-card-1.png';
+import { insertLast,getNode } from 'kind-tiger';
+import pb from '/src/api/pocketbase.js';
+import getPbImageURL from '/api/getPbImageURL';
 
-const template = `
-<div class="quickVOD">
-  <div class="quickVOD__content">
-    <!-- Quick VOD 아이콘 -->
-    <a href="">
-      <div class="quickVOD__icon">
-        <p class="quickVOD__icon-title">Quick VOD</p>
-      </div>
+async function renderCard3(){
+  const article3Wrapper = getNode('.article--swiper2 .swiper-wrapper');
+const data = await pb.collection('main_vod').getFullList();
 
-      <img
-        class="quickVOD__content-img"
-        src="${card}"
-        alt="Quick VOD 첫 번째 콘텐츠 카드: JTBC 뉴스룸"
-      />
+for (let i=0; i< data.length ; i ++){
+  const dataObj = data[i];
+  const imageURL = await getPbImageURL(dataObj);
+  const template = `
+  <div class="quickVOD">
+    <div class="quickVOD__content">
+      <!-- Quick VOD 아이콘 -->
+      <a href="">
+        <div class="quickVOD__icon">
+          <p class="quickVOD__icon-title">Quick VOD</p>
+        </div>
+        <img
+          class="quickVOD__content-img"
+          src="${imageURL}"
+          alt="${dataObj.sub_title}"
+        />
+        <span class="quickVOD__title">${dataObj.sub_title}</span>
+      </a>
+      <span class="quickVOD__episode-number">0화</span>
+    </div>
+  </div>`;
+  
 
-      <span class="quickVOD__title">JTBC 뉴스룸</span>
-    </a>
-    <span class="quickVOD__episode-number">0화</span>
-  </div>
-</div>`;
+      const slide = document.createElement('div');
+      slide.className = `swiper-slide article__swiper2--slide${i}`;
+      article3Wrapper.appendChild(slide);
 
-insertLast('.article__swiper2--slide1', template);
-insertLast('.article__swiper2--slide2', template);
-insertLast('.article__swiper2--slide3', template);
-insertLast('.article__swiper2--slide4', template);
-insertLast('.article__swiper2--slide5', template);
-insertLast('.article__swiper2--slide6', template);
-insertLast('.article__swiper2--slide7', template);
-insertLast('.article__swiper2--slide8', template);
+      insertLast(`.article__swiper2--slide${i}`, template);
+}
+
+}
+
+renderCard3();

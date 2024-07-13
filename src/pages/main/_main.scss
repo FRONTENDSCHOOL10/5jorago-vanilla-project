@@ -5,15 +5,36 @@
 @use '/src/styles/pages/main/footer';
 @use '/src/styles/pages/main/promo';
 
+h2 {
+    // height: rem;
+    // font: unset;
+    color: white;
+    align-items: center;
+    font-family: Pretendard;
+    font-size: 1.77688rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 2.48763rem */
+    margin: 0.75rem 0;
+  }
 
-// .event-prom{
-//   margin-left: 4.38rem;
-//   margin-top: 2.25rem;
-// }
+@media (max-width: $breakpoint-desktop){
+  h2{
+    font-size: 1rem;
+  }
 
+  .sec-2{
 
-// .top-banner--swiper {
-//   position: relative;
-// }
+    height: 10.9rem;
+  }
 
+  .sec-3{
+  }
+}
 
+// mobile
+@media (max-width: $breakpoint-tablet){
+  h2{
+    font-size: 0.75019rem;
+  }
+}

@@ -42,7 +42,7 @@ $breakpoint-desktop: 1024px;
 }
 
 .liveChannel__content {
-  @include size(21.6rem, 18.3rem);
+  @include size(21.6rem, 19.3rem);
   @include display(flex, column);
 }
 
@@ -99,7 +99,7 @@ $breakpoint-desktop: 1024px;
 //tablet
 @media (max-width: $breakpoint-desktop) {
   .liveChannel__content {
-    @include size(14.0625rem, 12rem);
+    @include size(14.0625rem, 14rem);
   }
 
   .liveChannel__content-img {
@@ -131,7 +131,7 @@ $breakpoint-desktop: 1024px;
 //mobile
 @media (max-width: $breakpoint-tablet) {
   .liveChannel__content {
-    @include size(9.0625rem, 8.5rem);
+    @include size(9.0625rem, 9.5rem);
   }
 
   .liveChannel__content-img {

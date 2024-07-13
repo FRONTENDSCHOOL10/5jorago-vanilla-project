@@ -1,27 +1,39 @@
 import '/src/components/card-4/_card-4.scss';
-import { insertLast } from 'kind-tiger';
-import vertical1 from "/public/assets/Vertical_1.png";
-import vertical2 from "/public/assets/Vertical_2.png";
-import vertical3 from "/public/assets/Vertical_3.png";
+import { insertLast, getNode } from 'kind-tiger';
 import logo from "/public/assets/tvingoriginal_1.png";
+import pb from '/src/api/pocketbase.js';
+import getPbImageURL from '/api/getPbImageURL';
 
-const template = `
+
+async function renderCard4(){
+  const article1Wrapper = getNode('.article--swiper1 .swiper-wrapper');
+  const data = await pb.collection('main_must_watch').getFullList();
+  
+  for (let i=0; i< data.length ; i ++){
+    const dataObj = data[i];
+    const imageURL = await getPbImageURL(dataObj);
+    const template = `
     <div class="mainFirstCard">
       <a href="/">
-        <source media="(min-width: 768px)" srcset="${vertical2}" />
-        <source media="(min-width: 320px)" srcset="${vertical3}" />
-        <img src="${vertical1}" alt="" />
+        <img src="${imageURL}" alt="${dataObj.title}" />
         <div class="mainFirstCard--card"></div>
-        <img class="logo" src="${logo}" alt="" />
-        <span class="mainFirstCard__videoTitle">보물찾기</span>
+        <img class="logo" src="${logo}" alt="타잉 오리지널 로고" />
+        <span class="mainFirstCard__videoTitle">${dataObj.title}</span>
       </a>
     </div>`;
 
-insertLast('.article__swiper1--slide1', template);
-insertLast('.article__swiper1--slide2', template);
-insertLast('.article__swiper1--slide3', template);
-insertLast('.article__swiper1--slide4', template);
-insertLast('.article__swiper1--slide5', template);
-insertLast('.article__swiper1--slide6', template);
-insertLast('.article__swiper1--slide7', template);
-insertLast('.article__swiper1--slide8', template);
+    const slide = document.createElement('div');
+    slide.className = `swiper-slide article__swiper1--slide${i}`;
+    article1Wrapper.appendChild(slide);
+
+  insertLast(`.article__swiper1--slide${i}`, template);
+
+}
+
+}
+
+renderCard4()
+
+
+// <source media="(min-width: 768px)" srcset="${vertical2}" />
+//         <source media="(min-width: 320px)" srcset="${vertical3}" />
