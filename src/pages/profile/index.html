@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로필 페이지</title>
+  <link
+  rel="stylesheet"
+  as="style"
+  crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+/>
+  <script type="module" src="/src/pages/profile/main.js"></script>
+</head>
+<body>
+  <!-- 헤더 -->
+  <c-header class="header"></c-header>
+
+  <main>
+    <h2>프로필 선택</h2>
+    <p>시청할 프로필을 선택해주세요</p>
+
+    <div class="profile-box">
+      <c-profile></c-profile>
+      <c-profile></c-profile>
+      <c-profile></c-profile>
+      <c-profile></c-profile>
+    </div>
+
+    <button>
+      <p>프로필 편집</p>
+    </button>
+  </main>
+
+  <!-- 푸터 -->
+  <c-footer class="footer"></c-footer>
+</body>
+</html>

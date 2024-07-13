@@ -1,38 +1,5 @@
 @use '/src/styles/scss' as *;
 
-$section-1--height: 50rem;
-$section-1__img-box-img--width: 100%;
-$section-1__img-box-img--height: 51rem;
-
-$section-2--height: 53rem;
-$section-2__swiper-box--width: 88.3rem;
-$section-2__swiper-box--height: 31.9rem;
-$section-2__swiper-box-img--width: 56.7rem;
-$section-2__swiper-box-img--height: 31.88rem;
-
-$section-3--height: 63rem;
-$section-3__swiper-box--height: 33rem;
-$section-3__swiper-box-img--width: 29.375rem;
-$section-3__swiper-box-img--height: 16.52344rem;
-
-$section-4__text-color: #fff;
-$section-4__text-font-size: 3.15731rem;
-
-$text-box__title--color: #fff;
-$text-box__title--font-size: 3.15731rem;
-$text-box__explain--color: #898989;
-$text-box__explain--font-size: 1.77688rem;
-$text-box__explain2--color: #c4c4c4;
-$text-box__explain2--font-size: 1.333rem;
-
-
-// 믹스인
-@mixin transform-zIndex($translateX, $translateY, $z-index) {
-  transform: translate($translateX, $translateY);
-  z-index: $z-index;
-}
-
-
 body {
   font-family: $search--font-family;
   background-color: $black;
@@ -42,7 +9,6 @@ body {
     display: none;
   }
 }
-
 
 // 섹션 1----------------------------------
 .section-1 {
