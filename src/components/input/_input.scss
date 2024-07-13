@@ -5,7 +5,6 @@ body {
 }
 
 .container {
-  min-width: $breakpoint-desktop;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -15,6 +14,7 @@ body {
 }
 
 .input-component {
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -24,7 +24,6 @@ body {
 }
 
 .input-component--input {
-  padding: 0rem 28.375rem 0rem 1.5rem;
   box-sizing: border-box;
   padding-left: 1.5rem;
   width: 100%;
@@ -40,8 +39,7 @@ p {
 }
 @media (max-width: $breakpoint-tablet) {
   .input-component--input {
-    @include size(100%, 3.375rem, 100%, 3.375rem);
-    padding-left: 1.25rem;
+    @include size(100%, 3.375rem, null, null);
     gap: 21.1875rem;
     background: $brand-dark-bg-2;
     border: 0px;
@@ -54,6 +52,6 @@ p {
 }
 @media (max-width: $breakpoint-mobile) {
   input {
-    @include size(100%, 2.875rem, 100%, 2.875rem);
+    @include size(100%, 2.875rem, null, null);
   }
 }
