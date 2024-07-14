@@ -3,6 +3,16 @@ body {
   background-color: $brand-dark-bg-1;
 }
 
+li {
+  color: $gray-300;
+  font-family: Pretendard;
+  font-size: 1.333rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  list-style-type: none;
+}
+
 .search-container {
   width: 100%;
   background-color: $brand-dark-bg-1;
@@ -63,6 +73,7 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: 150%;
+    margin-bottom: 1.25rem;
   }
   span {
     display: block;
@@ -73,6 +84,21 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 160%;
+  }
+
+  display: flex;
+  flex-direction: column;
+  ul {
+    .search-list-group {
+      display: flex;
+      gap: 1.25rem;
+      flex-flow: row nowrap;
+    }
+
+    img {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
   }
 }
 
