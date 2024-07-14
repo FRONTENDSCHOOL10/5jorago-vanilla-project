@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <title>Find ID Page</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/src/pages/findID/findID.js"></script>
+</head>
+
+<body>
+    <c-header style="align-self: stretch;"></c-header>
+
+    <section>
+
+        <div class="contentwraper">
+            <div class="find-email">
+                <div class="content--head">
+                    <h2 class="head--title">아이디 찾기</h2>
+                </div>
+                <div class="input-form">
+                    <h4 class="input-title">
+                        이메일로 찾기
+                        <div class="input-description">가입 시 등록한 이메일을 입력해주세요.</div>
+                    </h4>
+                    <div class="input-component">
+                        <label for="email"></label>
+                        <input placeholder="이메일" class="input-component--input" type="text" id="email" name="email"
+                            pattern="[a-zA-Z0-9]{6,12}" required="">
+                    </div>
+                </div>
+                <button class="confirm-btn">
+                    <label>확인</label>
+                </button>
+            </div>
+
+            <div class="line-border">
+                <span class="line"></span>
+                <span class="or">또는</span>
+                <span class="line"></span>
+            </div>
+            
+            
+
+            <div class="find-certification">
+                <h4 class="input-title">
+                    본인인증으로 찾기
+                    <div class="input-description">이미 본인인증이 완료된 계정에 한하여 아이디 찾기가 가능합니다.</div>
+                </h4>
+                <button class="certification-btn">
+                    <label>본인인증하기</label>
+                </button>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+<c-footer style="
+align-self: stretch;
+"></c-footer>
+
+</html>
