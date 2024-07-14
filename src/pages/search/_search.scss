@@ -6,7 +6,9 @@ body {
 li {
   color: $gray-300;
   font-family: Pretendard;
-  font-size: 1.333rem;
+
+  font-size: 0.75019rem;
+
   font-style: normal;
   font-weight: 400;
   line-height: 160%;
@@ -176,8 +178,12 @@ li {
       font-size: 1.77688rem;
     }
     span {
-      font-size: 1.333rem;
+      font-size: 1.2rem;
     }
+  }
+
+  li {
+    font-size: 1.333rem;
   }
 
   .search__popular-searches {
