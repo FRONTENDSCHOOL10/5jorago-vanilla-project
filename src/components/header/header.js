@@ -55,7 +55,7 @@ export class Header extends HTMLElement {
         </div>
 
         <div class="aside">
-          <a href="#" aria-label="Search">
+          <a href="/src/pages/search/" aria-label="Search">
             <img
               src="${serch_default}"
               alt="Search Icon"
@@ -77,4 +77,3 @@ export class Header extends HTMLElement {
 }
 
 customElements.define('c-header', Header);
-
