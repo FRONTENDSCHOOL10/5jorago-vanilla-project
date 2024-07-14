@@ -156,29 +156,3 @@ async function bottomSwiper() {
 
 bottomSwiper();
 
-
-
-// getPbImageURL 파일 만들어야됨
-// import getPbImageURL from '../../../api/getPbImageURL';
-// const data = await pb.collection('render_contents').getOne('i0vjd5h4d763hk2');
-// console.log(getPbImageURL(data,'img'))
-
-
-// const data = await pb.collection('render_contents').getOne('spn9eneezrzuue8');
-// // console.log(`${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${data.img[0]}`);
-
-// for (let i = 0; i < data.img.length; i++) {
-//   console.log(`${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${data.img[i]}`);
-// }
-
-
-//?????????????????
-// const record = await pb.collection('render_contents').getOne('i0vjd5h4d763hk2');
-
-// console.log(getPblimageURL(data, 'title'));
-
-
-// const record = await pb.collection('render_contents').getFullList();
-
-// console.log(record);
-// console.log(record[0].img);
