@@ -27,8 +27,8 @@ async function renderDate() {
   let year = today.getFullYear();
   let month = today.getMonth() + 1;
   let date = today.getDate();
-  let hours = today.getHours();
-  let minutes = today.getMinutes();
+  let hours = today.getHours().toString().padStart(2,'0');
+  let minutes = today.getMinutes().toString().padStart(2, '0');
 
   const dateElement = document.createElement('span');
   dateElement.className = 'search__date';
