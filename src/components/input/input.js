@@ -1,5 +1,6 @@
 import '/src/components/input/_input.scss';
-import { insertFirst } from 'kind-tiger';
+import { insertBefore } from 'kind-tiger';
+import { getNode } from 'kind-tiger';
 
 const idtemplate = /*html */ `
 
@@ -21,13 +22,13 @@ const idtemplate = /*html */ `
 const pwtemplate = /*html */ `
 
 <div class="input-component">
-  <label for="user-id"></label>
+  <label for="user-pw"></label>
   <input
     placeholder="비밀번호"
     class="input-component--input"
-    type="text"
-    id="user-id"
-    name="user-id"
+    type="password"
+    id="user-pw"
+    name="user-pw"
     pattern="[a-zA-Z0-9]{6,12}"
     required
   />
@@ -42,33 +43,37 @@ const checkThePassword = /*html */ `
   <input
     placeholder="비밀번호 확인"
     class="input-component--input"
-    type="text"
-    id="user-id"
+    type="password"
+    id="user-pw"
     name="user-id"
     pattern="[a-zA-Z0-9]{6,12}"
     required
   />
+  <p class = 'input--component__checkedpw display-none'>비밀번호 와 일치 하지 않습니다.</p>
 
 </div>
+
 `;
 const checkTheEmail = /*html */ `
 
 <div class="input-component">
-  <label for="user-id"></label>
+  <label for="user-email"></label>
   <input
     placeholder="이메일"
     class="input-component--input"
-    type="text"
-    id="user-id"
+    type="email"
+    id="user-email"
     name="user-id"
     pattern="[a-zA-Z0-9]{6,12}"
     required
   />
 
+  <p class='input--component__email'>이메일 형식으로 입력해주세요</p>
 </div>
+
 `;
 
-insertFirst('.container', idtemplate);
-insertFirst('.container', pwtemplate);
-insertFirst('.container', checkThePassword);
-insertFirst('.container', checkTheEmail);
+insertBefore('.container', idtemplate);
+insertBefore('.container', pwtemplate);
+insertBefore('.container', checkThePassword);
+insertBefore('.container', checkTheEmail);
