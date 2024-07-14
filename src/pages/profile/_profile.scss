@@ -11,11 +11,12 @@ body {
   }
 }
 
-
 main {
   height: 53rem;
   padding: 8rem 0 0;
   @include display(column, null, center, null);
+
+  margin-top: -80px;
 
   h2 {
     @include font(3.15731rem, 700, 4.42025rem, null, $main__h2--color);
@@ -46,14 +47,34 @@ main {
     }
 
     &:hover {
-      background-color: #ffffffd0;
+      border-radius: 0.25rem;
+      border: 1px solid #FFF;
 
       p {
-        color: $black;
+        color:#FFF;
+      }
+    }
+  }
+
+  // 프로필 변경 버튼 클릭 시 완료 버튼 스타일
+  .active {
+    background-color: #E1E1E1;
+
+    p {
+      color: #000;
+    }
+
+    &:hover {
+      color: #000;
+      background-color: #FFF;
+
+      p {
+        color: #000;
       }
     }
   }
 }
+
 
 // 반응형 -----------------------------------------------------
 
@@ -110,7 +131,7 @@ main {
       padding-top: 1rem;
   
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 2rem;
     }
 

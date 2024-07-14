@@ -8,6 +8,7 @@ import '/src/components/card-1/card-1.js';
 import '/src/components/card-3/card-3.js';
 import '/src/components/banner/banner.js';
 import '/src/components/card-4/card-4.js';
+import '/src/pages/main/modal.js';
 // import {Header, Footer, card2,card1,banner,card4} from './index.js';
 import '/src/pages/main/_main.scss';
 import pb from '/src/api/pocketbase.js';
