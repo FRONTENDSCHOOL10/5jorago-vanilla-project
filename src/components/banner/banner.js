@@ -1,7 +1,7 @@
 import '/src/components/banner/_banner.scss';
 import { insertLast, getNode } from 'kind-tiger';
 import pb from '/src/api/pocketbase.js';
-import getPbImageURL from '/api/getPbImageURL';
+import getPbImageURL from '/src/api/getPbImageURL';
 
 (async function () {
   const data = await pb.collection('main_swiper').getFullList();

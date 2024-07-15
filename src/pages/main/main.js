@@ -1,7 +1,8 @@
-import { insertLast, getNode, getPbImageURL } from 'kind-tiger';
+import { insertLast, getNode } from 'kind-tiger';
 import './modules/index.js';
 import '/src/pages/main/_main.scss';
 import pb from '/src/api/pocketbase.js';
+import getPbImageURL from '/src/api/getPbImageURL';
 
 /* 이미지 추가 */
 

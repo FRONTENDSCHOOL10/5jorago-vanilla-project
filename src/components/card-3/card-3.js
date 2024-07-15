@@ -1,7 +1,7 @@
 import '/src/components/card-3/_card-3.scss';
 import { insertLast, getNode } from 'kind-tiger';
 import pb from '/src/api/pocketbase.js';
-import getPbImageURL from '/api/getPbImageURL';
+import getPbImageURL from '/src/api/getPbImageURL';
 
 async function renderCard3(){
     const article3Wrapper = getNode('.article--swiper4 .swiper-wrapper');
