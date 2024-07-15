@@ -7,3 +7,4 @@ import '/src/components/banner/banner.js';
 import '/src/components/card-4/card-4.js';
 import '/src/pages/main/modules/modal.js';
 import '/src/pages/main/modules/swiper.js';
+import '/src/pages/main/modules/watchedContent.js';
