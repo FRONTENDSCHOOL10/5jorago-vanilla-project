@@ -1,16 +1,15 @@
 import '/src/components/card-1/_card-1.scss';
-import { insertLast,getNode } from 'kind-tiger';
+import { insertLast, getNode } from 'kind-tiger';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/api/getPbImageURL';
 
-async function renderCard3(){
+async function renderCard3() {
   const article3Wrapper = getNode('.article--swiper2 .swiper-wrapper');
-const data = await pb.collection('main_vod').getFullList();
-
-for (let i=0; i< data.length ; i ++){
-  const dataObj = data[i];
-  const imageURL = await getPbImageURL(dataObj);
-  const template = `
+  const data = await pb.collection('main_vod').getFullList();
+  for (let i = 0; i < data.length; i++) {
+    const dataObj = data[i];
+    const imageURL = await getPbImageURL(dataObj);
+    const template = `
   <div class="quickVOD">
     <div class="quickVOD__content">
       <!-- Quick VOD 아이콘 -->
@@ -28,15 +27,13 @@ for (let i=0; i< data.length ; i ++){
       <span class="quickVOD__episode-number">0화</span>
     </div>
   </div>`;
-  
 
-      const slide = document.createElement('div');
-      slide.className = `swiper-slide article__swiper2--slide${i}`;
-      article3Wrapper.appendChild(slide);
+    const slide = document.createElement('div');
+    slide.className = `swiper-slide article__swiper2--slide${i}`;
+    article3Wrapper.appendChild(slide);
 
-      insertLast(`.article__swiper2--slide${i}`, template);
-}
-
+    insertLast(`.article__swiper2--slide${i}`, template);
+  }
 }
 
 renderCard3();
