@@ -1,4 +1,5 @@
 import { getNode, insertLast } from 'kind-tiger';
+import cancelicon from '/public/assets/cancel_1_default.png';
 
 const searchInput = getNode('.search-input');
 const searchButton = getNode('.search-bar button');
@@ -11,9 +12,9 @@ function renderRecentSearch() {
     JSON.parse(localStorage.getItem('recentSearches')) || [];
 
   if (recentSearches) {
-    recentSearchesContainer.innerHTML = '';   
+    recentSearchesContainer.innerHTML = '';
   }
-  
+
   if (recentSearches.length > 0) {
     noResultElement.style.display = 'none';
     recentSearches.forEach((search, index) => {
@@ -21,7 +22,7 @@ function renderRecentSearch() {
       <div class="search-list-group" data-index="${index}">
         <li>${search}</li>
         <button type="button" class="delete-btn">
-          <img src="/public/assets/cancel_1_default.png">
+          <img src="${cancelicon}">
         </button>
       </div>`;
       insertLast(recentSearchesContainer, template);
