@@ -6,6 +6,17 @@
   overflow: hidden;
 }
 
+.watched-content {
+  // display: none;
+  margin-left: 4.38rem;
+  &__container {
+    height: 24rem;
+  }
+}
+
+.watched-content .is-active{
+  display: flex;
+}
 
 .sec-1 {
   height: 24rem;
@@ -27,4 +38,3 @@
   background-color: tomato;
   height: 35.625rem;
 }
-

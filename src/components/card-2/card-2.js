@@ -7,7 +7,7 @@ async function renderCard2() {
   const article3Wrapper = getNode('.article--swiper3 .swiper-wrapper');
 
   const data = await pb.collection('main_ranking').getFullList({
-    sort: 'rank'
+    sort: 'rank',
   });
 
   for (let i = 0; i < data.length; i++) {
@@ -17,11 +17,11 @@ async function renderCard2() {
     const template = `
       <div class="card-section">
         <div class="card">
-          <a href="/"><img class="card--img" src="${imageURL}" alt="${dataObj.title}" /></a>
+          <a href="/src/pages/main/"><img class="card--img" src="${imageURL}" alt="${dataObj.title}" /></a>
           <div class="card--wrapper">
             <span class="card__wrapper--rank">${dataObj.rank}</span>
             <div class="scrap">
-              <a class="scrap" href="/"><span class="card__wrapper--title">${dataObj.title}</span></a>
+              <a class="scrap" href="/src/pages/main/"><span class="card__wrapper--title">${dataObj.title}</span></a>
               <div class="dot"><span class="card__wrapper--dot is-active"></span></div>
             </div>
           </div>
