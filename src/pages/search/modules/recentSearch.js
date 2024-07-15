@@ -1,5 +1,5 @@
 import { getNode, insertLast } from 'kind-tiger';
-import cancelicon from '/public/assets/cancel_1_default.png';
+import cancelIcon from '/public/assets/cancel_1_default.png';
 
 const searchInput = getNode('.search-input');
 const searchButton = getNode('.search-bar button');
@@ -22,7 +22,7 @@ function renderRecentSearch() {
       <div class="search-list-group" data-index="${index}">
         <li>${search}</li>
         <button type="button" class="delete-btn">
-          <img src="${cancelicon}">
+          <img src="${cancelIcon}">
         </button>
       </div>`;
       insertLast(recentSearchesContainer, template);
