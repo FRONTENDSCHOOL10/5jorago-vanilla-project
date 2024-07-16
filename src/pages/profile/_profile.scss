@@ -11,6 +11,10 @@ body {
   }
 }
 
+.profile.selected .profile__img--overlay {
+  display: none;
+}
+
 main {
   height: 53rem;
   padding: 8rem 0 0;
