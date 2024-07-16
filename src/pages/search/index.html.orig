@@ -33,8 +33,11 @@
                 <li class="search__recent-searches--no-result-content">
                   검색 내역이 없습니다.
                 </li>
+<<<<<<< HEAD
                 <div class="search-box"></div>
+=======
                 <div type="group" class="search-group"></div>
+>>>>>>> develop
               </ul>
             </div>
           </div>

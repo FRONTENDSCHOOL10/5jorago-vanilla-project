@@ -67,8 +67,11 @@ li {
 
 // 최근 검색 기록 styles
 .search__recent-searches {
+<<<<<<< HEAD
   width: 14rem;
+=======
   width: 8rem;
+>>>>>>> develop
   flex-grow: 1;
   h2 {
     color: $gray-200;
