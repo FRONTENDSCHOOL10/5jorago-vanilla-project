@@ -10,7 +10,6 @@ import getPbImageURL from '/src/api/getPbImageURL';
 const { isAuth, avatar } = JSON.parse(localStorage.getItem('auth'));
 const userData = await pb.collection('users').getFullList();
 
-
 // 메인 페이지 컴포넌트
 export class Header extends HTMLElement {
   constructor() {
@@ -86,12 +85,9 @@ export class Header extends HTMLElement {
       const logoImg = this.shadowRoot.querySelector('.header__icon-profile');
       const localAuth = JSON.parse(localStorage.getItem('auth'));
       const localName = localAuth.user.name;
-      console.log(localName);
-      logoImg.src = '/public/assets/18age_1.png';
 
       for (let data of userData) {
         if (localName === data.name) {
-
           logoImg.src = `${getPbImageURL(data, 'avatar')}`;
         }
       }
