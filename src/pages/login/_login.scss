@@ -71,6 +71,43 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    position: relative;
+}
+
+.visible-icon,
+.cancel-id-icon,
+.cancel-pw-icon {
+    display: none;
+}
+
+.visible-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-105%);
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.cancel-id-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-105%);
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.cancel-pw-icon {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-105%);
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
 }
 
 .input-component--input {
@@ -85,21 +122,8 @@ body {
     @include font(1.77688rem, 400, 160%);
 }
 
-// .checkboxwrapper {
-//     display: flex;
-//     width: 45.75rem;
-// }
-
-//.btn-check {
-// display: flex;
-// padding: 1rem 0rem 2rem 0rem;
-// align-items: center;
-// gap: 0.75rem;
-//}
-
 .btn-check {
     padding: 1rem 0rem 2rem 0rem;
-    // position: relative;
 
     input {
         position: absolute;
@@ -110,8 +134,6 @@ body {
     label {
         background: url('/public/assets/defaultCircle_1.png') no-repeat 0 0 / contain;
         padding-left: 2.25rem;
-        // padding-bottom: 0.0625rem;
-
     }
 
     input:checked+label {
@@ -181,15 +203,15 @@ body {
 }
 
 .error-message {
-    color: var(--gray-500, #6B6B6B);
-    @include font(1.333rem, 400, 160%);
-    // @include font(1.333rem, 600, 150%);
+    color: #FF153C;
+    opacity: 85%;
+    @include font(1.333rem, 400, 2.13281rem);
 }
+
 
 // 태블릿 반응형 구현
 @media (max-width: $breakpoint-desktop) {
     .contentwraper {
-        // padding-top: 2.5rem;
         gap: 0.0625rem;
     }
 
@@ -214,22 +236,36 @@ body {
         gap: 0.5rem;
     }
 
+    .visible-icon {
+        top: 50%;
+        right: 10px;
+        transform: translateY(-105%);
+        width: 0.83331rem;
+        height: 0.83331rem;
+    }
+
+    .cancel-id-icon {
+        top: 50%;
+        right: 10px;
+        transform: translateY(-105%);
+        width: 0.83331rem;
+        height: 0.83331rem;
+    }
+
+    .cancel-pw-icon {
+        top: 50%;
+        right: 35px;
+        transform: translateY(-105%);
+        width: 0.83331rem;
+        height: 0.83331rem;
+    }
+
     .input-component--input {
         width: 26rem;
         height: 3.375rem;
         padding: 0rem 1.25rem 0rem 1rem;
         @include font(1rem, 400, 160%);
     }
-
-    // .checkboxwrapper {
-    //     width: 26rem;
-    //     height: 2.875rem;
-    //     padding: 0.75rem 0rem 1rem 0rem;
-    // }
-
-    // .btn-check {
-    //     gap: 0.25rem;
-    // }
 
     .btn-check>label {
         @include font(0.75019rem, 600, 1.12531rem);
@@ -278,12 +314,12 @@ body {
     .infojoinwrapper>span {
         @include font(1rem, 400, 1.6rem);
     }
+
+    .error-message {
+        @include font(0.75019rem, 400, 1.12531rem);
+    }
+
 }
-
-// .error-message {
-//     @include font(0.75019rem, 600, 1.9995rem);
-// }
-
 
 // 모바일 반응형 구현
 @media (max-width: $breakpoint-tablet) {
@@ -322,6 +358,30 @@ body {
         gap: 0.5rem;
     }
 
+    .visible-icon {
+        top: 50%;
+        right: 10px;
+        transform: translateY(-155%);
+        width: 0.42081rem;
+        height: 0.42081rem;
+    }
+
+    .cancel-id-icon {
+        top: 50%;
+        right: 10px;
+        transform: translateY(-155%);
+        width: 0.42081rem;
+        height: 0.42081rem;
+    }
+
+    .cancel-pw-icon {
+        top: 50%;
+        right: 25px;
+        transform: translateY(-155%);
+        width: 0.42081rem;
+        height: 0.42081rem;
+    }
+
     .input-component--input {
         width: 18rem;
         height: 2.875rem;
@@ -329,20 +389,8 @@ body {
         @include font(0.75019rem, 400, 1.20031rem);
     }
 
-    // .checkboxwrapper {
-    //     width: 18rem;
-    //     height: 2.6875rem;
-    //     padding: 0.5rem 0rem 1rem 0rem;
-    //     align-items: flex-start;
-    // }
-
-    // .btn-check {
-    //     gap: 0.25rem;
-    // }
-
     .btn-check>label {
         @include font(0.75019rem, 600, 1.12531rem);
-        // padding-left: 1.25rem;
     }
 
     .line {
@@ -387,16 +435,9 @@ body {
     .infojoinwrapper>span {
         @include font(0.75019rem, 400, 1.20031rem);
     }
+
+
+    .error-message {
+        @include font(0.75019rem, 400, 1.20031rem);
+    }
 }
-
-// .user-id-error {
-//     @include font(0.75019rem, 600, 1.12531rem);
-// }
-
-// .user-pw-error {
-//     @include font(0.75019rem, 600, 1.12531rem);
-// }
-
-// .error-message {
-//     @include font(1.333rem, 400, 1.12531rem);
-// }

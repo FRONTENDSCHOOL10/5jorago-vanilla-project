@@ -1,44 +1,48 @@
 <!doctype html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>Find ID Page</title>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="/src/pages/findPW/findPW.js"></script>
-</head>
+  </head>
 
-<body>
-    <c-header style="align-self: stretch;"></c-header>
+  <body>
+    <c-header style="align-self: stretch"></c-header>
 
     <section>
-
-        <div class="contentwraper">
-            <div class="find-email">
-                <div class="content--head">
-                    <h2 class="head--title">비밀번호 찾기</h2>
-                </div>
-                <div class="input-form">
-                    <div class="input-description">아이디 확인 후 등록된 이메일 주소로 비밀번호 재설정을 위한 인증 메일이 발송됩니다. 이메일을 확인하여 12시간 이내에 비밀번호 재설정을 완료해주세요.</div>
-                    <div class="input-component">
-                        <label for="user-id"></label>
-                        <input placeholder="아이디" class="input-component--input" type="text" id="user-id" name="user-id"
-                            pattern="[a-zA-Z0-9]{6,12}" required="">
-                    </div>
-                </div>
-                <button class="confirm-btn">
-                    <label>확인</label>
-                </button>
+      <div class="contentwraper">
+        <div class="find-email">
+          <div class="content--head">
+            <h2 class="head--title">비밀번호 찾기</h2>
+          </div>
+          <div class="input-form">
+            <div class="input-description">
+              아이디 확인 후 등록된 이메일 주소로 비밀번호 재설정을 위한 인증
+              메일이 발송됩니다. 이메일을 확인하여 12시간 이내에 비밀번호
+              재설정을 완료해주세요.
             </div>
-
-
+            <div class="input-component">
+              <label for="user-id"></label>
+              <input
+                placeholder="아이디"
+                class="input-component--input"
+                type="text"
+                id="user-id"
+                name="user-id"
+                pattern="[a-zA-Z0-9]{6,12}"
+                required=""
+              />
+            </div>
+          </div>
+          <button class="confirm-btn">
+            <label>확인</label>
+          </button>
         </div>
+      </div>
     </section>
-</body>
+  </body>
 
-<c-footer style="
-align-self: stretch;
-"></c-footer>
-
+  <c-footer style="align-self: stretch"></c-footer>
 </html>
