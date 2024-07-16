@@ -6,10 +6,18 @@ import paramount from '/public/assets/paramount_1_default.png';
 import usericon from '/public/assets/usericon_1.png';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
+const localAuth = JSON.parse(localStorage.getItem('auth'));
+import { insertLast, getNode } from 'kind-tiger';
+const localName = localAuth.user.name;
 
-const { isAuth, avatar } = JSON.parse(localStorage.getItem('auth'));
 const userData = await pb.collection('users').getFullList();
-
+for (let data of userData) {
+  if (localName === data.name) {
+    var dataName = data.name;
+    let avatars = data.avatar[0];
+    var profileImg = `${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${avatars}`;
+  }
+}
 // 메인 페이지 컴포넌트
 export class Header extends HTMLElement {
   constructor() {
@@ -73,6 +81,37 @@ export class Header extends HTMLElement {
               alt="Profile Icon"
               class="header__icon-profile"
             />
+            <section class="profile-modal">
+            <div class="profile-modal__profile-group">
+                <div class="wrapper">
+                    <img src="${profileImg}" alt="" />
+                    <div class="profile-modal__profile-group__info-group">
+                        <h3 class="profile-modal__profile-group__info-group--name">${dataName} 님</h3>
+                        <a href="/src/pages/profile/">
+                            <div class="profile-modal__profile-group__info-group--edit-group">
+                                <p class="profile-modal__profile-group__info-group--edit">프로필 전환</p>
+                                <i class="fas fa-angle-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <ul class="profile-modal__menu">
+                    <a href="/src/pages/profile/">
+                        <li>MY</li>
+                    </a>
+                    <a href="/src/pages/main/">
+                        <li>이용권</li>
+                    </a>
+                    <a href="">
+                        <li>회원탈퇴</li>
+                    </a>
+                    <a href="">
+                        <li>로그아웃</li>
+                    </a>
+                </ul>
+            </div>
+        </section>
           </a>
         </div>
       </nav>
@@ -81,9 +120,22 @@ export class Header extends HTMLElement {
   }
 
   async connectedCallback() {
-    const { isAuth, avatar } = JSON.parse(localStorage.getItem('auth'));
+    const profileIcon = this.shadowRoot.querySelector('.header__icon-profile');
+    const profileModal = this.shadowRoot.querySelector('.profile-modal');
+
+    profileIcon.addEventListener('mouseenter', () => {
+      profileModal.classList.add('is-active');
+    });
+    profileIcon.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!profileModal.matches(':hover')) {
+          profileModal.classList.remove('is-active');
+        }
+      }, 300);
+    });
+
+    const { isAuth } = JSON.parse(localStorage.getItem('auth'));
     if (isAuth) {
-      const logoImg = this.shadowRoot.querySelector('.header__icon-profile');
       const localAuth = JSON.parse(localStorage.getItem('auth'));
       const localName = localAuth.user.name;
 
@@ -92,9 +144,9 @@ export class Header extends HTMLElement {
         if (localName === data.name) {
           if (data.avatar.length > 1) {
             let avatars = data.avatar[0];
-            logoImg.src = `${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${avatars}`;
+            profileIcon.src = `${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${avatars}`;
           } else {
-            logoImg.src = `${getPbImageURL(data, 'avatar')}`;
+            profileIcon.src = `${getPbImageURL(data, 'avatar')}`;
           }
         }
       }
