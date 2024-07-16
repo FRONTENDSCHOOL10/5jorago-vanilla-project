@@ -23,6 +23,20 @@ function throttle(func, delay) {
 }
 
 
+// 로고 페이지 이동 함수 -------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  const logos = document.querySelectorAll('c-header');
+
+  function moveToPage() {
+    window.location.href = '/src/pages/main/index.html';
+  }
+
+  logos.forEach(logo => {
+    logo.addEventListener('click', moveToPage);
+  });
+});
+
+
 // 1. 계정에 따른 UI 변경
 // - 신규 회원(막 회원가입 시): 친구 X -> 프로필에 1개만 보여줌
 // - 기존 회원: 친구 O -> 프로필에 여러 개 보여줌
