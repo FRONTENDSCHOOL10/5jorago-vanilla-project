@@ -3,6 +3,58 @@ body {
   background-color: $brand-dark-bg-1;
 }
 
+.render-input {
+  // flex-flow: row nowrap;
+  flex-flow: column wrap;
+  gap: 1rem;
+  .reder-img-list {
+    display: flex;
+  }
+  height: 30rem;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: $brand-dark-bg-1;
+  display: none;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: var(--gray-300, #a6a6a6);
+    font-family: Pretendard;
+    font-size: 1.333rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  h3 {
+    color: var(--gray-300, #a6a6a6);
+    font-family: Pretendard;
+    font-size: 1.333rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  img {
+    width: 15rem;
+    height: 21.6rem;
+    opacity: 0;
+    transform: translateY(5px);
+    animation: fadeIn 0.2s forwards;
+    border-radius: 0.25rem;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 li {
   color: $gray-300;
   font-family: Pretendard;
@@ -16,8 +68,13 @@ li {
 }
 
 .search-container {
+  position: relative;
   width: 100%;
   background-color: $brand-dark-bg-1;
+
+  .search-wraper {
+    width: 100%;
+  }
 }
 .search-bar {
   display: flex;
@@ -67,7 +124,6 @@ li {
 
 // 최근 검색 기록 styles
 .search__recent-searches {
-  width: 14rem;
   width: 8rem;
   flex-grow: 1;
   h2 {
@@ -215,6 +271,10 @@ li {
 //모바일
 
 @media (max-width: $breakpoint-tablet) {
+  .render-input {
+    max-width: 14.1rem;
+    width: 100%;
+  }
   .search__recent-searches {
     display: none;
   }
