@@ -1,19 +1,17 @@
-import { getNode, insertLast } from 'kind-tiger';
+import { getNode, insertLast, getNodes } from 'kind-tiger';
 import cancelIcon from '/public/assets/cancel_1_default.png';
 
 const searchInput = getNode('.search-input');
 const searchButton = getNode('.search-bar button');
-const recentSearchesContainer = getNode('.search__recent-searches--list');
 const noResultElement = getNode('.search__recent-searches--no-result-content');
+const searchGroup = getNode('.search-group');
 
-// 서치기록 렌더링
+// 검색기록 렌더링
 function renderRecentSearch() {
   const recentSearches =
     JSON.parse(localStorage.getItem('recentSearches')) || [];
 
-  if (recentSearches) {
-    recentSearchesContainer.innerHTML = '';
-  }
+  searchGroup.innerHTML = '';
 
   if (recentSearches.length > 0) {
     noResultElement.style.display = 'none';
@@ -25,10 +23,10 @@ function renderRecentSearch() {
           <img src="${cancelIcon}">
         </button>
       </div>`;
-      insertLast(recentSearchesContainer, template);
+      insertLast(searchGroup, template);
     });
 
-    document.querySelectorAll('.delete-btn').forEach((button) => {
+    getNodes('.delete-btn').forEach((button) => {
       button.addEventListener('click', handleDeleteSearch);
     });
   } else {
@@ -79,5 +77,3 @@ function handleDeleteSearch(event) {
 }
 
 searchButton.addEventListener('click', handleRecentSearch);
-
-// renderRecentSearch();
