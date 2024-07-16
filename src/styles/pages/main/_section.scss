@@ -1,4 +1,5 @@
 @use '/src/styles/scss' as *;
+
 .article {
   margin-left: 4.38rem;
   width: 100%;
@@ -7,15 +8,60 @@
 }
 
 .watched-content {
-  // display: none;
+  display: none;
   margin-left: 4.38rem;
+  flex-flow: column wrap;
+  // gap: 1rem;
+
+  .watchedContent__videoTitle{
+    width: 15rem;
+  }
+
+  .swiper-slide{
+    width: 100%;
+    height: 100%;
+  }
+
+  div{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  &__title {
+    color: white;
+    width: 100%;
+  }
   &__container {
     height: 24rem;
-  }
-}
 
-.watched-content .is-active{
-  display: flex;
+    h3 {
+      color: white;
+    }
+  }
+
+  a {
+    display: block;
+    width: 15rem;
+    height: 100%;
+  }
+
+  img {
+    width: 15rem;
+    height: 21.5625rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.313;
+  }
+  &__container {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  span {
+    color: white;
+    @include font(1.333rem, 600, 150%, Pretendard, $gray-200);
+    width: 15rem;
+  }
 }
 
 .sec-1 {

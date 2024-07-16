@@ -1,10 +1,11 @@
 import '/src/components/card-4/_card-4.scss';
-import { insertLast, getNode, getNodes } from 'kind-tiger';
+import { insertLast, getNode } from 'kind-tiger';
 import logo from '/public/assets/tvingoriginal_1.png';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
+import { watchedContent } from '../../pages/main/modules/watchedContent';
 
-async function renderCard4() {
+(async function renderCard4() {
   const article1Wrapper = getNode('.article--swiper1 .swiper-wrapper');
   const data = await pb.collection('main_must_watch').getFullList();
 
@@ -27,17 +28,8 @@ async function renderCard4() {
 
     insertLast(`.article__swiper1--slide${i}`, template);
   }
-  // const imgTags = document.querySelectorAll(
-  //   '.article--swiper1 .swiper-wrapper img'
-  // );
-  // imgTags.addEventListener('clicked', (e) => {
-  //   console.log(e.target);
-  // });
-
-
-}
-
-renderCard4();
+  watchedContent();
+})();
 
 // <source media="(min-width: 768px)" srcset="${vertical2}" />
 //         <source media="(min-width: 320px)" srcset="${vertical3}" />

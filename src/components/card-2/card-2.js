@@ -2,6 +2,7 @@ import '/src/components/card-2/_card-2.scss';
 import { insertLast, getNode } from 'kind-tiger';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
+import { watchedContent } from '../../pages/main/modules/watchedContent';
 
 async function renderCard2() {
   const article3Wrapper = getNode('.article--swiper3 .swiper-wrapper');
@@ -34,6 +35,7 @@ async function renderCard2() {
 
     insertLast(`.article__swiper3--slide${i}`, template);
   }
+
 }
 
 renderCard2();

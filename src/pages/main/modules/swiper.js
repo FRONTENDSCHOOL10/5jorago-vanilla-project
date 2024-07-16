@@ -179,3 +179,15 @@ const swiperEvent = new Swiper('.article__swiper--events', {
     },
   },
 });
+
+const watchedSwiper = new Swiper('.watched-content__container', {
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+  autoplay: {
+    delay: 5000,
+  },
+  slidesPerView: 6,
+  spaceBetween: 1,
+});
