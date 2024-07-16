@@ -7,6 +7,9 @@ import usericon from '/public/assets/usericon_1.png';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
 
+const { isAuth, avatar } = JSON.parse(localStorage.getItem('auth'));
+const userData = await pb.collection('users').getFullList();
+
 // 메인 페이지 컴포넌트
 export class Header extends HTMLElement {
   constructor() {
