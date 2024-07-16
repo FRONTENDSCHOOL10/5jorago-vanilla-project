@@ -1,4 +1,4 @@
-@use "/src/components/header/header";
+@use '/src/components/header/header';
 @use '/src/styles/scss/' as *;
 @use '/src/styles/pages/main/section';
 @use '/src/styles/pages/main/swiper';
@@ -7,35 +7,34 @@
 @use '/src/styles/pages/main/modal';
 
 h2 {
-    // height: rem;
-    // font: unset;
-    color: white;
-    align-items: center;
-    font-family: Pretendard;
-    font-size: 1.77688rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 140%; /* 2.48763rem */
-    margin: 0.75rem 0;
-  }
+  // height: rem;
+  // font: unset;
+  color: white;
+  align-items: center;
+  font-family: Pretendard;
+  font-size: 1.77688rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 2.48763rem */
+  margin: 0.75rem 0;
+}
 
-@media (max-width: $breakpoint-desktop){
-  h2{
+@media (max-width: $breakpoint-desktop) {
+  h2 {
     font-size: 1rem;
   }
 
-  .sec-2{
-
+  .sec-2 {
     height: 10.9rem;
   }
 
-  .sec-3{
+  .sec-3 {
   }
 }
 
 // mobile
-@media (max-width: $breakpoint-tablet){
-  h2{
+@media (max-width: $breakpoint-tablet) {
+  h2 {
     font-size: 0.75019rem;
   }
 }

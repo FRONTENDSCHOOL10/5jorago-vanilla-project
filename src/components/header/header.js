@@ -15,14 +15,14 @@ export class Header extends HTMLElement {
       <header class="header">
       <nav class="nav">
         <div class="header__nav__logo-menu">
-          <a href="#" class="header__logo">
+          <a href="/src/pages/main/" class="header__logo">
             <img src="${logo}" alt="타잉 로고" class="header__logo" />
           </a>
 
           <div class="header__menu-wrapper" aria-orientation="horizontal" >
             <ul class="header__menu">
               <li style="list-style: none">
-                <a href="#" class="header__menu-item" aria-label="Live">
+                <a href="/src/pages/main/" class="header__menu-item" aria-label="Live">
                   <img
                     src="${live}"
                     alt="실시간 라이브 컨텐츠"
@@ -32,17 +32,17 @@ export class Header extends HTMLElement {
                 </a>
               </li>
               <li style="list-style: none">
-                <a href="#" class="header__menu-item" aria-label="TV Programs">
+                <a href="/src/pages/main/" class="header__menu-item" aria-label="TV Programs">
                   <span class="text">TV 프로그램</span>
                 </a>
               </li>
               <li style="list-style: none">
-                <a href="#" class="header__menu-item" aria-label="Movies">
+                <a href="/src/pages/main/" class="header__menu-item" aria-label="Movies">
                   <span class="text">영화</span>
                 </a>
               </li>
               <li style="list-style: none">
-                <a href="#" class="header__menu-item" aria-label="Paramount">
+                <a href="/src/pages/main/" class="header__menu-item" aria-label="Paramount">
                   <img
                     src="${paramount}"
                     alt="파라마운트 플러스 컨텐츠"
@@ -55,7 +55,7 @@ export class Header extends HTMLElement {
         </div>
 
         <div class="aside">
-          <a href="#" aria-label="Search">
+          <a href="/src/pages/search/" aria-label="Search">
             <img
               src="${serch_default}"
               alt="Search Icon"
@@ -77,4 +77,3 @@ export class Header extends HTMLElement {
 }
 
 customElements.define('c-header', Header);
-

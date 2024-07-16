@@ -1,4 +1,3 @@
-
 import '/src/components/input/input.js';
 import '/src/pages/signup/_signup.scss';
 import { Header } from '/src/components/header/header.js';
@@ -10,6 +9,9 @@ const inputNode = inputNodes[0];
 const inputNode2 = inputNodes[1];
 const inputNode3 = inputNodes[2];
 const inputNode4 = inputNodes[3];
+const checkedAll = document.querySelector('input[name=agree_all]');
+const checkboxes = document.querySelectorAll('input[name=agree]');
+
 
 function isValidString(str) {
   const regex = /^[a-zA-Z0-9]{6,12}$/;
@@ -90,13 +92,40 @@ inputNode4.addEventListener('input', (e) => {
 
 
 
+// 전체 동의 체크박스 클릭 이벤트 핸들러
+checkedAll.addEventListener('click', () => {
+  const isChecked = checkedAll.checked;
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = isChecked;
+  });
+});
+
+// 개별 체크박스 클릭 이벤트 핸들러
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener('click', () => {
+    // 모든 체크박스가 체크되어 있는지 확인
+    const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
+    checkedAll.checked = allChecked;
+  });
+});
+
+const specificCheckboxes = Array.from(checkboxes).slice(0, 4); // 특정 4개 체크박스 선택
+const submitButton = document.querySelector('button[type=submit]');
 
 
+function checkButtonStatus() {
+  const allSpecificChecked = specificCheckboxes.every(checkbox => checkbox.checked);
+  
+  
+  submitButton.classList.toggle('on', allSpecificChecked); // 특정 4개 모두 체크되었을 때 'on' 추가
+  submitButton.removeAttribute('disabled');
+}
 
+// 초기 버튼 상태 확인
+checkButtonStatus();
 
-
-
-
-
-
-
+// 각 체크박스에 이벤트 리스너 추가
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', checkButtonStatus);
+});
+checkedAll.addEventListener('change',checkButtonStatus)

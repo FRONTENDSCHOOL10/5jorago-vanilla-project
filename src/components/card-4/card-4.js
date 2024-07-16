@@ -2,7 +2,7 @@ import '/src/components/card-4/_card-4.scss';
 import { insertLast, getNode } from 'kind-tiger';
 import logo from "/public/assets/tvingoriginal_1.png";
 import pb from '/src/api/pocketbase.js';
-import getPbImageURL from '/api/getPbImageURL';
+import getPbImageURL from '/src/api/getPbImageURL';
 
 
 async function renderCard4(){

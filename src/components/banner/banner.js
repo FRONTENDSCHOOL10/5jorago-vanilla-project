@@ -1,17 +1,17 @@
 import '/src/components/banner/_banner.scss';
 import { insertLast, getNode } from 'kind-tiger';
 import pb from '/src/api/pocketbase.js';
-import getPbImageURL from '/api/getPbImageURL';
+import getPbImageURL from '/src/api/getPbImageURL';
 
+(async function () {
+  const data = await pb.collection('main_swiper').getFullList();
+  const bannerWrapper = getNode('.top-banner--swiper .swiper-wrapper');
 
-const data = await pb.collection('main_swiper').getFullList();
-const bannerWrapper = getNode('.top-banner--swiper .swiper-wrapper');
-
-for (let i=0; i< data.length ; i ++){
-  const dataObj = data[i];
-  const imageURL = await getPbImageURL(dataObj);
-  const logoURL = await getPbImageURL(dataObj, 'logo');
-  const template = `
+  for (let i = 0; i < data.length; i++) {
+    const dataObj = data[i];
+    const imageURL = await getPbImageURL(dataObj);
+    const logoURL = await getPbImageURL(dataObj, 'logo');
+    const template = `
   <section class="banner">
         <a href="/src/pages/main/" class="banner__link">
           <div class="banner__link--container">
@@ -38,15 +38,10 @@ for (let i=0; i< data.length ; i ++){
         </a>
       </section>`;
 
-      const slide = document.createElement('div');
-      slide.className = `swiper-slide top-banner__swiper--slide${i}`;
-      bannerWrapper.appendChild(slide);
+    const slide = document.createElement('div');
+    slide.className = `swiper-slide top-banner__swiper--slide${i}`;
+    bannerWrapper.appendChild(slide);
 
-
-      insertLast(`.top-banner__swiper--slide${[i]}`, template);
-}
-
-
-
-
-
+    insertLast(`.top-banner__swiper--slide${[i]}`, template);
+  }
+})();

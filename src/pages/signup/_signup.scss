@@ -56,8 +56,6 @@ section {
 
   input {
     position: absolute;
-    right: 6.6rem;
-    top: 0.2rem;
     appearance: none;
     padding: 0.125rem;
   }
@@ -129,6 +127,11 @@ button {
   font-weight: 600;
   line-height: 150%;
   color: $gray-400;
+  
+}
+.on{
+  background-color: $brand-red-1;
+  color: $white;
 }
 
 @media (max-width: $breakpoint-tablet) {
