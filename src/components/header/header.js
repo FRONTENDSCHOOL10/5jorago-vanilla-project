@@ -4,6 +4,12 @@ import live from '/public/assets/live_1_default.png';
 import serch_default from '/public/assets/search_1_default.png';
 import paramount from '/public/assets/paramount_1_default.png';
 import usericon from '/public/assets/usericon_1.png';
+import pb from '/src/api/pocketbase.js';
+import getPbImageURL from '/src/api/getPbImageURL';
+
+const { isAuth, avatar } = JSON.parse(localStorage.getItem('auth'));
+const userData = await pb.collection('users').getFullList();
+
 
 // 메인 페이지 컴포넌트
 export class Header extends HTMLElement {
@@ -62,7 +68,7 @@ export class Header extends HTMLElement {
               class="header__icon-search"
             />
           </a>
-          <a href="#" aria-label="Profile">
+          <a  href="#" aria-label="Profile">
             <img
               src="${usericon}"
               alt="Profile Icon"
@@ -73,6 +79,23 @@ export class Header extends HTMLElement {
       </nav>
     </header>
     `;
+  }
+
+  connectedCallback() {
+    if (isAuth) {
+      const logoImg = this.shadowRoot.querySelector('.header__icon-profile');
+      const localAuth = JSON.parse(localStorage.getItem('auth'));
+      const localName = localAuth.user.name;
+      console.log(localName);
+      logoImg.src = '/public/assets/18age_1.png';
+
+      for (let data of userData) {
+        if (localName === data.name) {
+
+          logoImg.src = `${getPbImageURL(data, 'avatar')}`;
+        }
+      }
+    }
   }
 }
 
