@@ -7,10 +7,6 @@ import usericon from '/public/assets/usericon_1.png';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
 
-const { isAuth, avatar } = JSON.parse(localStorage.getItem('auth'));
-const userData = await pb.collection('users').getFullList();
-
-
 // 메인 페이지 컴포넌트
 export class Header extends HTMLElement {
   constructor() {
@@ -81,17 +77,16 @@ export class Header extends HTMLElement {
     `;
   }
 
-  connectedCallback() {
+  async connectedCallback() {
+    const { isAuth, avatar } = JSON.parse(localStorage.getItem('auth'));
     if (isAuth) {
       const logoImg = this.shadowRoot.querySelector('.header__icon-profile');
       const localAuth = JSON.parse(localStorage.getItem('auth'));
       const localName = localAuth.user.name;
-      console.log(localName);
-      logoImg.src = '/public/assets/18age_1.png';
 
+      const userData = await pb.collection('users').getFullList();
       for (let data of userData) {
         if (localName === data.name) {
-
           logoImg.src = `${getPbImageURL(data, 'avatar')}`;
         }
       }
