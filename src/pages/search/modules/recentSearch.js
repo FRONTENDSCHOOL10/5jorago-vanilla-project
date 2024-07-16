@@ -3,17 +3,20 @@ import cancelIcon from '/public/assets/cancel_1_default.png';
 
 const searchInput = getNode('.search-input');
 const searchButton = getNode('.search-bar button');
-const recentSearchesContainer = getNode('.search__recent-searches--list');
+const recentSearchesContainer = getNode('.search-box');
 const noResultElement = getNode('.search__recent-searches--no-result-content');
+
+// 페이지 로드 시 최근 검색어 목록을 확인하고 렌더링하는 함수
+document.addEventListener('DOMContentLoaded', () => {
+  renderRecentSearch();
+});
 
 // 서치기록 렌더링
 function renderRecentSearch() {
   const recentSearches =
     JSON.parse(localStorage.getItem('recentSearches')) || [];
 
-  if (recentSearches) {
-    recentSearchesContainer.innerHTML = '';
-  }
+  recentSearchesContainer.innerHTML = '';
 
   if (recentSearches.length > 0) {
     noResultElement.style.display = 'none';
@@ -79,5 +82,3 @@ function handleDeleteSearch(event) {
 }
 
 searchButton.addEventListener('click', handleRecentSearch);
-
-// renderRecentSearch();

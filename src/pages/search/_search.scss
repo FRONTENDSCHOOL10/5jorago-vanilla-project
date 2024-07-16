@@ -67,6 +67,7 @@ li {
 
 // 최근 검색 기록 styles
 .search__recent-searches {
+  width: 14rem;
   flex-grow: 1;
   h2 {
     color: $gray-200;
@@ -174,6 +175,7 @@ li {
 
 @media (min-width: $breakpoint-desktop) {
   .search__recent-searches {
+    width: 14rem;
     h2 {
       font-size: 1.77688rem;
     }
