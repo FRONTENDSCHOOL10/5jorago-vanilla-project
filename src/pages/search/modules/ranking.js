@@ -9,7 +9,6 @@ async function renderDate() {
 
   for (let i = 0; i < data.length; i++) {
     const dataObj = data[i];
-    console.log(dataObj);
 
     const template = `
   <span class="search__popular-searches--rank">${dataObj.rank}</span>

@@ -87,7 +87,12 @@ export class Header extends HTMLElement {
       const userData = await pb.collection('users').getFullList();
       for (let data of userData) {
         if (localName === data.name) {
-          logoImg.src = `${getPbImageURL(data, 'avatar')}`;
+          if (data.avatar.length > 1) {
+            let avatars = data.avatar[0];
+            logoImg.src = `${import.meta.env.VITE_PB_API}/files/${data.collectionId}/${data.id}/${avatars}`;
+          } else {
+            logoImg.src = `${getPbImageURL(data, 'avatar')}`;
+          }
         }
       }
     }

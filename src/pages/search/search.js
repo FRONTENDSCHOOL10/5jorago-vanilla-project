@@ -5,3 +5,4 @@ import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
 import './modules/recentSearch';
 import './modules/ranking';
+import './modules/recentSearch2';
