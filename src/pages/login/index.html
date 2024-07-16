@@ -17,7 +17,7 @@
           <div class="content--head">
             <h2 class="head--title">TVING ID 로그인</h2>
           </div>
-          <div class="input-form">
+          <!-- <div class="input-form">
             <div class="input-component">
               <label for="user-id"></label>
               <input
@@ -42,16 +42,41 @@
                 required=""
               />
             </div>
-          </div>
-        </div>
-        <div class="checkboxwraper">
-          <div class="tooltip-group" role="group" aria-label="tooltip-group">
-            <div class="btn-check">
-              <input type="checkbox" class="checkbox" name="agree" id="agree" />
-              <label for="agree">자동로그인</label>
+          </div> -->
+          <div class="input-form">
+            <div class="input-component">
+              <label for="user-id"></label>
+              <input
+                placeholder="아이디"
+                class="input-component--input"
+                type="text"
+                id="user-id"
+                name="user-id"
+                pattern="^[a-zA-Z0-9]{6,12}$"
+                required=""
+              />
+              <p id="user-id-error" class="error-message"></p>
+            </div>
+            <div class="input-component">
+              <label for="user-pw"></label>
+              <input
+                placeholder="비밀번호"
+                class="input-component--input"
+                type="password"
+                id="user-pw"
+                name="user-pw"
+                pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~!@#$%^&*])[a-zA-Z\d~!@#$%^&*]{8,15}$"
+                required=""
+              />
+              <p id="user-pw-error" class="error-message"></p>
             </div>
           </div>
         </div>
+        <div class="btn-check" role="group" aria-label="tooltip-group">
+          <input type="checkbox" class="checkbox" name="agree" id="agree" />
+          <label for="agree">자동로그인</label>
+        </div>
+
         <button class="login-btn">
           <label>로그인하기</label>
         </button>

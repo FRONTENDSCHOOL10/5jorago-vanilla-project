@@ -85,16 +85,38 @@ body {
     @include font(1.77688rem, 400, 160%);
 }
 
-.checkboxwrapper {
-    display: flex;
-    width: 45.75rem;
-}
+// .checkboxwrapper {
+//     display: flex;
+//     width: 45.75rem;
+// }
+
+//.btn-check {
+// display: flex;
+// padding: 1rem 0rem 2rem 0rem;
+// align-items: center;
+// gap: 0.75rem;
+//}
 
 .btn-check {
-    display: flex;
     padding: 1rem 0rem 2rem 0rem;
-    align-items: center;
-    gap: 0.75rem;
+    // position: relative;
+
+    input {
+        position: absolute;
+        appearance: none;
+        padding: 0.125rem;
+    }
+
+    label {
+        background: url('/public/assets/defaultCircle_1.png') no-repeat 0 0 / contain;
+        padding-left: 2.25rem;
+        // padding-bottom: 0.0625rem;
+
+    }
+
+    input:checked+label {
+        background-image: url('/public/assets/activeCircle_1.png');
+    }
 }
 
 .btn-check>label {
@@ -105,7 +127,6 @@ body {
 .checkbox {
     width: 1.625rem;
     height: 1.625rem;
-    padding: 0.1875rem;
 }
 
 .login-btn {
@@ -142,7 +163,6 @@ body {
     @include font(1.333rem, 400, 2.13281rem);
 }
 
-//
 .line {
     width: 0.0625rem;
     height: 1.125rem;
@@ -158,6 +178,12 @@ body {
 .infojoinwrapper>span {
     color: var(--gray-500, #6B6B6B);
     @include font(1.333rem, 400, 2.13281rem);
+}
+
+.error-message {
+    color: var(--gray-500, #6B6B6B);
+    @include font(1.333rem, 400, 160%);
+    // @include font(1.333rem, 600, 150%);
 }
 
 // 태블릿 반응형 구현
@@ -195,18 +221,19 @@ body {
         @include font(1rem, 400, 160%);
     }
 
-    .checkboxwrapper {
-        width: 26rem;
-        height: 2.875rem;
-        padding: 0.75rem 0rem 1rem 0rem;
-    }
+    // .checkboxwrapper {
+    //     width: 26rem;
+    //     height: 2.875rem;
+    //     padding: 0.75rem 0rem 1rem 0rem;
+    // }
 
-    .btn-check {
-        gap: 0.25rem;
-    }
+    // .btn-check {
+    //     gap: 0.25rem;
+    // }
 
     .btn-check>label {
         @include font(0.75019rem, 600, 1.12531rem);
+        padding-left: 1.5rem;
     }
 
     .checkbox {
@@ -253,6 +280,11 @@ body {
     }
 }
 
+// .error-message {
+//     @include font(0.75019rem, 600, 1.9995rem);
+// }
+
+
 // 모바일 반응형 구현
 @media (max-width: $breakpoint-tablet) {
 
@@ -297,19 +329,20 @@ body {
         @include font(0.75019rem, 400, 1.20031rem);
     }
 
-    .checkboxwrapper {
-        width: 18rem;
-        height: 2.6875rem;
-        padding: 0.5rem 0rem 1rem 0rem;
-        align-items: flex-start;
-    }
+    // .checkboxwrapper {
+    //     width: 18rem;
+    //     height: 2.6875rem;
+    //     padding: 0.5rem 0rem 1rem 0rem;
+    //     align-items: flex-start;
+    // }
 
-    .btn-check {
-        gap: 0.25rem;
-    }
+    // .btn-check {
+    //     gap: 0.25rem;
+    // }
 
     .btn-check>label {
         @include font(0.75019rem, 600, 1.12531rem);
+        // padding-left: 1.25rem;
     }
 
     .line {
@@ -355,3 +388,15 @@ body {
         @include font(0.75019rem, 400, 1.20031rem);
     }
 }
+
+// .user-id-error {
+//     @include font(0.75019rem, 600, 1.12531rem);
+// }
+
+// .user-pw-error {
+//     @include font(0.75019rem, 600, 1.12531rem);
+// }
+
+// .error-message {
+//     @include font(1.333rem, 400, 1.12531rem);
+// }
