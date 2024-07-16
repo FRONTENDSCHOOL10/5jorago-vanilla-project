@@ -1,6 +1,10 @@
 @use 'src/styles/scss/' as *;
 // 테스트 하려고 넣음
 
+.search-list-group {
+  width: 50rem;
+}
+
 .search__recent-searches {
   @include size(
     $search__recent-searches--width,
