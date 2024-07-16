@@ -2,7 +2,7 @@ import '/src/components/input/input.js';
 import '/src/pages/signup/_signup.scss';
 import { Header } from '/src/components/header/header.js';
 import { Footer } from '/src/components/footer/footer.js';
-import { getNode, getNodes } from 'kind-tiger';
+import { getNode, getNodes, getPbImageURL } from 'kind-tiger';
 import pb from '/src/api/pocketbase';
 import { ClientResponseError } from 'pocketbase';
 
@@ -13,13 +13,21 @@ const inputNode3 = inputNodes[2];
 const inputNode4 = inputNodes[3];
 const checkedAll = document.querySelector('input[name=agree_all]');
 const checkboxes = document.querySelectorAll('input[name=agree]');
-
 //객체로 만들고 키벨류로 만들기
+const defaultAvatarUrl = '/public/assets/facebook-1.png';
+
+// console.log(
+//   getPbImageURL(pb.collection('default').getOne('ptez07w3bofbpy5'), 'field')
+// );
+
+// console.log(pb.collection('default').getOne('ptez07w3bofbpy5'));
+// getPbImageURL(pb.collection('default').getOne('ptez07w3bofbpy5'));
 let usersData = {
   username: '',
   password: '',
   passwordConfirm: '',
   email: '',
+  avtar: defaultAvatarUrl,
 };
 
 function isValidString(str) {
@@ -182,6 +190,7 @@ submitButton.addEventListener('click', async () => {
         password,
         passwordConfirm,
         username,
+        avatar: defaultAvatarUrl,
       });
 
       console.log('유저 생성 성공:', record);
@@ -192,6 +201,7 @@ submitButton.addEventListener('click', async () => {
         password: '',
         passwordConfirm: '',
         email: '',
+        avatar: defaultAvatarUrl,
       };
     } catch (error) {
       console.error('유저 생성 실패:', error);
