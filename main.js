@@ -14,6 +14,15 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 
+// GSAP 애니메이션 -------------------------------
+gsap.from([".section-1__text-box", ".button1", ".text-box", ".section-3__swiper-box"], {
+  opacity: 0,
+  y: 50, // 아래에서 위로 올라오는 애니메이션
+  duration: 1,
+  stagger: 0.6 // 올라오는 카드 간의 시간 간격
+});
+
+
 // 랜딩 버튼 페이지 이동 함수 -------------------------------
 document.addEventListener('DOMContentLoaded', function () {
   const button = document.querySelectorAll('.button');
@@ -146,7 +155,7 @@ async function bottomSwiper() {
 
       1024: {
         speed: 7000,
-        spaceBetween: -280, 
+        spaceBetween: -280,
       }
     }
   }
