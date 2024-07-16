@@ -1,4 +1,4 @@
-import { getNode, insertLast, getNodes } from 'kind-tiger';
+import { getNode, insertLast } from 'kind-tiger';
 import cancelIcon from '/public/assets/cancel_1_default.png';
 
 const searchInput = getNode('.search-input');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderRecentSearch();
 });
 
-// 검색기록 렌더링
+// 서치기록 렌더링
 function renderRecentSearch() {
   const recentSearches =
     JSON.parse(localStorage.getItem('recentSearches')) || [];
@@ -28,10 +28,10 @@ function renderRecentSearch() {
           <img src="${cancelIcon}">
         </button>
       </div>`;
-      insertLast(searchGroup, template);
+      insertLast(recentSearchesContainer, template);
     });
 
-    getNodes('.delete-btn').forEach((button) => {
+    document.querySelectorAll('.delete-btn').forEach((button) => {
       button.addEventListener('click', handleDeleteSearch);
     });
   } else {
