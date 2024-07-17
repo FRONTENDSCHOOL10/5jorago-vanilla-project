@@ -19,13 +19,11 @@
 
   img{
     max-width: 132.75rem;
-    width: 90%;
+    width: 92%;
+    height: 100%;
     margin-left: 4.375rem;
     left: 23.6rem;
     max-height: 11.0625rem;
-    // margin: 2.25rem 4.375rem; 
-    // padding: 30px;
-    // margin: 10px;
 
   }
 
@@ -35,7 +33,7 @@
   display: block;
   justify-content: center;
   flex-flow: row nowrap;
-  width: 21.74369rem;
+  // width: 21.74369rem;
   height: 7.5rem;
   // flex-shrink: 0;
 
@@ -71,6 +69,9 @@
 
 
 @media (max-width: $breakpoint-desktop){
+  .promo-banner{
+    width: 90%;
+  }
   .event-group{
     img{
       width: 13.375rem;

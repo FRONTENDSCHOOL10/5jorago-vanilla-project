@@ -44,6 +44,9 @@
 @media (max-width: $breakpoint-desktop) {
   .banner__link__container--group {
     width: 20rem;
+    img{
+      max-width: 20rem;
+    }
   }
 
   .banner__link__container__group--desc {
@@ -54,21 +57,29 @@
 // 모바일
 @media (max-width: $breakpoint-tablet) {
   .banner__link__container--group {
-    width: 16rem;
+    // width: 12rem;
     bottom: 1.6rem;
+    img{
+      max-width: 8rem;
+    }
   }
 
   .banner__link__container__group--desc {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: $breakpoint-mobile) {
   .banner__link__container--group {
-    width: 5rem;
+    max-width: 8rem;
+    width: 100%;
+    img{
+      max-width: 5rem;
+    }
   }
 
   .banner__link__container__group--desc {
     font-size: 0.5rem;
+    width: 100%;
   }
 }
