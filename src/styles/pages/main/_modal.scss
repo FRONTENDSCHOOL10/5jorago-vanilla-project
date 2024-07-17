@@ -1,42 +1,42 @@
 .modal {
-            display: none; /* 기본적으로 모달 숨김 */
-            position: fixed;
-            justify-content: center;
-            align-self: start;
-            background: #000;
-            z-index: 100;
-            width: 100%;
-            height: 100%;
-        }
-        .modal__container {
-            position: absolute;
-            z-index: 100;
-            transform: translate(0%, 20%);
-        }
-        .modal__container img {
-            width: 25rem;
-            height: auto;
-        }
-        .modal__container__buttons {
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-        .modal__container__buttons button {
-            color: white;
-            padding: 1rem 3rem;
-            display: flex;
-            justify-content: center;
-            font-family: Pretendard;
-            font-size: 1rem;
-            font-weight: 400;
-        }
-        .modal__container__buttons hr {
-            height: 1rem;
-            top: 0.53rem;
-        }
-        .modal.is-clicked {
-            display: none;
-        }
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-self: start;
+  background: #000;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+.modal__container {
+  position: absolute;
+  z-index: 100;
+  transform: translate(0%, 20%);
+}
+.modal__container img {
+  width: 25rem;
+  height: auto;
+}
+.modal__container__buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.modal__container__buttons button {
+  color: white;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: center;
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.modal__container__buttons hr {
+  height: 1rem;
+  top: 0.53rem;
+}
+.modal.is-clicked {
+  display: none;
+}
