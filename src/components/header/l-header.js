@@ -11,7 +11,7 @@ export class Header extends HTMLElement {
       <header class="header" style="background-color: transparent;">
       <nav class="nav">
         <div class="header__nav__logo-menu">
-          <a href="#" class="header__logo">
+          <a href="/" class="header__logo">
             <img src="${logo}" alt="Logo" class="header__logo" />
           </a>
         </div>
@@ -22,4 +22,3 @@ export class Header extends HTMLElement {
 }
 
 customElements.define('c-header', Header);
-
