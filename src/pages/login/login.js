@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const userIdError = document.querySelector('#user-id-error');
   const passwordError = document.querySelector('#user-pw-error');
 
-  const authData = JSON.parse(localStorage.getItem('auth'));
+  const { isAuth } = JSON.parse(localStorage.getItem('auth'));
 
-  if (!authData || !authData.isAuth) {
+  if (!isAuth) {
     localStorage.clear();
     localStorage.setItem('auth', JSON.stringify(defaultAuthData));
   }
