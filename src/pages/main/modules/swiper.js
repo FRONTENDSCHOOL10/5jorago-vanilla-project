@@ -25,6 +25,21 @@ const swiper = new Swiper('.top-banner--swiper', {
   },
   cssMode: true,
 });
+const stopButton = document.querySelector('.slide-btn i');
+let isPlaying = true;
+
+stopButton.addEventListener('click', function () {
+  if (isPlaying) {
+    swiper.autoplay.stop();
+    stopButton.classList.remove('fa-pause');
+    stopButton.classList.add('fa-play');
+  } else {
+    swiper.autoplay.start();
+    stopButton.classList.remove('fa-play');
+    stopButton.classList.add('fa-pause');
+  }
+  isPlaying = !isPlaying;
+});
 
 /* 티빙에서 꼭봐야하는 컨텐츠 스와이퍼 */
 const swiper1 = new Swiper('.article--swiper1', {
@@ -59,6 +74,10 @@ const swiper1 = new Swiper('.article--swiper1', {
 
 /* Quick VOD 스와이퍼 */
 const swiper2 = new Swiper('.article--swiper2', {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
@@ -120,6 +139,10 @@ const swiper3 = new Swiper('.article--swiper3', {
 
 /* 인기 라이브 채널 */
 const swiper4 = new Swiper('.article--swiper4', {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
@@ -160,6 +183,10 @@ const swiper4 = new Swiper('.article--swiper4', {
 
 /* 오직 티빙에만 있어요 스와이퍼 */
 const swiper5 = new Swiper('.article--swiper5', {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
@@ -190,6 +217,10 @@ const swiper5 = new Swiper('.article--swiper5', {
 /* 이벤트 스와이퍼 */
 
 const swiperEvent = new Swiper('.article__swiper--events', {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
@@ -217,6 +248,10 @@ const swiperEvent = new Swiper('.article__swiper--events', {
 });
 
 const watchedSwiper = new Swiper('.watched-content__container', {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
