@@ -102,6 +102,10 @@ li {
   gap: 2.19rem;
   margin-top: 3rem;
 }
+.search-input:focus {
+  outline: none;
+}
+
 .search-input {
   border: none;
   box-sizing: border-box;
