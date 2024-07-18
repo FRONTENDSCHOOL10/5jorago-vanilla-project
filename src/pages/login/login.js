@@ -29,15 +29,37 @@ document.addEventListener('DOMContentLoaded', () => {
     return regex.test(password);
   }
 
-  const validateInput = throttle(() => {
+  //   const validateInput = throttle(() => {
+  //     const idValue = userIdInput.value;
+  //     const pwValue = passwordInput.value;
+
+  //     if (isValidString(idValue)) {
+  //       userIdError.textContent = "";
+  //     } else {
+  //       userIdError.textContent = "형식이 맞지 않습니다";
+  //     }
+
+  //     if (isValidPassword(pwValue)) {
+  //       passwordError.textContent = "";
+  //     } else {
+  //       passwordError.textContent = "형식이 맞지 않습니다";
+  //     }
+  //   }, 1000);
+
+  // ID 입력 필드 유효성 검사
+  const validateUserId = throttle(() => {
     const idValue = userIdInput.value;
-    const pwValue = passwordInput.value;
 
     if (isValidString(idValue)) {
       userIdError.textContent = '';
     } else {
       userIdError.textContent = '형식이 맞지 않습니다';
     }
+  }, 1000);
+
+  // 비밀번호 입력 필드 유효성 검사
+  const validatePassword = throttle(() => {
+    const pwValue = passwordInput.value;
 
     if (isValidPassword(pwValue)) {
       passwordError.textContent = '';
@@ -47,8 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1000);
 
   // 입력 이벤트에 검증 함수 연결
-  userIdInput.addEventListener('input', validateInput);
-  passwordInput.addEventListener('input', validateInput);
+  userIdInput.addEventListener('input', validateUserId);
+  passwordInput.addEventListener('input', validatePassword);
 
   loginButton.addEventListener('click', async (event) => {
     event.preventDefault();
