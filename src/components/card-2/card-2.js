@@ -19,7 +19,7 @@ async function renderCard2() {
     const template = `
       <div class="card-section">
         <div class="card">
-          <a href="/src/pages/main/"><img class="card--img" src="${imageURL}" alt="${dataObj.title}" /></a>
+          <a href="/src/pages/main/"><img class="card--img" src="${imageURL}" alt="${dataObj.title}" width="100%" height="100%"/></a>
           <div class="card--wrapper">
             <span class="card__wrapper--rank">${dataObj.rank}</span>
             <div class="scrap">

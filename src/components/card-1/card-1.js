@@ -20,7 +20,7 @@ async function renderCard3() {
         <img
           class="quickVOD__content-img"
           src="${imageURL}"
-          alt="${dataObj.sub_title}"
+          alt="${dataObj.sub_title}" width="100%" height="100%"
         />
         <span class="quickVOD__title">${dataObj.sub_title}</span>
       </a>

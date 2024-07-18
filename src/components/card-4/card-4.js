@@ -16,7 +16,7 @@ import { animation } from '/src/pages/main/modules/animation';
     const template = `
     <div class="mainFirstCard">
       <a href="/src/pages/main/">
-        <img src="${imageURL}" alt="${dataObj.title}" />
+        <img src="${imageURL}" alt="${dataObj.title}" width="100%" height="100%" />
         <div class="mainFirstCard--card"></div>
         <img class="logo" src="${logo}" alt="타잉 오리지널 로고" />
         <span class="mainFirstCard__videoTitle">${dataObj.title}</span>

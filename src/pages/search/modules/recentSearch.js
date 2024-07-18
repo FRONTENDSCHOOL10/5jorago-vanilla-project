@@ -25,7 +25,7 @@ function renderRecentSearch() {
       <div class="search-list-group" data-index="${index}">
         <li>${search}</li>
         <button type="button" class="delete-btn">
-          <img src="${cancelIcon}">
+          <img src="${cancelIcon}" alt="검색어 삭제 버튼">
         </button>
       </div>`;
       insertLast(recentSearchesContainer, template);

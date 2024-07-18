@@ -2,8 +2,7 @@ import '/src/components/card-3/_card-3.scss';
 import { insertLast, getNode } from 'kind-tiger';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
-import { watchedContent } from '../../pages/main/modules/watchedContent';
-import { animation } from '../../pages/main/modules/animation';
+import { animation } from '/src/pages/main/modules/animation';
 
 async function renderCard3() {
   const article3Wrapper = getNode('.article--swiper4 .swiper-wrapper');
@@ -22,6 +21,8 @@ async function renderCard3() {
                 class="liveChannel__content-img"
                 src="${imageURL}"
                 alt="${dataObj.title}"
+                width="100%" height="100%"
+                
             />
             <div class="liveChannel__wrap">
                 <div class="liveChannel__icon">    

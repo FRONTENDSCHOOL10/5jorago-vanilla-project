@@ -1,28 +1,25 @@
 import { getNodes, getNode, insertLast } from 'kind-tiger';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
-import defaultAuthData from '/src/api/defaultAuth.js';
 import { watchedAnimation } from './animation';
 
 const watchedContainer = getNode('.watched-content__container .swiper-wrapper');
 const userName = getNode('.watched-content h2');
 
-// 'auth' 데이터 가져오기
-const authData = JSON.parse(localStorage.getItem('auth'));
+// localStorage에서 'auth' 데이터 가져오기
+const { user } = JSON.parse(localStorage.getItem('auth'));
+const watchedContentList =
+  JSON.parse(localStorage.getItem('watchedContentList')) || [];
 
-if (!authData || !authData.isAuth) {
-  localStorage.clear();
-  localStorage.setItem('auth', JSON.stringify(defaultAuthData));
-}
-
+// 컨텐츠 로컬에 저장 함수
 function addWatchedContent(content) {
-  const watchedContentList =
-    JSON.parse(localStorage.getItem('watchedContentList')) || [];
-  const existingIndex = watchedContentList.findIndex(
+  const existing = watchedContentList.find(
     (item) => item.title === content.title
   );
-  if (existingIndex === -1) {
+
+  if (!existing) {
     watchedContentList.push(content);
+
     if (watchedContentList.length > 10) watchedContentList.shift();
     localStorage.setItem(
       'watchedContentList',
@@ -31,57 +28,58 @@ function addWatchedContent(content) {
   }
 }
 
+// 템플릿 형성 함수
 function createTemplate(imgURL, title) {
   return `
     <div class="swiper-slide">
       <a href="/src/pages/main/">
-        <img src="${imgURL}" alt="${title}"/>
+        <img src="${imgURL}" alt="${title}" width="100%" height="100%"/>
         <span class="watchedContent__videoTitle">${title}</span>
       </a>
     </div>`;
 }
 
-async function displayStoredContent() {
-  const watchedContentList =
-    JSON.parse(localStorage.getItem('watchedContentList')) || [];
+async function renderWatchedContents() {
   if (watchedContentList.length > 0) {
-    const data = await pb.collection('watched').getFullList();
-    for (const storedContent of watchedContentList) {
-      const content = data.find((item) => item.title === storedContent.title);
-      if (content) {
-        const imgURL = await getPbImageURL(content);
-        const template = createTemplate(imgURL, content.title);
+    for (const content of watchedContentList) {
+      const selectedData = await pb.collection('watched').getFullList({
+        filter: `title = '${content.title}'`,
+      });
+
+      if (selectedData) {
+        const imgURL = await getPbImageURL(selectedData[0]);
+        const template = createTemplate(imgURL, selectedData[0].title);
         insertLast(watchedContainer, template);
       }
     }
-    if (authData && authData.user) {
-      userName.textContent = `${authData.user.name}님이 시청하는 컨텐츠`;
-      getNode('.watched-content').style.display = 'block';
-    }
+
+    userName.textContent = `${user.name}님이 시청하는 컨텐츠`;
+    getNode('.watched-content').style.display = 'block';
   }
-  watchedAnimation();
+  watchedAnimation(); // 랜더링 후 애니메이션 실행
 }
 
-async function handleTarget(e, data) {
+async function renderNewContent(e, data) {
   const title = e.target.getAttribute('alt');
-  const watchedContentList =
-    JSON.parse(localStorage.getItem('watchedContentList')) || [];
-  if (title && !watchedContentList.some((item) => item.title === title)) {
+
+  if (title) {
     const content = data.find((item) => item.title === title);
     if (content) {
       const imgURL = await getPbImageURL(content);
       const template = createTemplate(imgURL, title);
       insertLast(watchedContainer, template);
-      addWatchedContent({ title, template });
+      addWatchedContent({ title });
     }
+  } else {
+    throw new Error('해당하는 제목의 컨텐츠가 없습니다.');
   }
 }
 
 export async function watchedContent() {
-  await displayStoredContent();
+  await renderWatchedContents();
   const allContents = getNodes('.article a');
   const data = await pb.collection('watched').getFullList();
   allContents.forEach((content) => {
-    content.addEventListener('click', (e) => handleTarget(e, data));
+    content.addEventListener('click', (e) => renderNewContent(e, data));
   });
 }

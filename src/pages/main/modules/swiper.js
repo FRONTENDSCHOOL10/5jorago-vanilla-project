@@ -255,9 +255,6 @@ const watchedSwiper = new Swiper('.watched-content__container', {
     enabled: true,
     onlyInViewport: true,
   },
-  autoplay: {
-    delay: 5000,
-  },
   slidesPerView: 6,
   spaceBetween: 4,
   breakpoints: {

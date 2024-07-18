@@ -5,15 +5,12 @@ import serch_default from '/assets/search_1_default.png';
 import paramount from '/assets/paramount_1_default.png';
 import usericon from '/assets/usericon_1.png';
 import pb from '/src/api/pocketbase.js';
-import getPbImageURL from '/src/api/getPbImageURL';
 import defaultAuth from '/src/api/defaultAuth';
-import { insertLast, getNode, setStorage, getStorage } from 'kind-tiger';
+import { setStorage, getStorage } from 'kind-tiger';
 
 async function fetchData() {
   const { user } = JSON.parse(localStorage.getItem('auth'));
   const userData = await pb.collection('users').getOne(user.id);
-  console.log(userData);
-  console.log(user);
   const dataName = userData.name;
   const profileImg = `${import.meta.env.VITE_PB_API}/files/${user.collectionId}/${user.id}/${user.avatar[0]}`;
 
