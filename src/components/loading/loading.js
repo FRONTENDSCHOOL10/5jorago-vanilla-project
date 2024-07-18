@@ -15,6 +15,9 @@ const html = document.querySelector('html');
 html.style.overflow = 'hidden';
 window.addEventListener('load', () => {
   loading.style.opacity = '0';
-  html.style.overflow = 'auto';
-  loading.style.display = 'none';
+  loading.style.transition = 'opacity 0.7s ease';
+  setTimeout(() => {
+    html.style.overflow = 'auto';
+    loading.style.display = 'none';
+  }, 500);
 });

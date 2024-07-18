@@ -16,7 +16,7 @@ async function renderCard5() {
     const template = `
   <div class="swiper-slide article__swiper5--slide${i}">
     <a href="/src/pages/main/">
-    <img src="${getPbImageURL(dataObj)}" alt="${dataObj.title}" />
+    <img src="${getPbImageURL(dataObj)}" alt="${dataObj.title}" width="100%" height="100%" />
     </a>
   </div>
   `;
@@ -36,7 +36,7 @@ async function renderEvent() {
     const template = `
   <div class="swiper-slide article__swiper6--slide${i}">
     <a href="/src/pages/main/">
-    <img src="${getPbImageURL(dataObj2)}" alt="${dataObj2.title}" />
+    <img src="${getPbImageURL(dataObj2)}" alt="${dataObj2.title}" width="100%" height="100%"/>
     </a>
   </div>
   `;
@@ -46,3 +46,4 @@ async function renderEvent() {
 }
 
 renderEvent();
+window.scrollTo(0, 0);
