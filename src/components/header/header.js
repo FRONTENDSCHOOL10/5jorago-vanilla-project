@@ -8,7 +8,7 @@ import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
 import defaultAuth from '/src/api/defaultAuth';
 const localAuth = JSON.parse(localStorage.getItem('auth'));
-import { insertLast, getNode, setStorage } from 'kind-tiger';
+import { insertLast, getNode, setStorage, getStorage } from 'kind-tiger';
 const localName = localAuth.user.name;
 
 const userData = await pb.collection('users').getFullList();
@@ -95,8 +95,8 @@ export class Header extends HTMLElement {
                     <a href="/src/pages/main/">
                       <li>이용권</li>
                     </a>
-                    <a href="">
-                      <li>회원탈퇴</li>
+                    <a>
+                      <li id="withdrawal">회원탈퇴</li>
                     </a>
                     <a href="">
                       <li id="logoutButton" class="logoutButton">로그아웃</li>
@@ -130,6 +130,7 @@ export class Header extends HTMLElement {
     const closeButton = logoutModal.querySelector('.logout-close');
     const cancelLogoutButton = logoutModal.querySelector('.cancelLogout');
     const confirmLogoutButton = logoutModal.querySelector('.confirmLogout');
+    const withdrawal = this.shadowRoot.querySelector('#withdrawal');
 
     profileIcon.addEventListener('mouseenter', () => {
       profileModal.classList.add('is-active');
@@ -181,6 +182,22 @@ export class Header extends HTMLElement {
         }
       }
     }
+    withdrawal.addEventListener('click', async () => {
+      try {
+        let user = await getStorage('auth');
+        const userId = user.user['id'];
+        console.log('Attempting to delete user with ID:', userId);
+
+        await pb.collection('users').delete(userId);
+        console.log('User deleted successfully');
+        setStorage('auth', defaultAuth);
+
+        // 추가적인 작업 (예: 로그아웃, 페이지 리다이렉트 등)
+      } catch (error) {
+        console.error('Error deleting user:', error);
+        // 사용자에게 오류 메시지 표시
+      }
+    });
   }
 }
 
