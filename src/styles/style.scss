@@ -1,5 +1,9 @@
 @use '/src/styles/scss' as *;
 
+.swiper-wrapper{
+  -webkit-transition-timing-function:linear !important; transition-timing-function:linear !important; 
+}
+
 body {
   font-family: $search--font-family;
   background-color: $black;

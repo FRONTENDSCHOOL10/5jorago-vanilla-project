@@ -52,6 +52,8 @@ async function topSwiper() {
   const data2 = await pb.collection('render_contents').getOne('rki6i5rdc9u7mnr');
   const swiperWrapper = document.querySelector('.swiper-wrapper');
 
+  let swiper; // Swiper 인스턴스 변수
+
   // 이미지 데이터를 기반으로 슬라이드를 로드하는 함수
   function loadImages(imageData) {
     swiperWrapper.innerHTML = ''; // 기존 이미지 초기화
@@ -98,6 +100,19 @@ async function topSwiper() {
     return new Swiper('.swiper', SWIPER_OPTIONS);
   }
 
+
+  // 이미지 경로를 업데이트하고 Swiper를 재설정하는 함수
+  function updateAndResetSwiper(imageData) {
+    updateImagePaths(imageData); // 이미지 경로 업데이트
+
+    if (swiper) {
+      swiper.destroy(true, true); // 기존 Swiper 인스턴스 파기
+    }
+    
+    swiper = initializeSwiper(); // Swiper 새로 초기화
+  }
+
+
   // 이미지 경로를 업데이트하는 함수
   function updateImagePaths(imageData) {
     const images = swiperWrapper.querySelectorAll('.swiper-slide img');
@@ -109,13 +124,13 @@ async function topSwiper() {
 
   // 처음 로드 시 적절한 이미지를 로드하고 Swiper를 초기화
   loadImages(data); // 초기에는 큰 화면의 이미지를 로드
-  let swiper = initializeSwiper();
+  swiper = initializeSwiper(); // Swiper 초기화
 
-  // 창 크기 변경 시 이미지 경로만 업데이트
+
+  // 창 크기 변경 시 이미지 경로만 업데이트하고 Swiper 재설정
   window.addEventListener('resize', () => {
     const imageData = window.innerWidth >= 1024 ? data : data2;
-    updateImagePaths(imageData);
-    swiper.update(); // Swiper 업데이트
+    updateAndResetSwiper(imageData);
   });
 }
 
