@@ -18,48 +18,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const userIdError = document.querySelector('#user-id-error');
   const passwordError = document.querySelector('#user-pw-error');
 
-  const { isAuth } = JSON.parse(localStorage.getItem('auth'));
-
-  if (!isAuth) {
-    localStorage.clear();
-    localStorage.setItem('auth', JSON.stringify(defaultAuthData));
+  function isValidString(str) {
+    const regex = /^[a-zA-Z0-9]{6,12}$/;
+    return regex.test(str);
   }
 
-  const validateInput = throttle(() => {
-    const userIdPattern = /^[a-zA-Z0-9]{6,12}$/;
-    const passwordPattern =
+  function isValidPassword(password) {
+    const regex =
       /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~!@#$%^&*])[a-zA-Z\d~!@#$%^&*]{8,15}$/;
+    return regex.test(password);
+  }
 
-    if (!userIdPattern.test(userIdInput.value)) {
-      userIdError.textContent = '형식이 맞지 않습니다';
-    } else {
+  userIdInput.addEventListener('input', (e) => {
+    const idValue = e.target.value;
+    if (isValidString(idValue)) {
       userIdError.textContent = '';
-    }
-
-    if (!passwordPattern.test(passwordInput.value)) {
-      passwordError.textContent = '형식이 맞지 않습니다';
     } else {
-      passwordError.textContent = '';
+      userIdError.textContent = '형식이 맞지 않습니다';
     }
-  }, 1000);
-
-  const updateVisibility = () => {
-    cancelIdToggle.style.display =
-      userIdInput.value.length === 0 ? 'none' : 'block';
-    cancelPwToggle.style.display =
-      passwordInput.value.length === 0 ? 'none' : 'block';
-    passwordToggle.style.display =
-      passwordInput.value.length === 0 ? 'none' : 'block';
-  };
-
-  userIdInput.addEventListener('input', () => {
-    validateInput();
-    updateVisibility();
+    console.log(idValue);
+    console.log(isValidString(idValue));
   });
 
-  passwordInput.addEventListener('input', () => {
-    validateInput();
-    updateVisibility();
+  passwordInput.addEventListener('input', (e) => {
+    const pwValue = e.target.value;
+    if (isValidPassword(pwValue)) {
+      passwordError.textContent = '';
+    } else {
+      passwordError.textContent = '형식이 맞지 않습니다';
+    }
+    console.log(pwValue);
+    console.log(isValidPassword(pwValue));
   });
 
   loginButton.addEventListener('click', async (event) => {
@@ -127,14 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   cancelIdToggle.addEventListener('click', () => {
     userIdInput.value = ''; // 입력값 초기화
-    validateInput();
-    updateVisibility();
+    userIdError.textContent = ''; // 에러 메시지 초기화
   });
 
   cancelPwToggle.addEventListener('click', () => {
     passwordInput.value = ''; // 입력값 초기화
-    validateInput();
-    updateVisibility();
+    passwordError.textContent = ''; // 에러 메시지 초기화
   });
 });
 
