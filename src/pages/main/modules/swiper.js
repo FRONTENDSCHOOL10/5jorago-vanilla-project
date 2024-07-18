@@ -248,7 +248,6 @@ const swiperEvent = new Swiper('.article__swiper--events', {
 });
 
 const watchedSwiper = new Swiper('.watched-content__container', {
-  loop: true,
   autoplay: {
     delay: 5000,
   },

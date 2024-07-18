@@ -5,7 +5,6 @@ import { Footer } from '/src/components/footer/footer.js';
 import { Profile } from '/src/components/profile/profile.js';
 import { getNode, getNodes } from 'kind-tiger';
 import pb from '/src/api/pocketbase.js';
-// import getPbImageURL from '/src/api/getPbImageURL.js';
 
 // * throttle 함수
 function throttle(func, delay) {
@@ -134,11 +133,22 @@ function profileBox() {
   const buttonText = getNode('.profile-title');
   const profiles = getNodes('.profile');
 
-  // 프로필 클릭 이벤트 함수 
   profiles.forEach(profile => {
-    // 프로필 클릭 시 메인 페이지 이동
+    let isFirstClick = true;
+
+    // 프로필 클릭 이벤트 함수
     profile.addEventListener('click', () => {
-      window.location.href = '/src/pages/main/index.html';
+
+      // 첫 번째 클릭일 때 아이콘과 overlay 이미지 숨기기
+      if (isFirstClick) {
+        profile.querySelector('.profile__icon').style.display = 'none';
+        profile.querySelector('.profile__img--overlay').style.display = 'none';
+        isFirstClick = false;
+
+      // 두 번째 클릭일 때 메인 페이지로 이동
+      } else {
+        window.location.href = '/src/pages/main/index.html';
+      }
     });
   });
 
@@ -205,6 +215,13 @@ function profileBox() {
             </defs>
           </svg>
         `;
+      }
+
+
+      // 선택 해제 시 img--overlay 이미지 다시 보이기
+      if (!isEditMode) {
+        const overlay = profile.querySelector('.profile__img--overlay');
+        overlay.style.display = 'block';
       }
     });
   });

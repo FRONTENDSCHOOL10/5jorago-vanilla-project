@@ -1,9 +1,9 @@
 import css from '/src/components/header/_header.scss?inline';
-import logo from '/public/assets/logo_1.png';
-import live from '/public/assets/live_1_default.png';
-import serch_default from '/public/assets/search_1_default.png';
-import paramount from '/public/assets/paramount_1_default.png';
-import usericon from '/public/assets/usericon_1.png';
+import logo from '/assets/logo_1.png';
+import live from '/assets/live_1_default.png';
+import serch_default from '/assets/search_1_default.png';
+import paramount from '/assets/paramount_1_default.png';
+import usericon from '/assets/usericon_1.png';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
 import defaultAuth from '/src/api/defaultAuth';
@@ -107,13 +107,8 @@ export class Header extends HTMLElement {
         <div class="logout-modal-content">
             <p>로그아웃 하시겠습니까?</p>
             <div class="logout-modal-footer">
-                <div class="btn-noborder">
-                    <button class="confirm-Logout" id="confirm-Logout">확인</button>
-                </div>
-                <span class="line"></span>
-                <div class="btn-noborder">
-                    <button class="cancel-Logout" id="cancel-Logout">취소</button>
-                </div>
+              <button id="cancelLogout" class="cancelLogout">취소</button>
+              <button id="confirmLogout" class="confirmLogout">확인</button>
             </div>
         </div>
     </div>
@@ -137,6 +132,20 @@ export class Header extends HTMLElement {
     `;
   }
 
+    async connectedCallback() {
+      const profileIcon = this.shadowRoot.querySelector(
+        '.header__icon-profile'
+      );
+      const profileModal = this.shadowRoot.querySelector('.profile-modal');
+      const logoutButton = this.shadowRoot.querySelector('.logoutButton');
+      const logoutModal = this.shadowRoot.querySelector('.logout-modal');
+      const closeButton = logoutModal.querySelector('.logout-close');
+      const cancelLogoutButton = logoutModal.querySelector('.cancelLogout');
+      const confirmLogoutButton = logoutModal.querySelector('.confirmLogout');
+
+      profileIcon.addEventListener('mouseenter', () => {
+        profileModal.classList.add('is-active');
+      });
   async connectedCallback() {
     const profileIcon = this.shadowRoot.querySelector('.header__icon-profile');
     const profileModal = this.shadowRoot.querySelector('.profile-modal');
@@ -180,49 +189,40 @@ export class Header extends HTMLElement {
       profileModal.classList.add('is-active');
     });
 
-    profileIcon.addEventListener('mouseleave', () => {
-      setTimeout(() => {
-        if (!profileModal.matches(':hover')) {
-          profileModal.classList.remove('is-active');
-        }
-      }, 300);
-    });
-
-    logoutButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      console.log('로그아웃 버튼 클릭했음');
-      logoutModal.style.display = 'block';
-    });
-
-    cancelLogoutButton.addEventListener('click', () => {
-      logoutModal.style.display = 'none';
-    });
-
-    confirmLogoutButton.addEventListener('click', () => {
-      setStorage('auth', defaultAuth);
-      window.location.href = '/src/pages/login/index.html';
-    });
-
-    const { isAuth } = JSON.parse(localStorage.getItem('auth'));
-    if (isAuth) {
-      const localAuth = JSON.parse(localStorage.getItem('auth'));
-      const localName = localAuth.user.name;
-
-      const userData = await pb.collection('users').getFullList();
-      for (let data of userData) {
-        if (localName === data.name) {
-          if (data.avatar.length > 1) {
-            let avatars = data.avatar[0];
-            profileIcon.src = `${import.meta.env.VITE_PB_API}/files/${
-              data.collectionId
-            }/${data.id}/${avatars}`;
-          } else {
-            profileIcon.src = `${getPbImageURL(data, 'avatar')}`;
+      profileIcon.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!profileModal.matches(':hover')) {
+            profileModal.classList.remove('is-active');
           }
-        }
-      }
+        }, 300);
+      });
+
+      logoutButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('로그아웃 버튼 클릭했음');
+        logoutModal.style.display = 'block';
+      });
+
+      closeButton.addEventListener('click', () => {
+        logoutModal.style.display = 'none';
+      });
+
+      cancelLogoutButton.addEventListener('click', () => {
+        logoutModal.style.display = 'none';
+      });
+
+      confirmLogoutButton.addEventListener('click', () => {
+        setStorage('auth', defaultAuth);
+        window.location.href = '/src/pages/login/index.html';
+      });
     }
   }
+
+  customElements.define('c-header', Header);
+
+  return Header;
 }
 
-customElements.define('c-header', Header);
+const Header = fetchData();
+
+export { Header };
