@@ -30,8 +30,10 @@
 ## 01. 프로젝트 소개 📝
 
 ###  티빙(TIVING) 클론코딩 프로젝트
-<br/>
 
+![랜딩 페이지](https://github.com/user-attachments/assets/27e8ec9f-5f63-494a-810f-408a493dc685)
+
+<br/>
 
 **기간** 
 <br/>
@@ -66,7 +68,14 @@
 <br/><br/><br/>
 
 ## 02. 구현 기능 ⚙
+
+<br/>
+
 - [기능 구현](https://github.com/FRONTENDSCHOOL10/5jorago-vanilla-project/wiki/%EA%B8%B0%EB%8A%A5-%EA%B5%AC%ED%98%84)
+
+<br/>
+
+![검색 페이지](https://github.com/user-attachments/assets/b6d6bb21-4aee-416c-86ab-41c680c92fd0)
 
 <br/><br/><br/>
 
@@ -81,5 +90,3 @@
 
 
 <br/><br/>
-
-
