@@ -3,7 +3,8 @@ import { insertLast, getNode } from 'kind-tiger';
 import logo from '/public/assets/tvingoriginal_1.png';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
-import { watchedContent } from '../../pages/main/modules/watchedContent';
+import { watchedContent } from '/src/pages/main/modules/watchedContent';
+import { animation } from '/src/pages/main/modules/animation';
 
 (async function renderCard4() {
   const article1Wrapper = getNode('.article--swiper1 .swiper-wrapper');
@@ -29,6 +30,7 @@ import { watchedContent } from '../../pages/main/modules/watchedContent';
     insertLast(`.article__swiper1--slide${i}`, template);
   }
   watchedContent();
+  animation();
 })();
 
 // <source media="(min-width: 768px)" srcset="${vertical2}" />

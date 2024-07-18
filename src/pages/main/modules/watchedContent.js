@@ -2,6 +2,7 @@ import { getNodes, getNode, insertLast } from 'kind-tiger';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
 import defaultAuthData from '/src/api/defaultAuth.js';
+import { watchedAnimation } from './animation';
 
 const watchedContainer = getNode('.watched-content__container .swiper-wrapper');
 const userName = getNode('.watched-content h2');
@@ -58,6 +59,7 @@ async function displayStoredContent() {
       getNode('.watched-content').style.display = 'block';
     }
   }
+  watchedAnimation();
 }
 
 async function handleTarget(e, data) {

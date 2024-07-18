@@ -3,6 +3,7 @@ import { insertLast, getNode } from 'kind-tiger';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
 import { watchedContent } from '../../pages/main/modules/watchedContent';
+import { animation } from '../../pages/main/modules/animation';
 
 async function renderCard3() {
   const article3Wrapper = getNode('.article--swiper4 .swiper-wrapper');
@@ -40,8 +41,8 @@ async function renderCard3() {
     slide.className = `swiper-slide article__swiper4--slide${i}`;
     article3Wrapper.appendChild(slide);
     insertLast(`.article__swiper4--slide${i}`, template);
+    animation();
   }
-
 }
 
 renderCard3();
