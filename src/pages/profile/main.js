@@ -111,7 +111,11 @@ function renderProfile(data, isEditMode = false) {
 
   // 모바일 화면일 때 그리드 템플릿 수정
   if (window.innerWidth < 768) {
-    profileBox.style.gridTemplateColumns = data.avatar.length > 1 ? '1fr 1fr' : '1fr';
+    if (data.avatar.length > 1) {
+      profileBox.style.gridTemplateColumns = '1fr 1fr';
+    } else {
+      profileBox.style.gridTemplateColumns = '1fr';
+    }
   }
 
   // 아바타 프로필 이미지 넣기
@@ -132,59 +136,9 @@ function profileBox() {
 
   // 프로필 클릭 이벤트 함수 
   profiles.forEach(profile => {
-    profile.addEventListener('click', throttle(() => {
-
-      // 다른 프로필들의 선택 상태 초기화(프로필들 중 하나만 선택 가능)
-      profiles.forEach(p => {
-        if (p !== profile) {
-          // 현재 클릭된 프로필을 제외한 나머지 프로필들에 적용
-          p.classList.remove('selected');
-          p.querySelector('.profile__icon').style.display = 'block';
-          p.querySelector('.profile__img--overlay').style.display = 'block';
-        }
-      });
-
-      // 클릭된 프로필의 선택 상태
-      profile.classList.toggle('selected');
-
-      // 선택된 프로필인지 여부
-      const isSelected = profile.classList.contains('selected');
-
-
-      // 클릭된 프로필의 자물쇠 아이콘 숨기기
-      const icon = profile.querySelector('.profile__icon');
-      if (isSelected) {
-        // 선택 - 아이콘 숨김
-        icon.style.display = 'none';
-      } else {
-        // 선택 해제 - 아이콘 표시
-        icon.style.display = 'block';
-      }
-
-      // 선택된 프로필의 img--overlay 이미지 숨기기
-      const overlay = profile.querySelector('.profile__img--overlay');
-      if (isSelected) {
-        overlay.style.display = 'none';
-      } else {
-        overlay.style.display = 'block';
-      }
-    }, 500));
-
-
-    let timeout;
-
-    // 프로필 두 번 클릭 시 메인 페이지 이동
+    // 프로필 클릭 시 메인 페이지 이동
     profile.addEventListener('click', () => {
-      if (timeout) { // 두 번째 클릭
-        clearTimeout(timeout);
-        window.location.href = '/src/pages/main/index.html';
-
-      } else { // 처음 클릭
-        timeout = setTimeout(() => {
-          clearTimeout(timeout);
-          timeout = null;
-        }, 300);
-      }
+      window.location.href = '/src/pages/main/index.html';
     });
   });
 
@@ -251,12 +205,6 @@ function profileBox() {
             </defs>
           </svg>
         `;
-      }
-
-      // 선택 해제 시 img--overlay 이미지 다시 보이기
-      if (!isEditMode) {
-        const overlay = profile.querySelector('.profile__img--overlay');
-        overlay.style.display = 'block';
       }
     });
   });
