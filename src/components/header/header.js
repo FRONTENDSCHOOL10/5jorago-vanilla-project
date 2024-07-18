@@ -12,9 +12,10 @@ import { insertLast, getNode, setStorage, getStorage } from 'kind-tiger';
 async function fetchData() {
   const { user } = JSON.parse(localStorage.getItem('auth'));
   const userData = await pb.collection('users').getOne(user.id);
-
+  console.log(userData);
+  console.log(user);
   const dataName = userData.name;
-  const profileImg = getPbImageURL(user, 'avatar');
+  const profileImg = `${import.meta.env.VITE_PB_API}/files/${user.collectionId}/${user.id}/${user.avatar[0]}`;
 
   class Header extends HTMLElement {
     constructor() {
@@ -107,7 +108,7 @@ async function fetchData() {
             </div>
           </div>
         </div>
-      <div id="userout" class="userout"">
+      <div id="userout" class="userout">
         <div class="userout-content">
             <p>회원탈퇴 하시겠습니까?</p>
             <div class="userout-footer">
