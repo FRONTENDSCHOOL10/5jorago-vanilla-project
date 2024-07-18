@@ -7,20 +7,27 @@ import usericon from '/public/assets/usericon_1.png';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
 import defaultAuth from '/src/api/defaultAuth';
-const localAuth = JSON.parse(localStorage.getItem('auth'));
 import { insertLast, getNode, setStorage } from 'kind-tiger';
-const localName = localAuth.user.name;
+let dataName;
+let avatars;
+let profileImg;
 
-const userData = await pb.collection('users').getFullList();
-for (let data of userData) {
-  if (localName === data.name) {
-    var dataName = data.name;
-    let avatars = data.avatar[0];
-    var profileImg = `${import.meta.env.VITE_PB_API}/files/${
-      data.collectionId
-    }/${data.id}/${avatars}`;
+async function fetchData() {
+  const localAuth = JSON.parse(localStorage.getItem('auth'));
+  const localName = localAuth.user.name;
+  const userData = await pb.collection('users').getFullList();
+
+  for (let data of userData) {
+    if (localName === data.name) {
+      dataName = data.name;
+      avatars = data.avatar[0];
+      profileImg = `${import.meta.env.VITE_PB_API}/files/${
+        data.collectionId
+      }/${data.id}/${avatars}`;
+    }
   }
 }
+fetchData();
 
 export class Header extends HTMLElement {
   constructor() {
