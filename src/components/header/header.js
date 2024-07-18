@@ -7,7 +7,7 @@ import usericon from '/assets/usericon_1.png';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
 import defaultAuth from '/src/api/defaultAuth';
-import { insertLast, getNode, setStorage } from 'kind-tiger';
+import { insertLast, getNode, setStorage, getStorage } from 'kind-tiger';
 
 async function fetchData() {
   const { user } = JSON.parse(localStorage.getItem('auth'));
@@ -85,10 +85,10 @@ async function fetchData() {
                       <a href="/src/pages/main/">
                         <li>이용권</li>
                       </a>
-                      <a href="">
-                        <li>회원탈퇴</li>
+                     
+                        <li id="user-out">회원탈퇴</li>
                       </a>
-                      <a href="">
+                     
                         <li id="logoutButton" class="logoutButton">로그아웃</li>
                       </a>
                     </ul>
@@ -107,6 +107,20 @@ async function fetchData() {
             </div>
           </div>
         </div>
+      <div id="userout" class="userout"">
+        <div class="userout-content">
+            <p>회원탈퇴 하시겠습니까?</p>
+            <div class="userout-footer">
+                <div class="btn-noborder">
+                    <button class="confirm-userout" id="confirm-userout">확인</button>
+                </div>
+                <span class="line"></span>
+                <div class="btn-noborder">
+                    <button class="cancel-userout" id="cancel-userout">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
         </header>
         
       `;
@@ -122,6 +136,10 @@ async function fetchData() {
       const closeButton = logoutModal.querySelector('.logout-close');
       const cancelLogoutButton = logoutModal.querySelector('.cancelLogout');
       const confirmLogoutButton = logoutModal.querySelector('.confirmLogout');
+      const userOut = this.shadowRoot.querySelector('#user-out');
+      const userOutModal = this.shadowRoot.querySelector('.userout');
+      const cancelButton = userOutModal.querySelector('.cancel-userout');
+      const confirmButton = userOutModal.querySelector('.confirm-userout');
 
       profileIcon.addEventListener('mouseenter', () => {
         profileModal.classList.add('is-active');
@@ -152,6 +170,30 @@ async function fetchData() {
       confirmLogoutButton.addEventListener('click', () => {
         setStorage('auth', defaultAuth);
         window.location.href = '/src/pages/login/index.html';
+      });
+      userOut.addEventListener('click', () => {
+        userOutModal.style.display = 'block';
+      });
+      cancelButton.addEventListener('click', () => {
+        userOutModal.style.display = 'none';
+      });
+      confirmButton.addEventListener('click', async () => {
+        try {
+          let user = await getStorage('auth');
+          const userId = user.user['id'];
+          console.log('Attempting to delete user with ID:', userId);
+
+          await pb.collection('users').delete(userId);
+          console.log('User deleted successfully');
+          setStorage('auth', defaultAuth);
+
+          // 추가적인 작업 (예: 로그아웃, 페이지 리다이렉트 등)
+        } catch (error) {
+          console.error('Error deleting user:', error);
+          // 사용자에게 오류 메시지 표시
+        }
+        window.location.href = '/src/pages/login/index.html';
+        userOutModal.style.display = 'none';
       });
     }
   }

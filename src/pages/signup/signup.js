@@ -19,17 +19,15 @@ import downloadImage from '../../utils/downloadImage';
 
   const img = await pb.collection('default').getOne('ptez07w3bofbpy5');
 
-  console.log(img);
-
   const defaultAvatarUrl = getPbImageURL(img, 'field');
 
   // const defaultAvatarUrl = img.avatar;
 
   let usersData = {
-    username: 'tiger',
-    password: 'dkssud123!@',
-    passwordConfirm: 'dkssud123!@',
-    email: 'seonbeom2@gmail.com',
+    username: '',
+    password: '',
+    passwordConfirm: '',
+    email: '',
     avatar: img.avatar,
   };
 
@@ -214,7 +212,7 @@ import downloadImage from '../../utils/downloadImage';
         const response = await pb.collection('users').create(formData);
 
         alert('회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.');
-        // location.href = '/src/pages/login/index.html';
+        location.href = '/src/pages/login/index.html';
         return {
           username: '',
           password: '',
