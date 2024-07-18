@@ -13,10 +13,11 @@ import '/src/components/rendingbutton/rendingbutton.js'
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
-import defaultAuthData from '/src/api/defaultAuth.js';
-
 
 // GSAP 애니메이션 -------------------------------
+import { gsap } from "gsap";
+import defaultAuthData from '/src/api/defaultAuth.js';
+
 gsap.from([".section-1__text-box", ".button1", ".text-box", ".section-3__swiper-box"], {
   opacity: 0,
   y: 50, // 아래에서 위로 올라오는 애니메이션
