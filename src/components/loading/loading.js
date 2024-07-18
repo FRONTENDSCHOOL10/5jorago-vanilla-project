@@ -2,7 +2,7 @@ import { insertLast, getNode } from 'kind-tiger';
 import '/src/components/loading/_loading.scss';
 const template = `
 <div class="mask">
-  <img class="loadingImg" src="/assets/loading.gif" alt="로딩 이미지" width="100%" height="100%>
+  <img class="loadingImg" src="/assets/loading.gif" alt="로딩 이미지">
 </div>`;
 
 insertLast('.loading', template);
