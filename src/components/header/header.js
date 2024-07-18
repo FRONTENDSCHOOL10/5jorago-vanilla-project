@@ -99,6 +99,20 @@ async function fetchData() {
             </div>
           </nav>
           <div id="logout-modal" class="logout-modal">
+        <div class="logout-modal-content">
+            <p>로그아웃 하시겠습니까?</p>
+            <div class="logout-modal-footer">
+                <div class="btn-noborder">
+                    <button class="confirm-Logout" id="confirm-Logout">확인</button>
+                </div>
+                <span class="line"></span>
+                <div class="btn-noborder">
+                    <button class="cancel-Logout" id="cancel-Logout">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+          <div id="logout-modal" class="logout-modal">
           <div class="logout-modal-content">
             <span class="logout-close">&times;</span>
             <p>로그아웃 하시겠습니까?</p>
@@ -134,9 +148,8 @@ async function fetchData() {
       const profileModal = this.shadowRoot.querySelector('.profile-modal');
       const logoutButton = this.shadowRoot.querySelector('.logoutButton');
       const logoutModal = this.shadowRoot.querySelector('.logout-modal');
-      const closeButton = logoutModal.querySelector('.logout-close');
-      const cancelLogoutButton = logoutModal.querySelector('.cancelLogout');
-      const confirmLogoutButton = logoutModal.querySelector('.confirmLogout');
+      const cancelLogoutButton = logoutModal.querySelector('.cancel-Logout');
+      const confirmLogoutButton = logoutModal.querySelector('.confirm-Logout');
       const userOut = this.shadowRoot.querySelector('#user-out');
       const userOutModal = this.shadowRoot.querySelector('.userout');
       const cancelButton = userOutModal.querySelector('.cancel-userout');
@@ -158,10 +171,6 @@ async function fetchData() {
         e.preventDefault();
         console.log('로그아웃 버튼 클릭했음');
         logoutModal.style.display = 'block';
-      });
-
-      closeButton.addEventListener('click', () => {
-        logoutModal.style.display = 'none';
       });
 
       cancelLogoutButton.addEventListener('click', () => {
