@@ -17,21 +17,21 @@ import downloadImage from '../../utils/downloadImage';
   const checkboxes = document.querySelectorAll('input[name=agree]');
   //객체로 만들고 키벨류로 만들기
 
-  const img = await pb.collection('default').getOne('ptez07w3bofbpy5');
+  // const img = await pb.collection('default').getOne('ptez07w3bofbpy5');
 
-  console.log(img);
+  // console.log(img);
 
-  const defaultAvatarUrl = getPbImageURL(img, 'field');
+  // const defaultAvatarUrl = getPbImageURL(img, 'field');
 
-  // const defaultAvatarUrl = img.avatar;
+  // // const defaultAvatarUrl = img.avatar;
 
-  let usersData = {
-    username: 'tiger',
-    password: 'dkssud123!@',
-    passwordConfirm: 'dkssud123!@',
-    email: 'seonbeom2@gmail.com',
-    avatar: img.avatar,
-  };
+  // let usersData = {
+  //   username: 'tiger',
+  //   password: 'dkssud123!@',
+  //   passwordConfirm: 'dkssud123!@',
+  //   email: 'seonbeom2@gmail.com',
+  //   avatar: img.avatar,
+  // };
 
   function isValidString(str) {
     const regex = /^[a-zA-Z0-9]{6,12}$/;

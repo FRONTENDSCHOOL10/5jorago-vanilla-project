@@ -1,4 +1,4 @@
-@use "src/styles/scss/" as *;
+@use 'src/styles/scss/' as *;
 
 // 색상 변수
 $gray-800: #2b2b2b;
@@ -7,20 +7,19 @@ $gray-300: #a6a6a6;
 $gray-700: #404040;
 $--brand-dark-bg-2: #212121;
 
-
 // 폰트 변수
-$font-family: "Pretendard", sans-serif;
+$font-family: 'Pretendard', sans-serif;
 $font-size-large: 1.333rem;
 $font-weight-normal: 400;
 $line-height-large: 160%; // 2.13281rem
 
 //폰트 믹스인
-@mixin font($font-size,
+@mixin font(
+  $font-size,
   $font-weight,
   $line-height,
   $font-style: normal,
-  $font-family: "Pretendard"
-
+  $font-family: 'Pretendard'
 ) {
   font-size: $font-size;
   font-weight: $font-weight;
@@ -45,9 +44,11 @@ body {
 }
 
 .header {
-  background: linear-gradient(180deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   width: 100%;
   max-width: 1920px;
 
@@ -98,7 +99,7 @@ body {
     margin-right: 2rem;
 
     &:hover {
-      content: url("/public/assets/cancel_1_hover.png");
+      content: url('/public/assets/cancel_1_hover.png');
       width: 2.5rem;
       height: 2.5rem;
     }
@@ -268,7 +269,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.80);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .logout-modal-content {
@@ -310,7 +311,7 @@ body {
   gap: 0.625rem;
 }
 
-.btn-noborder>label {
+.btn-noborder > label {
   color: --gray-300;
   @include font(1.333rem, 400, 2.13281rem);
 }
@@ -324,8 +325,53 @@ body {
 .line {
   width: 0.0625rem;
   height: 1.125rem;
-  background: var(--gray-300, #2B2B2B);
+  background: var(--gray-300, #2b2b2b);
 }
 
-//로그아웃 모달 반응형 - 
 //로그아웃 모달 반응형 -
+//로그아웃 모달 반응형 -
+
+.userout {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.userout-content {
+  background: $--brand-dark-bg-2;
+  margin: 15% auto;
+  // padding: 2.25rem 0rem;
+  width: 32.875rem;
+  color: white;
+  // text-align: center;
+}
+
+.userout-content p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.25rem;
+  justify-content: center;
+  @include font(1.333rem, 400, 2.13281rem);
+  color: #fff;
+}
+
+.userout-footer {
+  display: flex;
+  width: 32.875rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-userout,
+.cancel-userout {
+  color: $gray-300;
+  @include font(1.333rem, 400, 2.13281rem);
+}
