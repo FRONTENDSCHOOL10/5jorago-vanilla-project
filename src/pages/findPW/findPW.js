@@ -9,6 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const userIdInput = document.querySelector('#user-id');
   const confirmButton = document.querySelector('.confirm-btn');
 
+  // 입력값이 변할 때마다 확인 버튼 활성화 여부를 체크하는 함수
+  const checkInput = () => {
+    if (userIdInput.value.trim().length > 0) {
+      confirmButton.classList.add('confirm-btn--active'); // 입력값이 있을 때 활성화 클래스 추가
+    } else {
+      confirmButton.classList.remove('confirm-btn--active'); // 입력값이 없을 때 활성화 클래스 제거
+    }
+  };
+
+  // 입력값 변화를 감지하는 이벤트 리스너 등록
+  userIdInput.addEventListener('input', checkInput);
+
   confirmButton.addEventListener('click', async (event) => {
     event.preventDefault();
 

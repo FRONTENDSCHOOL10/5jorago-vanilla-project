@@ -105,6 +105,14 @@ body {
     @include font(1.77688rem, 600, 2.66531rem);
 }
 
+.confirm-btn--active {
+    background: var(--gray-100, #E1E1E1);
+
+    label {
+        color: var(--black, #000);
+    }
+}
+
 .line-border {
     display: flex;
     height: 9.75rem;
