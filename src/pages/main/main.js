@@ -3,6 +3,7 @@ import './modules/index.js';
 import '/src/pages/main/_main.scss';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
+import { animation } from './modules/animation.js';
 
 /* 이미지 추가 */
 
@@ -20,6 +21,7 @@ async function renderCard5() {
   </div>
   `;
     insertLast(`.article--swiper5 .swiper-wrapper`, template);
+    animation();
   }
 }
 

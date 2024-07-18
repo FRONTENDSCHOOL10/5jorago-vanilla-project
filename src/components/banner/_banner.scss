@@ -1,12 +1,16 @@
-@use "/src/styles/scss/" as *;
-
-
+@use '/src/styles/scss/' as *;
 
 .banner__link--container {
   @include display(null, null, null, center, flex);
   position: relative;
   width: 100%;
   height: auto;
+}
+
+.pause-btn {
+  position: absolute;
+  z-index: 100;
+  width: 10rem;
 }
 
 .banner__link__container--img {
@@ -17,7 +21,7 @@
 .banner__link__container--group {
   position: absolute;
   left: 4rem;
-  bottom: 2.66rem;
+  bottom: 5rem;
   display: flex;
   flex-flow: column nowrap;
   width: 30rem;
@@ -44,6 +48,9 @@
 @media (max-width: $breakpoint-desktop) {
   .banner__link__container--group {
     width: 20rem;
+    img {
+      max-width: 20rem;
+    }
   }
 
   .banner__link__container__group--desc {
@@ -54,21 +61,29 @@
 // 모바일
 @media (max-width: $breakpoint-tablet) {
   .banner__link__container--group {
-    width: 16rem;
+    // width: 12rem;
     bottom: 1.6rem;
+    img {
+      max-width: 8rem;
+    }
   }
 
   .banner__link__container__group--desc {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: $breakpoint-mobile) {
   .banner__link__container--group {
-    width: 5rem;
+    max-width: 8rem;
+    width: 100%;
+    img {
+      max-width: 5rem;
+    }
   }
 
   .banner__link__container__group--desc {
     font-size: 0.5rem;
+    width: 100%;
   }
 }

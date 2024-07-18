@@ -1,15 +1,18 @@
 import { getNodes, getNode, insertLast } from 'kind-tiger';
 import pb from '/src/api/pocketbase.js';
 import getPbImageURL from '/src/api/getPbImageURL';
+import defaultAuthData from '/src/api/defaultAuth.js';
+import { watchedAnimation } from './animation';
 
 const watchedContainer = getNode('.watched-content__container .swiper-wrapper');
 const userName = getNode('.watched-content h2');
 
-const { isAuth } = JSON.parse(localStorage.getItem('auth'));
+// 'auth' 데이터 가져오기
+const authData = JSON.parse(localStorage.getItem('auth'));
 
-
-if (!isAuth) {
-  localStorage.removeItem('watchedContentList');
+if (!authData || !authData.isAuth) {
+  localStorage.clear();
+  localStorage.setItem('auth', JSON.stringify(defaultAuthData));
 }
 
 function addWatchedContent(content) {
@@ -51,10 +54,12 @@ async function displayStoredContent() {
         insertLast(watchedContainer, template);
       }
     }
-    const userInfo = JSON.parse(localStorage.getItem('auth'));
-    userName.textContent = `${userInfo.user.name}님이 시청하는 컨텐츠`;
-    getNode('.watched-content').style.display = 'block';
+    if (authData && authData.user) {
+      userName.textContent = `${authData.user.name}님이 시청하는 컨텐츠`;
+      getNode('.watched-content').style.display = 'block';
+    }
   }
+  watchedAnimation();
 }
 
 async function handleTarget(e, data) {

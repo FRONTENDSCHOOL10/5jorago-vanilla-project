@@ -1,5 +1,5 @@
 import '/src/pages/login/_login.scss';
-
+import defaultAuthData from '/src/api/defaultAuth.js';
 import { getStorage, setStorage } from 'kind-tiger';
 import { Header } from '/src/components/header/l-header.js';
 import { Footer } from '/src/components/footer/footer.js';
@@ -17,6 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const userIdError = document.querySelector('#user-id-error');
   const passwordError = document.querySelector('#user-pw-error');
+
+  const { isAuth } = JSON.parse(localStorage.getItem('auth'));
+
+  if (!isAuth) {
+    localStorage.clear();
+    localStorage.setItem('auth', JSON.stringify(defaultAuthData));
+  }
 
   const validateInput = throttle(() => {
     const userIdPattern = /^[a-zA-Z0-9]{6,12}$/;
