@@ -257,7 +257,7 @@ body {
   display: flex;
 }
 
-// 로그아웃 모달
+/* 로그아웃 모달 */
 .logout-modal {
   display: none;
   position: fixed;
@@ -274,10 +274,8 @@ body {
 .logout-modal-content {
   background: $--brand-dark-bg-2;
   margin: 15% auto;
-  // padding: 2.25rem 0rem;
   width: 32.875rem;
   color: white;
-  // text-align: center;
 }
 
 .logout-modal-content p {
@@ -292,15 +290,11 @@ body {
 
 .logout-modal-footer {
   display: flex;
-  width: 32.875rem;
   align-items: center;
   justify-content: center;
 }
 
 .btn-noborder {
-  // display: flex;
-  // width: 10.625rem;
-  // justify-content: center;
   display: flex;
   width: 9.8125rem;
   height: 4.125rem;
@@ -327,5 +321,74 @@ body {
   background: var(--gray-300, #2B2B2B);
 }
 
-//로그아웃 모달 반응형 - 
-//로그아웃 모달 반응형 -
+/* 로그아웃 모달 - tablet*/
+@media (max-width: $breakpoint-desktop) {
+  .logout-modal-content {
+    background: $--brand-dark-bg-2;
+    margin: 15% auto;
+    width: 18.4375rem;
+    color: white;
+  }
+
+  .logout-modal-content p {
+    padding-top: 1.75rem;
+    padding-bottom: 0.75rem;
+    @include font(0.75019rem, 400, 1.20031rem);
+  }
+
+  .btn-noborder {
+    width: 5.625rem;
+    height: 2.4375rem;
+  }
+
+  .btn-noborder>label {
+    @include font(0.75019rem, 400, 1.20031rem);
+  }
+
+  .confirm-Logout,
+  .cancel-Logout {
+    @include font(0.75019rem, 400, 1.20031rem);
+  }
+
+  .line {
+    width: 0.0625rem;
+    height: 0.75rem;
+    background: var(--gray-300, #2B2B2B);
+  }
+}
+
+/* 로그아웃 모달 - mobile*/
+@media (max-width: $breakpoint-tablet) {
+  .logout-modal-content {
+    background: $--brand-dark-bg-2;
+    margin: 15% auto;
+    width: 12.25rem;
+    color: white;
+  }
+
+  .logout-modal-content p {
+    padding-top: 1.25rem;
+    padding-bottom: 0.75rem;
+    @include font(0.75019rem, 400, 1.20031rem);
+  }
+
+  .btn-noborder {
+    width: 4.5625rem;
+    height: 2.5rem;
+  }
+
+  .btn-noborder>label {
+    @include font(0.75019rem, 400, 1.20031rem);
+  }
+
+  .confirm-Logout,
+  .cancel-Logout {
+    @include font(0.75019rem, 400, 1.20031rem);
+  }
+
+  .line {
+    width: 0.0625rem;
+    height: 1.125rem;
+    background: var(--gray-300, #2B2B2B);
+  }
+}
