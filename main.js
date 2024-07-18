@@ -13,6 +13,8 @@ import '/src/components/rendingbutton/rendingbutton.js'
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
+import defaultAuthData from '/src/api/defaultAuth.js';
+
 
 // GSAP 애니메이션 -------------------------------
 gsap.from([".section-1__text-box", ".button1", ".text-box", ".section-3__swiper-box"], {
@@ -21,6 +23,12 @@ gsap.from([".section-1__text-box", ".button1", ".text-box", ".section-3__swiper-
   duration: 1,
   stagger: 0.6 // 올라오는 카드 간의 시간 간격
 });
+
+const { isAuth } = JSON.parse(localStorage.getItem('auth'));
+if (!isAuth) {
+  localStorage.clear();
+  localStorage.setItem('auth', JSON.stringify(defaultAuthData));
+}
 
 
 // 랜딩 버튼 페이지 이동 함수 -------------------------------
