@@ -1,5 +1,5 @@
 import '/src/pages/login/_login.scss';
-
+import defaultAuthData from '/src/api/defaultAuth.js';
 import { getStorage, setStorage } from 'kind-tiger';
 import { Header } from '/src/components/header/l-header.js';
 import { Footer } from '/src/components/footer/footer.js';

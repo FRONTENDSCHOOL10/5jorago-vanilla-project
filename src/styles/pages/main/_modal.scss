@@ -1,8 +1,9 @@
+@use 'src/styles/scss/' as *;
 .modal {
   display: none;
   position: fixed;
   justify-content: center;
-  align-self: start;
+  align-items: center;
   background: #000;
   z-index: 100;
   width: 100%;
@@ -11,10 +12,11 @@
 .modal__container {
   position: absolute;
   z-index: 100;
-  transform: translate(0%, 20%);
+  // transform: translate(0%, 30%);
 }
 .modal__container img {
-  width: 25rem;
+  max-width: 25rem;
+  width: 100%;
   height: auto;
 }
 .modal__container__buttons {
@@ -26,11 +28,11 @@
 }
 .modal__container__buttons button {
   color: white;
-  padding: 1rem 3rem;
+  padding: 5% 9%;
   display: flex;
   justify-content: center;
   font-family: Pretendard;
-  font-size: 1rem;
+  font-size: 1.333rem;
   font-weight: 400;
 }
 .modal__container__buttons hr {
@@ -39,4 +41,30 @@
 }
 .modal.is-clicked {
   display: none;
+}
+
+/* tablet */
+@media (max-width: $breakpoint-desktop) {
+  .modal__container {
+    img {
+      max-width: 20.5rem;
+    }
+    // transform: translate(10%, 30%);
+
+    .modal__container__buttons button {
+      font-size: 0.75019rem;
+    }
+  }
+}
+@media (max-width: $breakpoint-tablet) {
+  .modal__container {
+    img {
+      max-width: 15.75rem;
+    }
+    // transform: translate(15%, 50%);
+
+    .modal__container__buttons button {
+      font-size: 0.75019rem;
+    }
+  }
 }

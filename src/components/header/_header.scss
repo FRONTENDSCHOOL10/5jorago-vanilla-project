@@ -1,22 +1,22 @@
-@use "src/styles/scss/" as *;
+@use 'src/styles/scss/' as *;
 
 // 색상 변수
 $gray-800: #2b2b2b;
 $gray-200: #c4c4c4;
 
 // 폰트 변수
-$font-family: "Pretendard", sans-serif;
+$font-family: 'Pretendard', sans-serif;
 $font-size-large: 1.333rem;
 $font-weight-normal: 400;
 $line-height-large: 160%; // 2.13281rem
 
 //폰트 믹스인
-@mixin font($font-size,
+@mixin font(
+  $font-size,
   $font-weight,
   $line-height,
   $font-style: normal,
-  $font-family: "Pretendard"
-
+  $font-family: 'Pretendard'
 ) {
   font-size: $font-size;
   font-weight: $font-weight;
@@ -42,15 +42,17 @@ body {
 }
 
 .header {
-  background: linear-gradient(180deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   width: 100%;
   max-width: 1920px;
 
-  padding: 0 4.38rem;
+  padding: 0 2rem;
   box-sizing: border-box;
-  height: 6.25rem;
+  height: 3rem;
 
   .nav {
     display: flex;
@@ -58,7 +60,7 @@ body {
     align-items: center;
     width: 100%;
 
-    padding-top: 1.8rem;
+    padding-top: 0.6rem;
 
     .header__nav__logo-menu {
       display: flex;
@@ -84,10 +86,11 @@ body {
   align-items: center;
   gap: 1rem;
 
+  /* 모바일 */
   .header__icon-search,
   .header__icon-profile {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
     display: block;
   }
 
@@ -95,9 +98,9 @@ body {
     margin-right: 2rem;
 
     &:hover {
-      content: url("/public/assets/cancel_1_hover.png");
-      width: 2.5rem;
-      height: 2.5rem;
+      content: url('/public/assets/cancel_1_hover.png');
+      width: 1.8rem;
+      height: 1.8rem;
     }
   }
 }
@@ -108,6 +111,24 @@ body {
 
 // 태블릿 ver
 @media (min-width: $breakpoint-desktop) {
+  .aside {
+    .header__icon-search,
+    .header__icon-profile {
+      width: 2rem;
+      height: 2rem;
+      display: block;
+    }
+
+    .header__icon-search {
+      margin-right: 2rem;
+
+      &:hover {
+        content: url('/public/assets/cancel_1_hover.png');
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
   .header__menu-wrapper {
     display: block;
   }
@@ -150,6 +171,30 @@ body {
 
 // 데스크탑 ver
 @media (min-width: $breakpoint-tablet) {
+  .header {
+    height: 6rem;
+    .nav {
+      padding-top: 1.6rem;
+    }
+  }
+  .aside {
+    .header__icon-search,
+    .header__icon-profile {
+      width: 2.5rem;
+      height: 2.5rem;
+      display: block;
+    }
+
+    .header__icon-search {
+      margin-right: 2rem;
+
+      &:hover {
+        content: url('/public/assets/cancel_1_hover.png');
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
   .header__logo {
     width: 8.25rem;
     height: 2.625rem;

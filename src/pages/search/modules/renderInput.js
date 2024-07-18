@@ -37,17 +37,19 @@ const searchButton = getNode('.search-btn');
         found = true;
         const imgURL = getPbImageURL(data);
         const template = `
-      <a href="/src/pages/main/">
-        <img src="${imgURL}" alt="${data.title}"/>
-        <h3>${data.title}</h3>
-      </a>`;
+      <div class="img-group">
+        <a href="/src/pages/main/">
+          <img src="${imgURL}" alt="${data.title}"/>
+          <h3>${data.title}</h3>
+        </a>
+      </div>`;
 
         insertLast(renderBox, template);
       }
     }
 
     if (!found) {
-      renderBox.innerHTML = '<p>검색결과가 존재하지 않습니다</p>';
+      renderBox.innerHTML = '<p class="no-result">검색결과가 존재하지 않습니다</p>';
     }
   }
 
