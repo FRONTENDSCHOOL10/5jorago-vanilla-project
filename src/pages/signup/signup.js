@@ -202,9 +202,11 @@ import downloadImage from '../../utils/downloadImage';
         const formData = new FormData();
 
         formData.append('username', username);
+        formData.append('name', username);
         formData.append('email', email);
         formData.append('password', password);
         formData.append('passwordConfirm', password);
+
         formData.append('avatar', imgBlob, 'avatar.jpg');
 
         console.log(formData);
