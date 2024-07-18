@@ -291,6 +291,7 @@ body {
 
 .logout-modal-footer {
   display: flex;
+  width: 32.875rem;
   align-items: center;
   justify-content: center;
 }
@@ -393,15 +394,15 @@ body {
     background: var(--gray-300, #2b2b2b);
   }
 }
-//로그아웃 모달 반응형 -
-//로그아웃 모달 반응형 -
+// 로그아웃 모달 반응형 -
+// 로그아웃 모달 반응형 -
 
 .userout {
   display: none;
   position: fixed;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 10000000;
   left: 0;
   top: 0;
   width: 100%;
