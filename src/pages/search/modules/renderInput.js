@@ -4,7 +4,6 @@ import getPbImageURL from '/src/api/getPbImageURL';
 
 const renderBox = getNode('.render-input');
 const inputSearch = getNode('.search-input');
-const searchButton = getNode('.search-btn');
 
 (async function () {
   const dataList = await pb.collection('watched').getFullList();
@@ -49,12 +48,13 @@ const searchButton = getNode('.search-btn');
     }
 
     if (!found) {
-      renderBox.innerHTML = '<p class="no-result">검색결과가 존재하지 않습니다</p>';
+      renderBox.innerHTML =
+        '<p class="no-result">검색결과가 존재하지 않습니다</p>';
     }
   }
 
   const debouncedRenderImg = debounce(renderSearchImg, 500);
-
+  const searchButton = getNode('.serch-btn');
   inputSearch.addEventListener('input', debouncedRenderImg);
   searchButton.addEventListener('click', (e) => {
     e.preventDefault();

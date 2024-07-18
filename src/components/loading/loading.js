@@ -5,8 +5,6 @@ const template = `
   <img class="loadingImg" src='/assets/loading.gif'>
 </div>`;
 
-console.log(getNode('.loading'));
-
 insertLast('.loading', template);
 
 const loading = document.querySelector('.loading');
