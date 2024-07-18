@@ -5,6 +5,7 @@ import '/src/components/card-1/card-1.js';
 import '/src/components/card-3/card-3.js';
 import '/src/components/banner/banner.js';
 import '/src/components/card-4/card-4.js';
+import '/src/components/loading/loading.js';
 // import '/src/components/profileModal/profileModal.js';
 import '/src/pages/main/modules/modal.js';
 import '/src/pages/main/modules/swiper.js';
