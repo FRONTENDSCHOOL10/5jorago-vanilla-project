@@ -1,5 +1,5 @@
 import css from '/src/components/profile/_profile.scss?inline';
-import a from '/public/assets/profile_1_1.png'; // ? 슬비쌤 이미지
+import a from '/assets/profile_1_1.png'; // ? 슬비쌤 이미지
 
 export class Profile extends HTMLElement {
   constructor() {
@@ -13,6 +13,7 @@ export class Profile extends HTMLElement {
         src="${a}"
         alt="슬비님 프로필 이미지"
         class="profile__img"
+        width="100%" height="100%
       />
 
       <!-- 자물쇠 아이콘(잠금 상태) -->
@@ -56,9 +57,8 @@ export class Profile extends HTMLElement {
 
       <span class="profile__name" aria-labelledby="profile__img">슬비님</span>
     </div>
-    `
+    `;
   }
 }
 
 customElements.define('c-profile', Profile);
-

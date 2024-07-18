@@ -33,7 +33,7 @@ function createTemplate(imgURL, title) {
   return `
     <div class="swiper-slide">
       <a href="/src/pages/main/">
-        <img src="${imgURL}" alt="${title}"/>
+        <img src="${imgURL}" alt="${title}" width="100%" height="100%"/>
         <span class="watchedContent__videoTitle">${title}</span>
       </a>
     </div>`;

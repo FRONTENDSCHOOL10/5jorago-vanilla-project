@@ -1,8 +1,8 @@
 import css from '/src/components/footer/_footer.scss?inline';
-import youtube from '/public/assets/youtube-1.png';
-import instagram from '/public/assets/instagram-1.png';
-import twitter from '/public/assets/twitter-1.png';
-import facebook from '/public/assets/facebook-1.png';
+import youtube from '/assets/youtube-1.png';
+import instagram from '/assets/instagram-1.png';
+import twitter from '/assets/twitter-1.png';
+import facebook from '/assets/facebook-1.png';
 
 export class Footer extends HTMLElement {
   constructor() {
@@ -13,13 +13,13 @@ export class Footer extends HTMLElement {
       <footer>
         <div class="footer--contents">
           <div class="footer--util">
-            <a href=""><span>고객센터</span></a>
-            <a href=""><span>이용약관</span></a>
-            <a href=""><span>개인정보처리방침</span></a>
-            <a href=""><span>청소년 보호정책</span></a>
-            <a href=""><span>법적고지</span></a>
-            <a href=""><span>이벤트</span></a>
-            <a href=""><span>인재채용</span></a>
+            <a href="#"><span>고객센터</span></a>
+            <a href="#"><span>이용약관</span></a>
+            <a href="#"><span>개인정보처리방침</span></a>
+            <a href="#"><span>청소년 보호정책</span></a>
+            <a href="#"><span>법적고지</span></a>
+            <a href="#"><span>이벤트</span></a>
+            <a href="#"><span>인재채용</span></a>
           </div>
           <div class="footer--p">
             <p>
@@ -77,9 +77,8 @@ export class Footer extends HTMLElement {
           <p>Copyright © 주식회사 티빙 All right reserved.</p>
         </div>
       </footer>
-    `
+    `;
   }
 }
 
 customElements.define('c-footer', Footer);
-
