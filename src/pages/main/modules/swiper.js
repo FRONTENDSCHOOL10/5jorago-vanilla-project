@@ -47,9 +47,9 @@ const swiper1 = new Swiper('.article--swiper1', {
     enabled: true,
     onlyInViewport: true,
   },
-  autoplay: {
-    delay: 5000,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  // },
   slidesPerView: 6,
   spaceBetween: 4,
   breakpoints: {
@@ -75,9 +75,9 @@ const swiper1 = new Swiper('.article--swiper1', {
 /* Quick VOD 스와이퍼 */
 const swiper2 = new Swiper('.article--swiper2', {
   loop: true,
-  autoplay: {
-    delay: 5000,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  // },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
@@ -112,9 +112,9 @@ const swiper3 = new Swiper('.article--swiper3', {
     enabled: true,
     onlyInViewport: true,
   },
-  autoplay: {
-    delay: 5000,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  // },
   slidesPerView: 6,
   spaceBetween: 4,
   breakpoints: {
@@ -184,9 +184,9 @@ const swiper4 = new Swiper('.article--swiper4', {
 /* 오직 티빙에만 있어요 스와이퍼 */
 const swiper5 = new Swiper('.article--swiper5', {
   loop: true,
-  autoplay: {
-    delay: 5000,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  // },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
@@ -218,9 +218,9 @@ const swiper5 = new Swiper('.article--swiper5', {
 
 const swiperEvent = new Swiper('.article__swiper--events', {
   loop: true,
-  autoplay: {
-    delay: 5000,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  // },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
@@ -248,9 +248,9 @@ const swiperEvent = new Swiper('.article__swiper--events', {
 });
 
 const watchedSwiper = new Swiper('.watched-content__container', {
-  autoplay: {
-    delay: 5000,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  // },
   keyboard: {
     enabled: true,
     onlyInViewport: true,

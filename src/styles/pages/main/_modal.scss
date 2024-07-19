@@ -1,23 +1,19 @@
 @use 'src/styles/scss/' as *;
 .modal {
-  display: none;
+  @include display(null, null, center, center, none);
   position: fixed;
-  justify-content: center;
-  align-items: center;
-  background: #000;
+  background: $black;
   z-index: 100;
-  width: 100%;
-  height: 100%;
-}
-.modal__container {
-  position: absolute;
-  z-index: 100;
-  // transform: translate(0%, 30%);
-}
-.modal__container img {
-  max-width: 25rem;
-  width: 100%;
-  height: auto;
+  @include size(100%, 100%, null, null);
+  &__container {
+    position: absolute;
+    z-index: 100;
+    img {
+      max-width: 25rem;
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 .modal__container__buttons {
   display: flex;

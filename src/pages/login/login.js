@@ -5,10 +5,8 @@ import { Header } from '/src/components/header/l-header.js';
 import { Footer } from '/src/components/footer/footer.js';
 import pb from '/src/api/pocketbase.js';
 
+localStorage.setItem('auth', JSON.stringify(defaultAuthData));
 const { isAuth } = JSON.parse(localStorage.getItem('auth'));
-if (!isAuth) {
-  localStorage.setItem('auth', JSON.stringify(defaultAuthData));
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   const userIdInput = document.querySelector('#user-id');
