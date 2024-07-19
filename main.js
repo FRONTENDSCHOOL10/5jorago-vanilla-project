@@ -2,6 +2,7 @@ import '/src/styles/style.scss';
 import '/src/styles/scss/_reset.scss';
 import pb from '/src/api/pocketbase.js';
 import '/src/components/loading/loading.js';
+import defaultAuthData from '/src/api/defaultAuth.js';
 
 // 웹 컴포넌트
 import { Header } from '/src/components/header/l-header.js';
