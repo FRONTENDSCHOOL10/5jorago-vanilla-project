@@ -28,6 +28,11 @@ gsap.from(
   }
 );
 
+const { isAuth } = JSON.parse(localStorage.getItem('auth'));
+if (!isAuth) {
+  localStorage.setItem('auth', JSON.stringify(defaultAuthData));
+}
+
 // 랜딩 버튼 페이지 이동 함수 -------------------------------
 document.addEventListener('DOMContentLoaded', function () {
   const button = document.querySelectorAll('.button');
