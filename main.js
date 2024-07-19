@@ -28,9 +28,8 @@ gsap.from(
   }
 );
 
-if (!isAuth) {
-  localStorage.setItem('auth', JSON.stringify(defaultAuthData));
-}
+localStorage.setItem('auth', JSON.stringify(defaultAuthData));
+
 const { isAuth } = JSON.parse(localStorage.getItem('auth'));
 
 // 랜딩 버튼 페이지 이동 함수 -------------------------------
