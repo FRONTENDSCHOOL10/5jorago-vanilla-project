@@ -7,7 +7,6 @@ import pb from '/src/api/pocketbase.js';
 
 const { isAuth } = JSON.parse(localStorage.getItem('auth'));
 if (!isAuth) {
-  localStorage.clear();
   localStorage.setItem('auth', JSON.stringify(defaultAuthData));
 }
 
