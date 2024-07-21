@@ -6,11 +6,6 @@ const searchButton = getNode('.search-bar button');
 const recentSearchesContainer = getNode('.search-box');
 const noResultElement = getNode('.search__recent-searches--no-result-content');
 
-// 페이지 로드 시 최근 검색어 목록을 확인하고 렌더링하는 함수
-document.addEventListener('DOMContentLoaded', () => {
-  renderRecentSearch();
-});
-
 // 서치기록 렌더링
 function renderRecentSearch() {
   const recentSearches =
@@ -82,3 +77,4 @@ function handleDeleteSearch(event) {
 }
 
 searchButton.addEventListener('click', handleRecentSearch);
+renderRecentSearch();

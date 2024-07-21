@@ -140,9 +140,9 @@ const swiper3 = new Swiper('.article--swiper3', {
 /* 인기 라이브 채널 */
 const swiper4 = new Swiper('.article--swiper4', {
   loop: true,
-  autoplay: {
-    delay: 5000,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  // },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
